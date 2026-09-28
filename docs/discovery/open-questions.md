@@ -86,3 +86,15 @@ Source: `doc-analysis.md` §6 (the quotes behind each question are there). Each 
 | D-1 | Tone: the current hero reads as "AI startup hype" (six nonstop animations, glows, shimmer) while the promise is *confidence you can defend*. Which tone should the direction set? | **Calm, precise, evidence-first**: keep the brand colours, fonts and the product-true devices (GO track, release receipt), and cut decorative motion. | P2 |
 | D-2 | Priority: which issue category first? | **1. Arabic/RTL and mobile navigation breakage, 2. conversion clarity (one primary action), 3. proof credibility, 4. visual hierarchy.** | P4 |
 | D-3 | Which sections are off-limits (KEEP, preserved as they are)? | **The nine KEEP rows in the Section Matrix**, touched only to align them with shared design tokens (reported when done). | P4 |
+
+## Decisions at Checkpoint 1 (2026-09-28)
+
+The user's ruling:
+1. **Anything the strategy documents do not mention stays exactly as on the old site.** No changes. This overrides every default above that proposed changing an unmentioned element, including:
+   - The EN/AR switch and existing Arabic stay as they are. The RTL overflow bug is **not** fixed; it is recorded as a known bug.
+   - The chat widget stays unchanged.
+   - The 11 one-section pages and `/ai-era-quality-services/` stay unchanged.
+   - The broken links (`/business-care-quality`, the blog "original article" links) stay.
+   - The unmentioned Home sections stay on Home, unchanged: `#ai-era-quality-services-promo`, `#genai-based-systems`, `#impact`, `#how-we-work`. This overrides OQ-02's "Home = exactly 8 blocks"; they keep their current relative order.
+2. **Where the documents do mention an element**, the recommended defaults above apply.
+3. **Work proceeds one section at a time**, with a review stop after each section.
