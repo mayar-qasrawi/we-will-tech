@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist mono",
+        "createdAt": "2026-09-28T13:41:20.040Z",
+        "reason": "agent: Geist Mono is used only for machine data (receipt ID, QA run log) and pairs with the site's existing Geist brand display face"
+      }
+    ]
+  }
+}

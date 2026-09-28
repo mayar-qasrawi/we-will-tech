@@ -1,0 +1,64 @@
+/* Review-only tab bar that switches between style variants of one section. */
+.vsw-bar {
+  position: relative;
+  z-index: 5;
+  background: #0B1220;
+  border-block: 1px solid rgba(148, 163, 255, 0.18);
+  font-family: var(--ww-font-body);
+}
+.vsw-bar-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.vsw-label {
+  color: #9FB0D0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.vsw-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.vsw-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px 0 8px;
+  border: 1px solid rgba(148, 163, 255, 0.25);
+  border-radius: 999px;
+  background: transparent;
+  color: #DDE3F2;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: start;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 160ms, border-color 160ms, color 160ms;
+}
+.vsw-tab:hover { border-color: rgba(148, 163, 255, 0.6); }
+.vsw-tab:focus-visible { outline: 2px solid #FF8A47; outline-offset: 2px; }
+.vsw-tab[aria-selected="true"] { background: #F4F6FB; border-color: #F4F6FB; color: #0B1220; }
+.vsw-num {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(148, 163, 255, 0.16);
+  font-family: var(--ww-font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.vsw-tab[aria-selected="true"] .vsw-num { background: #1F3DDB; color: #fff; }
+.vsw-panel:focus { outline: none; }
+@media (max-width: 640px) {
+  .vsw-bar-inner { padding: 12px 20px; }
+  .vsw-tabs { width: 100%; }
+  .vsw-tabs { flex-direction: column; gap: 6px; }
+  .vsw-tab { width: 100%; justify-content: flex-start; }
+}

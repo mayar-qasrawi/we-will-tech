@@ -22,5 +22,8 @@
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/assets/layout.css">
 {% if extraCss %}  <link rel="stylesheet" href="{{ extraCss }}">
+{% endif %}{% if reviewAssets %}  <link rel="stylesheet" href="/assets/variants/hero-variants.css">
+  <link rel="stylesheet" href="/assets/variants/variant-switcher.css">
+  <script src="/assets/variants/variant-switcher.js" defer></script>
 {% endif %}{% if noindex %}  <meta name="robots" content="noindex" />
 {% endif %}
