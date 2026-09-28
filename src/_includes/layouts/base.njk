@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "partials/head.njk" %}</head>
+<body id="top">
+{% include "partials/body-start.html" %}{% include "partials/header.njk" %}
+  <main>
+{{ content | safe }}  </main>
+{% if chatWidget %}
+{% include "partials/chat-widget.html" %}{% endif %}
+{% include "partials/footer.html" %}{% include "partials/scripts.html" %}</body>
+</html>

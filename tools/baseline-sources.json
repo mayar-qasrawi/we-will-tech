@@ -1,0 +1,115 @@
+{
+  "capturedFrom": "https://wewill.tech",
+  "date": "2026-09-28T12:12:02.192Z",
+  "pages": [
+    {
+      "key": "home",
+      "live": "https://wewill.tech/",
+      "source": "src/index.njk"
+    },
+    {
+      "key": "genai-based-systems",
+      "live": "https://wewill.tech/genai-based-systems/",
+      "source": "src/genai-based-systems/index.njk"
+    },
+    {
+      "key": "why-we-will",
+      "live": "https://wewill.tech/why-we-will/",
+      "source": "src/why-we-will/index.njk"
+    },
+    {
+      "key": "services",
+      "live": "https://wewill.tech/services/",
+      "source": "src/services/index.njk"
+    },
+    {
+      "key": "quality-canvas",
+      "live": "https://wewill.tech/quality-canvas/",
+      "source": "src/quality-canvas/index.njk"
+    },
+    {
+      "key": "impact",
+      "live": "https://wewill.tech/impact/",
+      "source": "src/impact/index.njk"
+    },
+    {
+      "key": "how-we-work",
+      "live": "https://wewill.tech/how-we-work/",
+      "source": "src/how-we-work/index.njk"
+    },
+    {
+      "key": "team",
+      "live": "https://wewill.tech/team/",
+      "source": "src/team/index.njk"
+    },
+    {
+      "key": "success-stories",
+      "live": "https://wewill.tech/success-stories/",
+      "source": "src/success-stories/index.njk"
+    },
+    {
+      "key": "clients",
+      "live": "https://wewill.tech/clients/",
+      "source": "src/clients/index.njk"
+    },
+    {
+      "key": "knowledge",
+      "live": "https://wewill.tech/knowledge/",
+      "source": "src/knowledge/index.njk"
+    },
+    {
+      "key": "contact",
+      "live": "https://wewill.tech/contact/",
+      "source": "src/contact/index.njk"
+    },
+    {
+      "key": "ai-era-quality-services",
+      "live": "https://wewill.tech/ai-era-quality-services/",
+      "source": "src/ai-era-quality-services/index.njk"
+    },
+    {
+      "key": "blog",
+      "live": "https://wewill.tech/blog/",
+      "source": "src/blog/index.njk"
+    },
+    {
+      "key": "blog--when-software-quality-becomes-a-business-decision",
+      "live": "https://wewill.tech/blog/?slug=when-software-quality-becomes-a-business-decision",
+      "source": "src/blog/when-software-quality-becomes-a-business-decision/index.njk"
+    },
+    {
+      "key": "blog--the-triad-quality-framework",
+      "live": "https://wewill.tech/blog/?slug=the-triad-quality-framework",
+      "source": "src/blog/the-triad-quality-framework/index.njk"
+    }
+  ],
+  "uploads": [
+    "/uploads/041a66893761d3f31b788260.jpg",
+    "/uploads/051477fc13d9a2d94091467b.png",
+    "/uploads/1bd4cda42248525210e1e8a6.png",
+    "/uploads/20df78ae674bd9f12be9d934.jpg",
+    "/uploads/23eb841589a59fa75621e56c.jpg",
+    "/uploads/2712439551bd9f9352828622.png",
+    "/uploads/2d998f928cf87a909420d04a.jpg",
+    "/uploads/3b5edf333dd612526b1ab0c7.jpg",
+    "/uploads/40f072614cf25b1658294d28.jpg",
+    "/uploads/49e1e631f4129b8178ecb383.png",
+    "/uploads/4b56c105793bf60505341be8.jpg",
+    "/uploads/51aa9f0769b37fc6fead0457.jpg",
+    "/uploads/6fbc468cc7560cbfb13db5c0.jpg",
+    "/uploads/7319f2b29bd043ba2f763153.jpg",
+    "/uploads/7595ab96563302b83a0e2753.jpg",
+    "/uploads/7deaa3d6f7c6e6af6ebc3c68.jpg",
+    "/uploads/7f2b7b2a3047ff5ea3ec0fcf.jpg",
+    "/uploads/8636daa1a2e2fc75c1605a60.png",
+    "/uploads/967fea0f3204146e087af68e.png",
+    "/uploads/b496789933824df1da16945d.jpg",
+    "/uploads/c2c34df4ff8b91a3515a27bc.jpg",
+    "/uploads/df2c0c5c6a35f0591ae659d2.jpg",
+    "/uploads/e1f841e0f5c3c33b0432dec1.jpg",
+    "/uploads/e4e3c0eb0f623047b7e5a97d.jpg",
+    "/uploads/f069d4b8556d006dd972fadc.png",
+    "/uploads/f46740518bb1fa53a9bf75a7.png",
+    "/uploads/rasel.png"
+  ]
+}

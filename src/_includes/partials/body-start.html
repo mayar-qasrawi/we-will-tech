@@ -1,0 +1,16 @@
+  <script>
+    (function () {
+      try {
+        var lang = window.localStorage.getItem('ww_language') || 'en';
+        var target = lang === 'ar' ? 'ar' : 'en';
+        document.documentElement.lang = target;
+        document.documentElement.dir = target === 'ar' ? 'rtl' : 'ltr';
+        if (target === 'ar') {
+          document.body.classList.add('lang-ar');
+        }
+      } catch (error) {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+      }
+    })();
+  </script>

@@ -1,0 +1,1236 @@
+
+<style>
+  .aeqs {
+    --aeqs-blue: #1F3DDB;
+    --aeqs-blue-dark: #1530A6;
+    --aeqs-blue-light: #E7ECFF;
+    --aeqs-orange: #FF6716;
+    --aeqs-orange-dark: #D54D08;
+    --aeqs-soft: #F7F8FB;
+    --aeqs-text: #0B1220;
+    --aeqs-muted: #5B6473;
+    --aeqs-border: rgba(11,18,32,0.08);
+    --aeqs-radius: 12px;
+    --aeqs-shadow-soft: 0 1px 2px rgba(11,18,32,0.06), 0 8px 24px -8px rgba(11,18,32,0.12);
+    --aeqs-shadow-strong: 0 1px 2px rgba(11,18,32,0.08), 0 18px 40px -12px rgba(11,18,32,0.20);
+    font-family: "Inter", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--aeqs-text);
+    line-height: 1.6;
+    background: #ffffff;
+  }
+
+  /* Bilingual content toggle */
+  .aeqs .i18n-ar { display: none; }
+  body.lang-ar .aeqs .i18n-ar { display: inline; }
+  body.lang-ar .aeqs .i18n-ar.block { display: block; }
+  body.lang-ar .aeqs .i18n-en { display: none; }
+  .aeqs .i18n-ar.block { display: none; }
+  .aeqs .i18n-en.block { display: block; }
+
+  body.lang-ar .aeqs { text-align: right; }
+  body.lang-ar .aeqs .aeqs-section-header.center,
+  body.lang-ar .aeqs .aeqs-hero-inner { text-align: inherit; }
+
+  .aeqs-hero {
+    padding: 110px 6% 70px;
+    background:
+      radial-gradient(circle at top right, rgba(31,61,219,0.14), transparent 55%),
+      radial-gradient(circle at bottom left, rgba(31,61,219,0.08), transparent 60%),
+      #ffffff;
+  }
+
+  .aeqs-hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  .aeqs-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--aeqs-blue-dark);
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    background: var(--aeqs-blue-light);
+    border-radius: 999px;
+  }
+
+  .aeqs-hero h1 {
+    font-size: 2.9rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+    font-weight: 800;
+  }
+
+  .aeqs-hero h1 .brand { color: var(--aeqs-orange); }
+
+  .aeqs-hero-sub {
+    font-size: 1.05rem;
+    color: var(--aeqs-muted);
+    max-width: 560px;
+    margin-bottom: 26px;
+  }
+
+  .aeqs-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .aeqs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  .aeqs-btn-primary {
+    background: linear-gradient(130deg, var(--aeqs-blue), var(--aeqs-blue-dark));
+    color: #ffffff;
+    box-shadow: 0 14px 32px rgba(31,61,219,0.55);
+  }
+  .aeqs-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 42px rgba(31,61,219,0.7);
+  }
+
+  .aeqs-btn-ghost {
+    background: transparent;
+    color: var(--aeqs-blue-dark);
+    border: 1px solid rgba(11,18,32,0.14);
+  }
+  .aeqs-btn-ghost:hover { background: var(--aeqs-soft); }
+
+  .aeqs-microcopy {
+    font-size: 0.85rem;
+    color: var(--aeqs-muted);
+  }
+
+  /* Hero visual: 3-layer stack */
+  .aeqs-hero-visual {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .aeqs-visual-stack {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .aeqs-visual-flow {
+    background: #ffffff;
+    border: 1px solid var(--aeqs-border);
+    border-radius: var(--aeqs-radius);
+    padding: 14px 18px;
+    box-shadow: var(--aeqs-shadow-soft);
+    font-size: 0.85rem;
+    color: var(--aeqs-muted);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .aeqs-visual-flow.lead {
+    background: var(--aeqs-blue-light);
+    color: var(--aeqs-blue-dark);
+    font-weight: 700;
+    border-color: rgba(31,61,219,0.4);
+  }
+
+  .aeqs-visual-flow.center {
+    background: linear-gradient(130deg, var(--aeqs-blue), var(--aeqs-blue-dark));
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 16px 36px rgba(31,61,219,0.5);
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .aeqs-visual-flow .layers {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 8px;
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.92);
+    font-weight: 600;
+  }
+
+  .aeqs-visual-flow .layers span {
+    background: rgba(255,255,255,0.15);
+    padding: 6px 4px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .aeqs-visual-arrow {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--aeqs-blue-dark);
+    opacity: 0.6;
+    line-height: 1;
+  }
+
+  /* Generic section */
+  .aeqs-section {
+    padding: 80px 6%;
+  }
+  .aeqs-section-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .aeqs-section-header {
+    margin-bottom: 36px;
+  }
+  .aeqs-section-header.center { text-align: center; }
+  .aeqs-kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--aeqs-blue-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .aeqs-section h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .aeqs-section-sub {
+    font-size: 1rem;
+    color: var(--aeqs-muted);
+    max-width: 700px;
+  }
+  .aeqs-section-header.center .aeqs-section-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* The Shift section */
+  .aeqs-shift {
+    background: var(--aeqs-soft);
+    border-top: 1px solid var(--aeqs-border);
+    border-bottom: 1px solid var(--aeqs-border);
+  }
+  .aeqs-shift-body {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .aeqs-shift-body p {
+    font-size: 1rem;
+    color: var(--aeqs-muted);
+    margin-bottom: 16px;
+  }
+  .aeqs-shift-questions {
+    margin: 22px auto;
+    padding: 22px 26px;
+    background: #ffffff;
+    border-radius: var(--aeqs-radius);
+    border: 1px solid var(--aeqs-border);
+    box-shadow: var(--aeqs-shadow-soft);
+    text-align: left;
+    max-width: 560px;
+  }
+  body.lang-ar .aeqs-shift-questions { text-align: right; }
+  .aeqs-shift-questions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .aeqs-shift-questions li {
+    padding: 8px 0;
+    color: var(--aeqs-text);
+    border-bottom: 1px solid var(--aeqs-border);
+    font-weight: 500;
+  }
+  .aeqs-shift-questions li:last-child { border-bottom: none; }
+  .aeqs-shift-questions li::before {
+    content: "?";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: var(--aeqs-blue-light);
+    color: var(--aeqs-blue-dark);
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 0.8rem;
+  }
+  body.lang-ar .aeqs-shift-questions li::before {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  .aeqs-shift-close {
+    font-size: 1.05rem;
+    color: var(--aeqs-text);
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  /* Deliverables grid */
+  .aeqs-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .aeqs-service-card {
+    background: #ffffff;
+    border-radius: var(--aeqs-radius);
+    border: 1px solid var(--aeqs-border);
+    box-shadow: var(--aeqs-shadow-soft);
+    padding: 22px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .aeqs-service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--aeqs-shadow-strong);
+    border-color: rgba(31,61,219,0.6);
+  }
+  .aeqs-service-card .icon {
+    font-size: 1.6rem;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .aeqs-service-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .aeqs-service-card .subtitle {
+    font-size: 0.85rem;
+    color: var(--aeqs-blue-dark);
+    font-weight: 600;
+  }
+  .aeqs-service-card p {
+    font-size: 0.9rem;
+    color: var(--aeqs-muted);
+    margin: 4px 0 0;
+  }
+  .aeqs-service-card .output {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--aeqs-border);
+    font-size: 0.82rem;
+    color: var(--aeqs-text);
+  }
+  .aeqs-service-card .output strong {
+    color: var(--aeqs-blue-dark);
+    font-weight: 700;
+  }
+
+  /* How we work — 5-step timeline */
+  .aeqs-process {
+    background: #ffffff;
+  }
+  .aeqs-process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0,1fr));
+    gap: 16px;
+  }
+  .aeqs-process-step {
+    background: var(--aeqs-soft);
+    border-radius: var(--aeqs-radius);
+    padding: 18px 16px 16px;
+    border: 1px solid var(--aeqs-border);
+    box-shadow: var(--aeqs-shadow-soft);
+    position: relative;
+  }
+  .aeqs-process-step .num {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--aeqs-blue-dark);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .aeqs-process-step h4 {
+    font-size: 0.95rem;
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+  .aeqs-process-step p {
+    font-size: 0.85rem;
+    color: var(--aeqs-muted);
+    margin: 0;
+  }
+
+  /* Who we serve */
+  .aeqs-audience {
+    background: var(--aeqs-soft);
+  }
+  .aeqs-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0,1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .aeqs-audience-card {
+    background: #ffffff;
+    border-radius: var(--aeqs-radius);
+    padding: 18px 16px;
+    border: 1px solid var(--aeqs-border);
+    box-shadow: var(--aeqs-shadow-soft);
+  }
+  .aeqs-audience-card h4 {
+    font-size: 0.95rem;
+    margin: 0 0 6px;
+    color: var(--aeqs-blue-dark);
+    font-weight: 700;
+  }
+  .aeqs-audience-card p {
+    font-size: 0.85rem;
+    color: var(--aeqs-muted);
+    margin: 0;
+  }
+  .aeqs-filter {
+    background: #ffffff;
+    border: 1px solid var(--aeqs-border);
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--aeqs-radius);
+    padding: 22px 26px;
+    box-shadow: var(--aeqs-shadow-soft);
+  }
+  body.lang-ar .aeqs-filter {
+    border-left: 1px solid var(--aeqs-border);
+    border-right: 4px solid #f59e0b;
+  }
+  .aeqs-filter h4 {
+    font-size: 1rem;
+    margin: 0 0 12px;
+    color: #b45309;
+    font-weight: 700;
+  }
+  .aeqs-filter ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--aeqs-muted);
+    font-size: 0.9rem;
+  }
+  body.lang-ar .aeqs-filter ul {
+    padding-left: 0;
+    padding-right: 20px;
+  }
+  .aeqs-filter li {
+    margin-bottom: 6px;
+  }
+
+  /* Proof */
+  .aeqs-proof {
+    background: #ffffff;
+  }
+  .aeqs-proof-examples {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 12px;
+    margin: 28px 0 20px;
+  }
+  .aeqs-proof-chip {
+    background: var(--aeqs-soft);
+    border: 1px solid var(--aeqs-border);
+    border-radius: var(--aeqs-radius);
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    color: var(--aeqs-text);
+    font-weight: 600;
+    text-align: center;
+  }
+  .aeqs-proof-note {
+    text-align: center;
+    color: var(--aeqs-muted);
+    font-size: 0.92rem;
+    margin-top: 16px;
+  }
+
+  /* FAQ */
+  .aeqs-faq {
+    background: var(--aeqs-soft);
+    border-top: 1px solid var(--aeqs-border);
+  }
+  .aeqs-faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .aeqs-faq-item {
+    background: #ffffff;
+    border-radius: var(--aeqs-radius);
+    border: 1px solid var(--aeqs-border);
+    box-shadow: var(--aeqs-shadow-soft);
+    overflow: hidden;
+  }
+  .aeqs-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 600;
+    color: var(--aeqs-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: 0.98rem;
+  }
+  .aeqs-faq-item summary::-webkit-details-marker { display: none; }
+  .aeqs-faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--aeqs-blue-dark);
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .aeqs-faq-item[open] summary::after { content: "−"; }
+  .aeqs-faq-item .answer {
+    padding: 0 22px 18px;
+    color: var(--aeqs-muted);
+    font-size: 0.92rem;
+  }
+
+  /* Final CTA */
+  .aeqs-final {
+    background: linear-gradient(130deg, var(--aeqs-blue-dark), #0f1f6b);
+    color: #ffffff;
+    text-align: center;
+  }
+  body.lang-ar .aeqs-final { text-align: center; }
+  .aeqs-final h2 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+  .aeqs-final p {
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    margin: 0 auto 24px;
+    font-size: 1rem;
+  }
+  .aeqs-final .aeqs-btn-primary {
+    background: #ffffff;
+    color: var(--aeqs-blue-dark);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+  }
+  .aeqs-final .aeqs-btn-primary:hover { background: var(--aeqs-blue-light); }
+  .aeqs-final .aeqs-microcopy { color: rgba(255,255,255,0.7); margin-top: 14px; }
+
+  /* Sticky mobile CTA */
+  .aeqs-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 55;
+    background: #ffffff;
+    border-top: 1px solid var(--aeqs-border);
+    box-shadow: 0 -10px 24px rgba(15,23,42,0.12);
+    padding: 10px 14px;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  .aeqs-sticky-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--aeqs-text);
+  }
+  .aeqs-sticky .aeqs-btn {
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .aeqs-hero {
+      padding-top: 90px;
+    }
+    .aeqs-hero-inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+    .aeqs-hero h1 { font-size: 2.2rem; }
+    .aeqs-services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .aeqs-process-steps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .aeqs-audience-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .aeqs-proof-examples { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .aeqs-sticky { display: flex; }
+    .aeqs-final { padding-bottom: 120px; }
+  }
+  @media (max-width: 540px) {
+    .aeqs-services-grid,
+    .aeqs-process-steps,
+    .aeqs-audience-grid,
+    .aeqs-proof-examples { grid-template-columns: minmax(0,1fr); }
+    .aeqs-section h2 { font-size: 1.7rem; }
+    .aeqs-final h2 { font-size: 1.7rem; }
+  }
+</style>
+
+<div class="aeqs">
+
+  <!-- 1. HERO -->
+  <section class="aeqs-hero">
+    <div class="aeqs-hero-inner">
+      <div>
+        <span class="aeqs-eyebrow">
+          <span class="i18n-en">AI-Era Quality Services</span>
+          <span class="i18n-ar">خدمات الجودة في عصر الذكاء الاصطناعي</span>
+        </span>
+        <h1>
+          <span class="i18n-en">AI helps teams build faster. <span class="brand">WE WILL</span> helps them release with confidence.</span>
+          <span class="i18n-ar">الذكاء الاصطناعي يساعد الفرق على البناء أسرع. <span class="brand">WE WILL</span> تساعدهم على الإطلاق بثقة.</span>
+        </h1>
+        <p class="aeqs-hero-sub">
+          <span class="i18n-en">For teams using AI coding tools, fast delivery cycles, or modern product workflows, WE WILL verifies critical user journeys, GenAI features, release risks, and business-impacting quality issues before they reach users.</span>
+          <span class="i18n-ar">للفرق التي تستخدم أدوات البرمجة بالذكاء الاصطناعي أو دورات إطلاق سريعة أو سير عمل حديث، تتحقق WE WILL من رحلات المستخدم الحرجة وميزات الـ GenAI ومخاطر الإطلاق ومشكلات الجودة المؤثرة على الأعمال قبل أن تصل إلى المستخدمين.</span>
+        </p>
+        <div class="aeqs-cta-row">
+          <a class="aeqs-btn aeqs-btn-primary" href="/contact/#contact">
+            <span class="i18n-en">Book a 30-Min Discovery Call</span>
+            <span class="i18n-ar">احجز مكالمة استكشافية لمدة 30 دقيقة</span>
+          </a>
+          <a class="aeqs-btn aeqs-btn-ghost" href="#aeqs-what-we-deliver">
+            <span class="i18n-en">See what we deliver</span>
+            <span class="i18n-ar">شاهد ما نقدمه</span>
+          </a>
+        </div>
+        <p class="aeqs-microcopy">
+          <span class="i18n-en">No commitment. We review your product, release context, and quality risks.</span>
+          <span class="i18n-ar">بدون التزام. نراجع منتجك وسياق الإطلاق ومخاطر الجودة لديك.</span>
+        </p>
+      </div>
+
+      <div class="aeqs-hero-visual" aria-hidden="true">
+        <div class="aeqs-visual-stack">
+          <div class="aeqs-visual-flow lead">
+            <span class="i18n-en">Fast Build</span>
+            <span class="i18n-ar">بناء سريع</span>
+          </div>
+          <div class="aeqs-visual-arrow">↓</div>
+          <div class="aeqs-visual-flow center">
+            <div>
+              <span class="i18n-en">Quality Verification</span>
+              <span class="i18n-ar">التحقق من الجودة</span>
+            </div>
+            <div class="layers">
+              <span class="i18n-en">User Journeys</span><span class="i18n-ar">رحلات المستخدم</span>
+              <span class="i18n-en">GenAI Risks</span><span class="i18n-ar">مخاطر GenAI</span>
+              <span class="i18n-en">Release Readiness</span><span class="i18n-ar">جاهزية الإطلاق</span>
+            </div>
+          </div>
+          <div class="aeqs-visual-arrow">↓</div>
+          <div class="aeqs-visual-flow lead">
+            <span class="i18n-en">Release Confidence</span>
+            <span class="i18n-ar">ثقة الإطلاق</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE SHIFT -->
+  <section class="aeqs-section aeqs-shift">
+    <div class="aeqs-section-inner">
+      <div class="aeqs-section-header center">
+        <div class="aeqs-kicker">
+          <span class="i18n-en">The Shift</span>
+          <span class="i18n-ar">التحول</span>
+        </div>
+        <h2>
+          <span class="i18n-en">The bottleneck has moved from building to verifying.</span>
+          <span class="i18n-ar">انتقل الاختناق من البناء إلى التحقق.</span>
+        </h2>
+      </div>
+
+      <div class="aeqs-shift-body">
+        <p>
+          <span class="i18n-en">AI tools, automation, and modern development workflows make it possible to build features faster than before. But faster delivery creates a new quality gap: teams can produce more changes than they can confidently review.</span>
+          <span class="i18n-ar">تتيح أدوات الذكاء الاصطناعي والأتمتة وسير العمل الحديث بناء الميزات أسرع من أي وقت مضى. لكن سرعة التسليم تخلق فجوة جودة جديدة: تنتج الفرق تغييرات أكثر مما تستطيع مراجعته بثقة.</span>
+        </p>
+        <p>
+          <span class="i18n-en">For PMs, the question is no longer only: <em>Did the team finish the feature?</em></span>
+          <span class="i18n-ar">بالنسبة لمديري المنتجات، لم يعد السؤال فقط: <em>هل أنهى الفريق الميزة؟</em></span>
+        </p>
+
+        <div class="aeqs-shift-questions">
+          <ul>
+            <li>
+              <span class="i18n-en">Does it work for real users?</span>
+              <span class="i18n-ar">هل تعمل للمستخدمين الحقيقيين؟</span>
+            </li>
+            <li>
+              <span class="i18n-en">Did it break something else?</span>
+              <span class="i18n-ar">هل كسرت شيئاً آخر؟</span>
+            </li>
+            <li>
+              <span class="i18n-en">Is the GenAI behavior acceptable?</span>
+              <span class="i18n-ar">هل سلوك الذكاء التوليدي مقبول؟</span>
+            </li>
+            <li>
+              <span class="i18n-en">Is the release safe enough?</span>
+              <span class="i18n-ar">هل الإطلاق آمن بما يكفي؟</span>
+            </li>
+            <li>
+              <span class="i18n-en">What should we fix before launch?</span>
+              <span class="i18n-ar">ما الذي يجب إصلاحه قبل الإطلاق؟</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="aeqs-shift-close">
+          <span class="i18n-en">WE WILL helps product teams turn fast development into controlled, evidence-based release decisions.</span>
+          <span class="i18n-ar">تساعد WE WILL فرق المنتج على تحويل التطوير السريع إلى قرارات إطلاق منضبطة ومبنية على أدلة.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE DELIVER -->
+  <section class="aeqs-section" id="aeqs-what-we-deliver">
+    <div class="aeqs-section-inner">
+      <div class="aeqs-section-header center">
+        <div class="aeqs-kicker">
+          <span class="i18n-en">What We Deliver</span>
+          <span class="i18n-ar">ما نقدمه</span>
+        </div>
+        <h2>
+          <span class="i18n-en">What WE WILL delivers</span>
+          <span class="i18n-ar">ما تقدمه WE WILL</span>
+        </h2>
+        <p class="aeqs-section-sub">
+          <span class="i18n-en">We provide practical quality services designed for fast-moving product teams, AI-enabled development, and business-critical releases.</span>
+          <span class="i18n-ar">نقدم خدمات جودة عملية مصممة لفرق المنتج سريعة الحركة، والتطوير المعزز بالذكاء الاصطناعي، والإصدارات الحرجة للأعمال.</span>
+        </p>
+      </div>
+
+      <div class="aeqs-services-grid">
+
+        <!-- Card 1: Quality Strategy -->
+        <div class="aeqs-service-card">
+          <div class="icon">🗺️</div>
+          <h3>
+            <span class="i18n-en">Quality Strategy</span>
+            <span class="i18n-ar">استراتيجية الجودة</span>
+          </h3>
+          <div class="subtitle">
+            <span class="i18n-en">Quality Canvas + Value-Quality Map</span>
+            <span class="i18n-ar">لوحة الجودة + خريطة القيمة والجودة</span>
+          </div>
+          <p>
+            <span class="i18n-en">We define what quality means for your product, users, and release stage before testing begins. This includes key risks, critical journeys, business impact, and the quality expectations that must guide the team.</span>
+            <span class="i18n-ar">نُعرّف ما تعنيه الجودة لمنتجك ومستخدميك ومرحلة الإطلاق قبل بدء الاختبار. يشمل ذلك المخاطر الرئيسية والرحلات الحرجة والأثر التجاري وتوقعات الجودة التي يجب أن توجه الفريق.</span>
+          </p>
+          <div class="output">
+            <strong><span class="i18n-en">Output:</span><span class="i18n-ar">المخرجات:</span></strong>
+            <span class="i18n-en"> Quality Canvas, Value-Quality Map, risk-based quality scope.</span>
+            <span class="i18n-ar"> لوحة الجودة، خريطة القيمة والجودة، نطاق جودة مبني على المخاطر.</span>
+          </div>
+        </div>
+
+        <!-- Card 2: User Journey Testing -->
+        <div class="aeqs-service-card">
+          <div class="icon">🚶</div>
+          <h3>
+            <span class="i18n-en">User Journey Testing</span>
+            <span class="i18n-ar">اختبار رحلات المستخدم</span>
+          </h3>
+          <div class="subtitle">
+            <span class="i18n-en">Testing from the user and business value perspective</span>
+            <span class="i18n-ar">اختبار من منظور المستخدم وقيمة الأعمال</span>
+          </div>
+          <p>
+            <span class="i18n-en">We verify the flows that matter most to product success, not only isolated screens or tickets. We check whether users can complete real goals clearly, correctly, and without unnecessary friction.</span>
+            <span class="i18n-ar">نتحقق من التدفقات الأكثر أهمية لنجاح المنتج، وليس فقط الشاشات أو التذاكر المنفصلة. نتأكد من قدرة المستخدمين على إكمال أهداف حقيقية بوضوح وبشكل صحيح ودون احتكاك غير ضروري.</span>
+          </p>
+          <div class="output">
+            <strong><span class="i18n-en">Output:</span><span class="i18n-ar">المخرجات:</span></strong>
+            <span class="i18n-en"> Critical journey results, bugs, UX friction notes, business-impact labels.</span>
+            <span class="i18n-ar"> نتائج الرحلات الحرجة، الأخطاء، ملاحظات احتكاك تجربة المستخدم، تصنيفات الأثر التجاري.</span>
+          </div>
+        </div>
+
+        <!-- Card 3: GenAI Feature Evaluation -->
+        <div class="aeqs-service-card">
+          <div class="icon">🤖</div>
+          <h3>
+            <span class="i18n-en">GenAI Feature Evaluation</span>
+            <span class="i18n-ar">تقييم ميزات الذكاء التوليدي</span>
+          </h3>
+          <div class="subtitle">
+            <span class="i18n-en">Quality checks for AI outputs, assistants, recommendations, and automation</span>
+            <span class="i18n-ar">فحوصات جودة لمخرجات الذكاء الاصطناعي والمساعدات والتوصيات والأتمتة</span>
+          </div>
+          <p>
+            <span class="i18n-en">We evaluate AI-powered features for usefulness, consistency, safety, explainability, hallucination risk, weak responses, and unacceptable outputs.</span>
+            <span class="i18n-ar">نُقيّم ميزات الذكاء الاصطناعي من حيث الفائدة والاتساق والأمان والقابلية للتفسير ومخاطر الهلوسة والاستجابات الضعيفة والمخرجات غير المقبولة.</span>
+          </p>
+          <div class="output">
+            <strong><span class="i18n-en">Output:</span><span class="i18n-ar">المخرجات:</span></strong>
+            <span class="i18n-en"> AI quality contracts, golden/red/edge scenarios, GenAI risk findings.</span>
+            <span class="i18n-ar"> عقود جودة الذكاء الاصطناعي، سيناريوهات ذهبية/حمراء/طرفية، نتائج مخاطر GenAI.</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Release Readiness Reviews -->
+        <div class="aeqs-service-card">
+          <div class="icon">🚦</div>
+          <h3>
+            <span class="i18n-en">Release Readiness Reviews</span>
+            <span class="i18n-ar">مراجعات جاهزية الإطلاق</span>
+          </h3>
+          <div class="subtitle">
+            <span class="i18n-en">Clear go / no-go / release-with-risk recommendations</span>
+            <span class="i18n-ar">توصيات واضحة: إطلاق / عدم إطلاق / إطلاق بمخاطر</span>
+          </div>
+          <p>
+            <span class="i18n-en">We help PMs decide whether a release is ready, blocked, or acceptable with known risks. Our reports prioritize what must be fixed now and what can be monitored later.</span>
+            <span class="i18n-ar">نساعد مديري المنتجات على تحديد ما إذا كان الإصدار جاهزاً أو محظوراً أو مقبولاً مع مخاطر معروفة. تُرتّب تقاريرنا أولوية ما يجب إصلاحه الآن وما يمكن مراقبته لاحقاً.</span>
+          </p>
+          <div class="output">
+            <strong><span class="i18n-en">Output:</span><span class="i18n-ar">المخرجات:</span></strong>
+            <span class="i18n-en"> Release readiness matrix, risk summary, recommended action plan.</span>
+            <span class="i18n-ar"> مصفوفة جاهزية الإطلاق، ملخص المخاطر، خطة عمل موصى بها.</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Role-Aware Security Testing -->
+        <div class="aeqs-service-card">
+          <div class="icon">🔐</div>
+          <h3>
+            <span class="i18n-en">Role-Aware Security Testing</span>
+            <span class="i18n-ar">اختبار أمان حسب الدور</span>
+          </h3>
+          <div class="subtitle">
+            <span class="i18n-en">Access, permissions, and sensitive workflow checks</span>
+            <span class="i18n-ar">فحوصات الوصول والصلاحيات وسير العمل الحساس</span>
+          </div>
+          <p>
+            <span class="i18n-en">We test whether users can access only what they should, perform only allowed actions, and avoid exposing sensitive data through weak roles, broken permissions, or workflow gaps.</span>
+            <span class="i18n-ar">نختبر إذا ما كان المستخدمون يصلون فقط إلى ما يحق لهم، ويُنفّذون فقط الإجراءات المسموح بها، وتجنّب كشف البيانات الحساسة بسبب أدوار ضعيفة أو صلاحيات معطلة أو ثغرات في سير العمل.</span>
+          </p>
+          <div class="output">
+            <strong><span class="i18n-en">Output:</span><span class="i18n-ar">المخرجات:</span></strong>
+            <span class="i18n-en"> Access-control findings, permission-risk report, sensitive scenario checks.</span>
+            <span class="i18n-ar"> نتائج التحكم في الوصول، تقرير مخاطر الصلاحيات، فحوصات السيناريوهات الحساسة.</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Risk Reports for PMs -->
+        <div class="aeqs-service-card">
+          <div class="icon">📊</div>
+          <h3>
+            <span class="i18n-en">Risk Reports for PMs</span>
+            <span class="i18n-ar">تقارير المخاطر لمديري المنتجات</span>
+          </h3>
+          <div class="subtitle">
+            <span class="i18n-en">Quality reporting written for product decisions</span>
+            <span class="i18n-ar">تقارير جودة مكتوبة لقرارات المنتج</span>
+          </div>
+          <p>
+            <span class="i18n-en">We translate testing results into clear product risks, user impact, release impact, and next actions. Reports are designed for PMs, founders, and decision-makers, not only technical teams.</span>
+            <span class="i18n-ar">نُترجم نتائج الاختبار إلى مخاطر منتج واضحة وأثر على المستخدم وأثر على الإطلاق والإجراءات التالية. تقارير مصممة لمديري المنتج والمؤسسين وصانعي القرار، وليس للفرق التقنية فقط.</span>
+          </p>
+          <div class="output">
+            <strong><span class="i18n-en">Output:</span><span class="i18n-ar">المخرجات:</span></strong>
+            <span class="i18n-en"> Executive quality summary, prioritized risks, release recommendations.</span>
+            <span class="i18n-ar"> ملخص جودة تنفيذي، مخاطر مرتبة حسب الأولوية، توصيات الإطلاق.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW WE WORK TOGETHER -->
+  <section class="aeqs-section aeqs-process">
+    <div class="aeqs-section-inner">
+      <div class="aeqs-section-header center">
+        <div class="aeqs-kicker">
+          <span class="i18n-en">The Engagement</span>
+          <span class="i18n-ar">سير التعاون</span>
+        </div>
+        <h2>
+          <span class="i18n-en">How we work together</span>
+          <span class="i18n-ar">كيف نعمل معاً</span>
+        </h2>
+      </div>
+
+      <div class="aeqs-process-steps">
+        <div class="aeqs-process-step">
+          <div class="num">1</div>
+          <h4>
+            <span class="i18n-en">Discovery Call</span>
+            <span class="i18n-ar">مكالمة استكشافية</span>
+          </h4>
+          <p>
+            <span class="i18n-en">We understand your product, current release, team workflow, users, and quality concerns.</span>
+            <span class="i18n-ar">نفهم منتجك والإصدار الحالي وسير عمل الفريق والمستخدمين ومخاوف الجودة.</span>
+          </p>
+        </div>
+        <div class="aeqs-process-step">
+          <div class="num">2</div>
+          <h4>
+            <span class="i18n-en">Quality Scope</span>
+            <span class="i18n-ar">نطاق الجودة</span>
+          </h4>
+          <p>
+            <span class="i18n-en">We define the critical journeys, GenAI areas, risk zones, and release goals that need verification.</span>
+            <span class="i18n-ar">نحدد الرحلات الحرجة ومناطق الذكاء التوليدي ومناطق المخاطر وأهداف الإطلاق التي تحتاج إلى التحقق.</span>
+          </p>
+        </div>
+        <div class="aeqs-process-step">
+          <div class="num">3</div>
+          <h4>
+            <span class="i18n-en">Verification Sprint</span>
+            <span class="i18n-ar">سبرنت التحقق</span>
+          </h4>
+          <p>
+            <span class="i18n-en">Our team performs expert testing, AI-assisted checks, journey validation, UX friction review, and risk analysis.</span>
+            <span class="i18n-ar">يقوم فريقنا باختبار خبير وفحوصات بمساعدة الذكاء الاصطناعي والتحقق من الرحلات ومراجعة احتكاك تجربة المستخدم وتحليل المخاطر.</span>
+          </p>
+        </div>
+        <div class="aeqs-process-step">
+          <div class="num">4</div>
+          <h4>
+            <span class="i18n-en">Findings &amp; Priorities</span>
+            <span class="i18n-ar">النتائج والأولويات</span>
+          </h4>
+          <p>
+            <span class="i18n-en">We deliver clear findings with severity, business impact, evidence, and recommended fixes.</span>
+            <span class="i18n-ar">نُسلّم نتائج واضحة مع درجة الخطورة والأثر التجاري والأدلة والإصلاحات الموصى بها.</span>
+          </p>
+        </div>
+        <div class="aeqs-process-step">
+          <div class="num">5</div>
+          <h4>
+            <span class="i18n-en">Release Decision Support</span>
+            <span class="i18n-ar">دعم قرار الإطلاق</span>
+          </h4>
+          <p>
+            <span class="i18n-en">We help your team decide what to release, what to fix first, and what risks to accept or monitor.</span>
+            <span class="i18n-ar">نساعد فريقك في تحديد ما يُطلق وما يُصلح أولاً وما المخاطر التي يجب قبولها أو مراقبتها.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHO WE SERVE -->
+  <section class="aeqs-section aeqs-audience">
+    <div class="aeqs-section-inner">
+      <div class="aeqs-section-header center">
+        <div class="aeqs-kicker">
+          <span class="i18n-en">Who We Serve</span>
+          <span class="i18n-ar">من نخدم</span>
+        </div>
+        <h2>
+          <span class="i18n-en">Built for teams that move fast but cannot afford quality surprises</span>
+          <span class="i18n-ar">مبني للفرق التي تتحرك بسرعة ولا تتحمل مفاجآت الجودة</span>
+        </h2>
+      </div>
+
+      <div class="aeqs-audience-grid">
+        <div class="aeqs-audience-card">
+          <h4>
+            <span class="i18n-en">Product Managers</span>
+            <span class="i18n-ar">مديرو المنتج</span>
+          </h4>
+          <p>
+            <span class="i18n-en">PMs who need evidence before approving releases, demos, or production changes.</span>
+            <span class="i18n-ar">مديرو منتج يحتاجون أدلة قبل اعتماد الإصدارات أو العروض أو تغييرات الإنتاج.</span>
+          </p>
+        </div>
+        <div class="aeqs-audience-card">
+          <h4>
+            <span class="i18n-en">Founders &amp; Startups</span>
+            <span class="i18n-ar">المؤسسون والشركات الناشئة</span>
+          </h4>
+          <p>
+            <span class="i18n-en">Teams building MVPs or early products quickly, especially with AI coding tools or lean teams.</span>
+            <span class="i18n-ar">فرق تبني منتجات MVP أو منتجات مبكرة بسرعة، خاصةً باستخدام أدوات البرمجة بالذكاء الاصطناعي أو فرق مبسطة.</span>
+          </p>
+        </div>
+        <div class="aeqs-audience-card">
+          <h4>
+            <span class="i18n-en">Software Studios</span>
+            <span class="i18n-ar">استوديوهات البرمجيات</span>
+          </h4>
+          <p>
+            <span class="i18n-en">Studios managing multiple client products and needing consistent quality confidence before delivery.</span>
+            <span class="i18n-ar">استوديوهات تدير منتجات عدة عملاء وتحتاج ثقة جودة متسقة قبل التسليم.</span>
+          </p>
+        </div>
+        <div class="aeqs-audience-card">
+          <h4>
+            <span class="i18n-en">SaaS &amp; Web Platforms</span>
+            <span class="i18n-ar">منصات SaaS والويب</span>
+          </h4>
+          <p>
+            <span class="i18n-en">Platforms shipping frequent updates: onboarding flows, dashboards, portals, workflow-heavy features.</span>
+            <span class="i18n-ar">منصات تطلق تحديثات متكررة: تدفقات تأهيل ولوحات تحكم وبوابات وميزات سير عمل كثيفة.</span>
+          </p>
+        </div>
+        <div class="aeqs-audience-card">
+          <h4>
+            <span class="i18n-en">AI-Enabled Products</span>
+            <span class="i18n-ar">منتجات تعتمد الذكاء الاصطناعي</span>
+          </h4>
+          <p>
+            <span class="i18n-en">Teams building chatbots, copilots, recommendations, automation, or AI-generated outputs.</span>
+            <span class="i18n-ar">فرق تبني شات بوت أو مساعدين أو توصيات أو أتمتة أو مخرجات مولّدة بالذكاء الاصطناعي.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Honest filter -->
+      <div class="aeqs-filter">
+        <h4>
+          <span class="i18n-en">Not for you if…</span>
+          <span class="i18n-ar">ليست مناسبة لك إذا…</span>
+        </h4>
+        <ul>
+          <li>
+            <span class="i18n-en">You only need low-cost bug execution with no quality strategy.</span>
+            <span class="i18n-ar">تحتاج فقط تنفيذ اختبار أخطاء منخفض التكلفة دون استراتيجية جودة.</span>
+          </li>
+          <li>
+            <span class="i18n-en">You want a team to blindly follow test cases without questioning risk.</span>
+            <span class="i18n-ar">تريد فريقاً يتبع حالات الاختبار دون التشكيك في المخاطر.</span>
+          </li>
+          <li>
+            <span class="i18n-en">You are looking for full security penetration testing only.</span>
+            <span class="i18n-ar">تبحث فقط عن اختبار اختراق أمني كامل.</span>
+          </li>
+          <li>
+            <span class="i18n-en">You do not have a testable product, prototype, staging environment, or clear release scope.</span>
+            <span class="i18n-ar">لا تملك منتجاً قابلاً للاختبار أو نموذجاً أولياً أو بيئة staging أو نطاق إطلاق واضح.</span>
+          </li>
+          <li>
+            <span class="i18n-en">You expect quality to be solved by tools without product context.</span>
+            <span class="i18n-ar">تتوقع أن تُحلّ الجودة بالأدوات وحدها دون سياق المنتج.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROOF -->
+  <section class="aeqs-section aeqs-proof">
+    <div class="aeqs-section-inner">
+      <div class="aeqs-section-header center">
+        <div class="aeqs-kicker">
+          <span class="i18n-en">Proof</span>
+          <span class="i18n-ar">إثبات</span>
+        </div>
+        <h2>
+          <span class="i18n-en">Quality work connected to real product decisions</span>
+          <span class="i18n-ar">عمل جودة مرتبط بقرارات منتج حقيقية</span>
+        </h2>
+        <p class="aeqs-section-sub">
+          <span class="i18n-en">Examples of products we support across SaaS, mobile, AI-enabled platforms, and workflow systems.</span>
+          <span class="i18n-ar">أمثلة على المنتجات التي ندعمها عبر SaaS والموبايل والمنصات المعززة بالذكاء الاصطناعي وأنظمة سير العمل.</span>
+        </p>
+      </div>
+
+      <div class="aeqs-proof-examples">
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">CRM systems</span><span class="i18n-ar">أنظمة CRM</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">Mobile applications</span><span class="i18n-ar">تطبيقات الموبايل</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">Admin dashboards</span><span class="i18n-ar">لوحات تحكم الإدارة</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">Workflow automation</span><span class="i18n-ar">أتمتة سير العمل</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">AI-powered features</span><span class="i18n-ar">ميزات الذكاء الاصطناعي</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">SaaS platforms</span><span class="i18n-ar">منصات SaaS</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">Customer portals</span><span class="i18n-ar">بوابات العملاء</span>
+        </div>
+        <div class="aeqs-proof-chip">
+          <span class="i18n-en">Internal tools</span><span class="i18n-ar">أدوات داخلية</span>
+        </div>
+      </div>
+
+      <p class="aeqs-proof-note">
+        <span class="i18n-en">Case studies available upon request during the discovery call.</span>
+        <span class="i18n-ar">دراسات حالة متاحة عند الطلب خلال المكالمة الاستكشافية.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="aeqs-section aeqs-faq">
+    <div class="aeqs-section-inner">
+      <div class="aeqs-section-header center">
+        <div class="aeqs-kicker">
+          <span class="i18n-en">FAQ</span>
+          <span class="i18n-ar">الأسئلة الشائعة</span>
+        </div>
+        <h2>
+          <span class="i18n-en">Frequently asked questions</span>
+          <span class="i18n-ar">أسئلة يتكرر طرحها</span>
+        </h2>
+      </div>
+
+      <div class="aeqs-faq-list">
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">Is this only for AI-built products?</span>
+            <span class="i18n-ar">هل هذه الخدمة فقط للمنتجات المبنية بالذكاء الاصطناعي؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">No. The service is designed for fast-moving teams, including AI-assisted development teams, but it also applies to traditional web, mobile, CRM, workflow, and SaaS products.</span>
+            <span class="i18n-ar">لا. الخدمة مصممة للفرق سريعة الحركة، بما فيها فرق التطوير المعززة بالذكاء الاصطناعي، لكنها تنطبق أيضاً على منتجات الويب والموبايل وCRM وسير العمل وSaaS التقليدية.</span>
+          </div>
+        </details>
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">Do you replace our internal QA team?</span>
+            <span class="i18n-ar">هل تستبدلون فريق الـ QA الداخلي لدينا؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">No. WE WILL can support your QA team, add independent verification, or provide quality leadership when your internal capacity is limited.</span>
+            <span class="i18n-ar">لا. تستطيع WE WILL دعم فريق الـ QA لديك، أو إضافة تحقق مستقل، أو توفير قيادة جودة عندما تكون قدرتك الداخلية محدودة.</span>
+          </div>
+        </details>
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">Do you only report bugs?</span>
+            <span class="i18n-ar">هل تقتصرون على الإبلاغ عن الأخطاء؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">No. We report bugs, but the main value is quality judgment: risk, business impact, user journey confidence, and release readiness.</span>
+            <span class="i18n-ar">لا. نُبلّغ عن الأخطاء، لكن القيمة الأساسية هي حكم الجودة: المخاطر والأثر التجاري والثقة في رحلات المستخدم وجاهزية الإطلاق.</span>
+          </div>
+        </details>
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">Can you work with staging environments?</span>
+            <span class="i18n-ar">هل يمكنكم العمل مع بيئات staging؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">Yes. We can work with staging, test environments, demo environments, or production monitoring depending on the engagement and access rules.</span>
+            <span class="i18n-ar">نعم. نستطيع العمل مع بيئات staging أو الاختبار أو العرض أو مراقبة الإنتاج اعتماداً على نوع التعاون وقواعد الوصول.</span>
+          </div>
+        </details>
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">Do you provide automation?</span>
+            <span class="i18n-ar">هل تقدمون الأتمتة؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">Yes, where it adds value. We use automation and AI-assisted verification carefully, but we do not treat tools as a replacement for quality thinking.</span>
+            <span class="i18n-ar">نعم، حيث تضيف قيمة. نستخدم الأتمتة والتحقق المعزز بالذكاء الاصطناعي بحذر، لكننا لا نعتبر الأدوات بديلاً عن التفكير في الجودة.</span>
+          </div>
+        </details>
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">What happens in the discovery call?</span>
+            <span class="i18n-ar">ماذا يحدث في المكالمة الاستكشافية؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">We review your product context, release goals, current risks, team workflow, and whether WE WILL can support you with an audit, verification sprint, or continuous quality partnership.</span>
+            <span class="i18n-ar">نراجع سياق منتجك وأهداف الإطلاق والمخاطر الحالية وسير عمل الفريق وما إذا كانت WE WILL تستطيع دعمك بمراجعة أو سبرنت تحقق أو شراكة جودة مستمرة.</span>
+          </div>
+        </details>
+
+        <details class="aeqs-faq-item">
+          <summary>
+            <span class="i18n-en">How fast can you start?</span>
+            <span class="i18n-ar">كم يستغرق البدء؟</span>
+          </summary>
+          <div class="answer">
+            <span class="i18n-en">We can usually begin with a discovery and scoping step quickly, depending on product access, environment readiness, and team availability.</span>
+            <span class="i18n-ar">يمكننا عادةً البدء بخطوة الاستكشاف وتحديد النطاق بسرعة، اعتماداً على الوصول إلى المنتج وجاهزية البيئة وتوفر الفريق.</span>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FINAL CTA -->
+  <section class="aeqs-section aeqs-final">
+    <div class="aeqs-section-inner">
+      <h2>
+        <span class="i18n-en">Build fast. Verify deeply. Release with confidence.</span>
+        <span class="i18n-ar">ابنِ بسرعة. تحقّق بعمق. أطلق بثقة.</span>
+      </h2>
+      <p>
+        <span class="i18n-en">Share your product, release scope, or current quality concern. In a 30-minute discovery call, we will help you identify the right verification approach and the risks worth checking first.</span>
+        <span class="i18n-ar">شاركنا منتجك أو نطاق الإطلاق أو مخاوف الجودة الحالية. في مكالمة استكشافية مدتها 30 دقيقة، نساعدك على تحديد نهج التحقق المناسب والمخاطر التي تستحق الفحص أولاً.</span>
+      </p>
+      <a class="aeqs-btn aeqs-btn-primary" href="/contact/#contact">
+        <span class="i18n-en">Book a 30-Min Discovery Call</span>
+        <span class="i18n-ar">احجز مكالمة استكشافية لمدة 30 دقيقة</span>
+      </a>
+      <p class="aeqs-microcopy">
+        <span class="i18n-en">For PMs, founders, and teams preparing for launch, release, or rapid product iteration.</span>
+        <span class="i18n-ar">لمديري المنتجات والمؤسسين والفرق المستعدة للإطلاق أو الإصدار أو التكرار السريع للمنتج.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky mobile CTA -->
+  <div class="aeqs-sticky" role="region" aria-label="Book a discovery call">
+    <div class="aeqs-sticky-text">
+      <span class="i18n-en">Need release confidence?</span>
+      <span class="i18n-ar">تحتاج ثقة قبل الإطلاق؟</span>
+    </div>
+    <a class="aeqs-btn aeqs-btn-primary" href="/contact/#contact">
+      <span class="i18n-en">Book Call</span>
+      <span class="i18n-ar">احجز مكالمة</span>
+    </a>
+  </div>
+
+</div>
+

@@ -1,0 +1,158 @@
+  <section id="ai-era-quality-services-promo" class="section aeqs-promo">
+    <style>
+      .aeqs-promo {
+        background:
+          radial-gradient(circle at 80% 20%, rgba(45,98,255,0.18), transparent 55%),
+          radial-gradient(circle at 10% 90%, rgba(45,98,255,0.12), transparent 60%),
+          linear-gradient(135deg, #0f1f6b, #1b3bbf);
+        color: #ffffff;
+        padding: 64px 6%;
+      }
+      .aeqs-promo .section-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 36px;
+        align-items: center;
+      }
+      .aeqs-promo .aeqs-promo-eyebrow {
+        display: inline-block;
+        font-size: 0.75rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.14);
+        color: #d6dcff;
+        margin-bottom: 14px;
+      }
+      .aeqs-promo h2 {
+        font-size: 2rem;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 14px;
+        color: #ffffff;
+        font-weight: 700;
+      }
+      .aeqs-promo h2 .accent { color: #ffd76b; }
+      .aeqs-promo p.aeqs-promo-sub {
+        color: rgba(255,255,255,0.82);
+        font-size: 1rem;
+        margin: 0 0 22px;
+        max-width: 540px;
+      }
+      .aeqs-promo .aeqs-promo-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #1b3bbf;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
+      .aeqs-promo .aeqs-promo-cta:hover {
+        transform: translateY(-1px);
+        background: #e8eeff;
+      }
+      .aeqs-promo .aeqs-promo-cta::after {
+        content: "→";
+        font-weight: 400;
+        font-size: 1.05rem;
+      }
+      body.lang-ar .aeqs-promo .aeqs-promo-cta::after { content: "←"; }
+      .aeqs-promo .aeqs-promo-stack {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 18px;
+        padding: 18px;
+        backdrop-filter: blur(8px);
+      }
+      .aeqs-promo .aeqs-promo-stack ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+      }
+      .aeqs-promo .aeqs-promo-stack li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.92rem;
+        color: rgba(255,255,255,0.92);
+        font-weight: 500;
+      }
+      .aeqs-promo .aeqs-promo-stack li::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #ffd76b;
+      }
+      .aeqs-promo .i18n-ar { display: none; }
+      body.lang-ar .aeqs-promo .i18n-ar { display: inline; }
+      body.lang-ar .aeqs-promo .i18n-en { display: none; }
+      body.lang-ar .aeqs-promo { text-align: right; }
+      @media (max-width: 860px) {
+        .aeqs-promo .section-inner { grid-template-columns: minmax(0,1fr); }
+        .aeqs-promo h2 { font-size: 1.65rem; }
+      }
+    </style>
+    <div class="section-inner" data-reveal-children>
+      <div>
+        <span class="aeqs-promo-eyebrow">
+          <span class="i18n-en">AI-Era Quality Services</span>
+          <span class="i18n-ar">خدمات الجودة في عصر الذكاء الاصطناعي</span>
+        </span>
+        <h2>
+          <span class="i18n-en">AI helps teams build faster. <span class="accent">WE WILL</span> helps them release with confidence.</span>
+          <span class="i18n-ar">الذكاء الاصطناعي يساعد الفرق على البناء أسرع. <span class="accent">WE WILL</span> تساعدهم على الإطلاق بثقة.</span>
+        </h2>
+        <p class="aeqs-promo-sub">
+          <span class="i18n-en">A dedicated offer for fast-moving product teams: verify critical user journeys, GenAI features, release risks, and business-impacting quality issues before they reach users.</span>
+          <span class="i18n-ar">عرض مخصص لفرق المنتج سريعة الحركة: تحقق من رحلات المستخدم الحرجة وميزات الذكاء التوليدي ومخاطر الإطلاق ومشكلات الجودة المؤثرة على الأعمال قبل أن تصل إلى المستخدمين.</span>
+        </p>
+        <a class="aeqs-promo-cta" href="/ai-era-quality-services/">
+          <span class="i18n-en">Explore the offer</span>
+          <span class="i18n-ar">استكشف العرض</span>
+        </a>
+      </div>
+      <div class="aeqs-promo-stack" aria-hidden="true">
+        <ul>
+          <li>
+            <span class="i18n-en">Quality strategy &amp; risk-based scope</span>
+            <span class="i18n-ar">استراتيجية جودة ونطاق مبني على المخاطر</span>
+          </li>
+          <li>
+            <span class="i18n-en">User journey &amp; business-value testing</span>
+            <span class="i18n-ar">اختبار رحلات المستخدم وقيمة الأعمال</span>
+          </li>
+          <li>
+            <span class="i18n-en">GenAI feature evaluation</span>
+            <span class="i18n-ar">تقييم ميزات الذكاء التوليدي</span>
+          </li>
+          <li>
+            <span class="i18n-en">Release readiness reviews</span>
+            <span class="i18n-ar">مراجعات جاهزية الإطلاق</span>
+          </li>
+          <li>
+            <span class="i18n-en">Role-aware security testing</span>
+            <span class="i18n-ar">اختبار أمان حسب الدور</span>
+          </li>
+          <li>
+            <span class="i18n-en">PM-readable risk reports</span>
+            <span class="i18n-ar">تقارير مخاطر مفهومة لمديري المنتج</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>

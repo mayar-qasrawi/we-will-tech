@@ -1,0 +1,66 @@
+  <header class="site-shell-header">
+    <div class="shell-inner">
+      <a class="shell-brand" href="/">
+        <img
+          class="shell-brand-logo "
+          src="/uploads/7f2b7b2a3047ff5ea3ec0fcf.jpg"
+          alt="WE WILL"
+          data-site-setting-src="brand_logo"
+          data-site-setting-alt="brand_name"
+        >
+        <span class="shell-brand-text" data-site-setting="brand_name">WE WILL</span>
+      </a>
+      <nav id="shell-nav" class="shell-nav" aria-label="Section pages">
+                                                <a
+            href="{{ navHomeHref }}"
+            class=""
+            data-site-setting="header_nav_hero"
+          >
+            Home          </a>
+                                                          <a
+            href="{{ navPrefix }}#ai-era-quality-services-promo"
+            class="{% if activeNav == 'ai-era-quality-services-promo' %}is-active{% endif %}"
+            data-site-setting="header_nav_ai_era_quality_services_promo"
+          >
+            AI-Era Quality          </a>
+                                                          <a
+            href="{{ navPrefix }}#why-we-will"
+            class="{% if activeNav == 'why-we-will' %}is-active{% endif %}"
+            data-site-setting="header_nav_why_we_will"
+          >
+            Why WE WILL          </a>
+                                                          <a
+            href="{{ navPrefix }}#quality-canvas"
+            class="{% if activeNav == 'quality-canvas' %}is-active{% endif %}"
+            data-site-setting="header_nav_quality_canvas"
+          >
+            Quality Canvas          </a>
+                                                          <a
+            href="{{ navPrefix }}#how-we-work"
+            class="{% if activeNav == 'how-we-work' %}is-active{% endif %}"
+            data-site-setting="header_nav_how_we_work"
+          >
+            How We Work          </a>
+                                                                                        <a
+            href="{{ navPrefix }}#contact"
+            class="{% if activeNav == 'contact' %}is-active{% endif %}"
+            data-site-setting="header_nav_contact"
+          >
+            Contact          </a>
+                <a
+          href="/blog/"
+          class=""
+          data-site-setting="header_nav_blog"
+        >
+          Blog        </a>
+      </nav>
+      <div class="shell-header-actions">
+        <div class="lang-switcher shell-lang-switcher" aria-label="Language switcher">
+          <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="ar">AR</button>
+        </div>
+        <button type="button" class="shell-nav-toggle" aria-expanded="false" aria-controls="shell-nav">Menu</button>
+      </div>
+      <div class="shell-nav-backdrop"></div>
+    </div>
+  </header>
