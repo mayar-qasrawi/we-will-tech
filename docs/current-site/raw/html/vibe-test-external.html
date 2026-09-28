@@ -1,0 +1,491 @@
+<!DOCTYPE html><html><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style><script>window.__resources = {};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="blob:https://vibe-test.oneapp.dev/5b0634a1-bb25-4909-8af0-c533ca37d8a0"></script>
+
+<style>x-dc{display:none!important}</style><script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script><script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script><style></style><style>html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}</style><style data-dc-tpl="1">
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F7F8FA;color:#0B1526;font-family:"Helvetica Neue","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.ar{display:none}
+[data-lang="ar"] .en{display:none}
+[data-lang="ar"] .ar{display:inline}
+[data-lang="ar"]{font-family:"SF Arabic","Geeza Pro","Noto Naskh Arabic",system-ui,serif}
+[data-lang="ar"] .mono{letter-spacing:normal !important;text-transform:none !important}
+.disp{font-weight:800;letter-spacing:-.03em;text-transform:uppercase;line-height:.94}
+[data-lang="ar"] .disp{letter-spacing:normal !important;text-transform:none !important;line-height:1.45 !important;font-weight:700}
+[data-lang="ar"] .hero-sub{line-height:1.9}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid #2E6BE6;outline-offset:3px;border-radius:3px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes spinOrbit{to{transform:rotate(360deg)}}
+@keyframes stageOn{0%,100%{background:transparent;border-color:#E1E7F0}6%,22%{background:#FFFFFF;border-color:#2E6BE6}}
+@keyframes stageNumOn{0%,100%{background:#EEF2F9;color:#5A6A85}6%,22%{background:#2E6BE6;color:#fff}}
+@keyframes runRow{0%,3%{opacity:0;transform:translateY(8px)}9%,86%{opacity:1;transform:none}94%,100%{opacity:0;transform:none}}
+@keyframes runCaret{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes rcRow{0%,4%{opacity:0;transform:translateX(-8px)}12%,86%{opacity:1;transform:none}95%,100%{opacity:0}}
+@keyframes rcBar{0%,18%{width:0}48%,86%{width:98.7%}96%,100%{width:0}}
+@keyframes rcStamp{0%,52%{opacity:0;transform:scale(.5) rotate(-14deg)}62%,86%{opacity:1;transform:scale(1) rotate(-7deg)}95%,100%{opacity:0}}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(46,196,120,.5)}60%{box-shadow:0 0 0 7px rgba(46,196,120,0)}}
+[data-paused="1"] *{animation-play-state:paused !important}
+@media (prefers-reduced-motion:reduce){.reveal{transition:none !important;opacity:1 !important;transform:none !important}*{animation:none !important}html{scroll-behavior:auto}}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="Root"><div data-dc-tpl="2" data-lang="en" dir="ltr" data-paused="0" style="min-height: 100%; background: rgb(247, 248, 250); color: rgb(11, 21, 38); overflow-x: clip;">
+
+  <header data-dc-tpl="3" style="position: sticky; top: 0px; z-index: 50; background: rgba(247, 248, 250, 0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgb(225, 231, 240);">
+    <div data-dc-tpl="4" style="max-width: 1240px; margin: 0px auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <a data-dc-tpl="5" href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <img data-dc-tpl="6" src="blob:https://vibe-test.oneapp.dev/75f6b4b1-1d9f-4e35-8c91-b5ed39dd0659" alt="Vibe-Test logo" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgb(225, 231, 240); background: rgb(255, 255, 255);">
+        <span data-dc-tpl="7" style="display: flex; flex-direction: column; line-height: 1.15;">
+          <span data-dc-tpl="8" class="disp" style="font-size: 16px;">Vibe-Test<span data-dc-tpl="9" style="color: rgb(46, 107, 230);">.</span></span>
+          <span data-dc-tpl="10" class="mono" style="font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: rgb(90, 106, 133);">BY WE WILL TECH</span>
+        </span>
+      </a>
+      <nav data-dc-tpl="11" aria-label="Sections" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
+        <a data-dc-tpl="12" href="#problem" class="scp0" style="padding: 7px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; color: rgb(61, 76, 102); text-decoration: none; transition: color 0.2s, background 0.2s;"><span data-dc-tpl="13" class="en">Problem</span><span data-dc-tpl="14" class="ar">المشكلة</span></a>
+        <a data-dc-tpl="15" href="#how" class="scp0" style="padding: 7px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; color: rgb(61, 76, 102); text-decoration: none; transition: color 0.2s, background 0.2s;"><span data-dc-tpl="16" class="en">How it works</span><span data-dc-tpl="17" class="ar">كيف يعمل</span></a>
+        <a data-dc-tpl="18" href="#services" class="scp0" style="padding: 7px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; color: rgb(61, 76, 102); text-decoration: none; transition: color 0.2s, background 0.2s;"><span data-dc-tpl="19" class="en">Services</span><span data-dc-tpl="20" class="ar">الخدمات</span></a>
+        <a data-dc-tpl="21" href="#receipt" class="scp0" style="padding: 7px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; color: rgb(61, 76, 102); text-decoration: none; transition: color 0.2s, background 0.2s;"><span data-dc-tpl="22" class="en">The Receipt</span><span data-dc-tpl="23" class="ar">الإيصال</span></a>
+        <a data-dc-tpl="24" href="#who" class="scp0" style="padding: 7px 12px; border-radius: 100px; font-size: 13px; font-weight: 600; color: rgb(61, 76, 102); text-decoration: none; transition: color 0.2s, background 0.2s;"><span data-dc-tpl="25" class="en">Who it's for</span><span data-dc-tpl="26" class="ar">لمن</span></a>
+      </nav>
+      <div data-dc-tpl="27" style="display: flex; align-items: center; gap: 10px;">
+        <button data-dc-tpl="28" aria-label="Switch language / تبديل اللغة" class="scp1" style="display: inline-flex; align-items: center; gap: 7px; background: rgb(255, 255, 255); border: 1px solid rgb(217, 224, 236); border-radius: 100px; padding: 8px 14px; font-size: 13px; color: rgb(11, 21, 38); transition: border-color 0.2s, box-shadow 0.2s;">
+          <span data-dc-tpl="29" aria-hidden="true" style="font-size: 14px;">🌐</span>
+          <span data-dc-tpl="30" class="en mono" style="font-size: 11px; letter-spacing: 0.1em;">العربية</span>
+          <span data-dc-tpl="31" class="ar" style="font-weight: 600;">EN</span>
+        </button>
+        <a data-dc-tpl="32" href="#book" class="scp2" style="display: inline-flex; align-items: center; background: rgb(11, 21, 38); color: rgb(255, 255, 255); border-radius: 100px; padding: 9px 20px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background 0.2s, transform 0.2s;">
+          <span data-dc-tpl="33" class="en">Book a Demo</span><span data-dc-tpl="34" class="ar">احجز عرضاً</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <a data-dc-tpl="35" id="top"></a>
+  <section data-dc-tpl="36" style="position: relative; background-image: linear-gradient(rgb(237, 241, 247) 1px, transparent 1px), linear-gradient(90deg, rgb(237, 241, 247) 1px, transparent 1px); background-size: 64px 64px;">
+    <div data-dc-tpl="37" style="max-width: 1240px; margin: 0px auto; padding: 64px 24px 72px;">
+      <div data-dc-tpl="38" class="reveal in" style="display: flex; align-items: center; gap: 10px; margin-bottom: 36px;">
+        <span data-dc-tpl="39" style="width: 8px; height: 8px; border-radius: 50%; background: rgb(46, 196, 120); animation: 2s ease 0s infinite normal none running pulseDot;"></span>
+        <span data-dc-tpl="40" class="mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(90, 106, 133);">AGENTIC QA PLATFORM — MVP · INVITE-ONLY</span>
+      </div>
+      <h1 data-dc-tpl="41" style="margin: 0px; display: flex; flex-direction: column; gap: 2px;">
+        <span data-dc-tpl="42" class="disp reveal in" style="font-size: clamp(44px, 9vw, 118px);">
+          <span data-dc-tpl="43" class="en" style="color: rgb(11, 21, 38);">Tests.</span><span data-dc-tpl="44" class="ar" style="color: rgb(11, 21, 38);">يختبر.</span>
+        </span>
+        <span data-dc-tpl="45" class="disp reveal in" style="font-size: clamp(44px, 9vw, 118px);">
+          <span data-dc-tpl="46" class="en" style="color: transparent; -webkit-text-stroke: 2px rgb(11, 21, 38);">Fixes.</span><span data-dc-tpl="47" class="ar" style="color: rgb(90, 106, 133);">ويُصلح.</span>
+        </span>
+        <span data-dc-tpl="48" class="disp reveal in" style="font-size: clamp(44px, 9vw, 118px);">
+          <span data-dc-tpl="49" class="en" style="color: rgb(11, 21, 38);">Verifies.</span><span data-dc-tpl="50" class="ar" style="color: rgb(11, 21, 38);">ويتحقّق.</span>
+        </span>
+        <span data-dc-tpl="51" class="disp reveal in" style="font-size: clamp(34px, 6.4vw, 84px); margin-top: 8px;">
+          <span data-dc-tpl="52" class="en" style="color: rgb(46, 107, 230);">Hands you the receipts.</span><span data-dc-tpl="53" class="ar" style="color: rgb(46, 107, 230);">ثم يسلّمك الأدلة.</span>
+        </span>
+      </h1>
+      <div data-dc-tpl="54" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: end; margin-top: 44px;">
+        <div data-dc-tpl="55">
+          <p data-dc-tpl="56" class="reveal hero-sub in" style="max-width: 50ch; margin: 0px; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.65; color: rgb(61, 76, 102); text-wrap: pretty;">
+            <span data-dc-tpl="57" class="en">Your autonomous QA team. Connect your app or repo — expert agents run the QA a senior team would, and prove it with evidence, not claims.</span>
+            <span data-dc-tpl="58" class="ar">فريق ضمان جودتك ذاتيّ التشغيل. اربط تطبيقك أو مستودعك — فيُجري وكلاء خبراء اختبارات الجودة التي يجريها فريقٌ متمرّس، ويُثبتونها بالأدلة لا بالادعاءات.</span>
+          </p>
+          <div data-dc-tpl="59" class="reveal in" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
+            <a data-dc-tpl="60" href="#book" class="scp3" style="display: inline-flex; align-items: center; background: rgb(46, 107, 230); color: rgb(255, 255, 255); border-radius: 100px; padding: 15px 32px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: rgba(46, 107, 230, 0.35) 0px 10px 26px; transition: transform 0.2s, box-shadow 0.2s;">
+              <span data-dc-tpl="61" class="en">Book a Demo</span><span data-dc-tpl="62" class="ar">احجز عرضاً</span>
+            </a>
+            <a data-dc-tpl="63" href="#how" class="scp4" style="display: inline-flex; align-items: center; background: transparent; color: rgb(11, 21, 38); border: 1.5px solid rgb(11, 21, 38); border-radius: 100px; padding: 15px 32px; font-size: 16px; font-weight: 700; text-decoration: none; transition: background 0.2s, color 0.2s;">
+              <span data-dc-tpl="64" class="en">See how it works</span><span data-dc-tpl="65" class="ar">شاهد كيف يعمل</span>
+            </a>
+          </div>
+        </div>
+        <div data-dc-tpl="66" class="reveal in" style="background: rgb(11, 21, 38); border-radius: 14px; padding: 20px 22px; color: rgb(215, 225, 245); box-shadow: rgba(11, 21, 38, 0.3) 0px 22px 54px;">
+          <div data-dc-tpl="67" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+            <span data-dc-tpl="68" class="mono" style="font-size: 10px; letter-spacing: 0.2em; color: rgb(127, 146, 184);">LIVE QA RUN</span>
+            <span data-dc-tpl="69" style="display: inline-flex; align-items: center; gap: 7px;"><span data-dc-tpl="70" style="width: 7px; height: 7px; border-radius: 50%; background: rgb(46, 196, 120); animation: 2s ease 0s infinite normal none running pulseDot;"></span><span data-dc-tpl="71" class="mono" style="font-size: 10px; color: rgb(46, 196, 120);">RUNNING</span></span>
+          </div>
+          <div data-dc-tpl="72" class="mono" dir="ltr" style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; line-height: 1.5; text-align: left;">
+            <div data-dc-tpl="73" style="animation: 10s ease 0.2s infinite normal none running runRow; opacity: 0;"><span data-dc-tpl="74" style="color: rgb(76, 99, 148);">▸</span> sweep · mapping <span data-dc-tpl="75" style="color: rgb(255, 255, 255);">app.yoursite.com</span> … <span data-dc-tpl="76" style="color: rgb(46, 196, 120);">done</span></div>
+            <div data-dc-tpl="77" style="animation: 10s ease 1.5s infinite normal none running runRow; opacity: 0;"><span data-dc-tpl="78" style="color: rgb(76, 99, 148);">▸</span> journeys · checkout / auth / search … <span data-dc-tpl="79" style="color: rgb(46, 196, 120);">42 checks</span></div>
+            <div data-dc-tpl="80" style="animation: 10s ease 2.8s infinite normal none running runRow; opacity: 0;"><span data-dc-tpl="81" style="color: rgb(76, 99, 148);">▸</span> issue <span data-dc-tpl="82" style="color: rgb(242, 176, 61);">#241</span> → fix written · <span data-dc-tpl="83" style="color: rgb(46, 196, 120);">PR opened</span></div>
+            <div data-dc-tpl="84" style="animation: 10s ease 4.1s infinite normal none running runRow; opacity: 0;"><span data-dc-tpl="85" style="color: rgb(76, 99, 148);">▸</span> re-test ×3 · adversarial verify … <span data-dc-tpl="86" style="color: rgb(46, 196, 120);">pass</span></div>
+            <div data-dc-tpl="87" style="animation: 10s ease 5.4s infinite normal none running runRow; opacity: 0;"><span data-dc-tpl="88" style="color: rgb(76, 99, 148);">▸</span> receipt <span data-dc-tpl="89" style="color: rgb(255, 255, 255);">#VT-4821</span> · confidence <span data-dc-tpl="90" style="color: rgb(255, 255, 255);">98.7%</span> <span data-dc-tpl="91" style="color: rgb(46, 196, 120);">✓</span></div>
+            <div data-dc-tpl="92" style="display: flex; align-items: center; gap: 2px;"><span data-dc-tpl="93" style="color: rgb(76, 99, 148);">▸</span><span data-dc-tpl="94" style="width: 8px; height: 15px; background: rgb(127, 146, 184); display: inline-block; margin-left: 6px; animation: 1.1s ease 0s infinite normal none running runCaret;"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-dc-tpl="95" dir="ltr" aria-hidden="true" style="background: rgb(11, 21, 38); color: rgb(247, 248, 250); overflow: hidden; padding: 13px 0px; border-block: 1px solid rgb(11, 21, 38);">
+    <div data-dc-tpl="96" style="display: flex; width: max-content; animation: 26s linear 0s infinite normal none running marquee;">
+      <div data-dc-tpl="97" class="mono" style="display: flex; gap: 44px; padding-right: 44px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap;">
+        <span data-dc-tpl="98">Evidence, not claims <span data-dc-tpl="99" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="100">الأدلة، لا الادعاءات <span data-dc-tpl="101" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="102">Find → Fix → Verify → Ship <span data-dc-tpl="103" style="color: rgb(46, 107, 230);">↺</span></span><span data-dc-tpl="104">Backed by receipts <span data-dc-tpl="105" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="106">Evidence, not claims <span data-dc-tpl="107" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="108">الأدلة، لا الادعاءات <span data-dc-tpl="109" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="110">Find → Fix → Verify → Ship <span data-dc-tpl="111" style="color: rgb(46, 107, 230);">↺</span></span><span data-dc-tpl="112">Backed by receipts <span data-dc-tpl="113" style="color: rgb(46, 107, 230);">✓</span></span>
+      </div>
+      <div data-dc-tpl="114" class="mono" style="display: flex; gap: 44px; padding-right: 44px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap;">
+        <span data-dc-tpl="115">Evidence, not claims <span data-dc-tpl="116" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="117">الأدلة، لا الادعاءات <span data-dc-tpl="118" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="119">Find → Fix → Verify → Ship <span data-dc-tpl="120" style="color: rgb(46, 107, 230);">↺</span></span><span data-dc-tpl="121">Backed by receipts <span data-dc-tpl="122" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="123">Evidence, not claims <span data-dc-tpl="124" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="125">الأدلة، لا الادعاءات <span data-dc-tpl="126" style="color: rgb(46, 107, 230);">✓</span></span><span data-dc-tpl="127">Find → Fix → Verify → Ship <span data-dc-tpl="128" style="color: rgb(46, 107, 230);">↺</span></span><span data-dc-tpl="129">Backed by receipts <span data-dc-tpl="130" style="color: rgb(46, 107, 230);">✓</span></span>
+      </div>
+    </div>
+  </div>
+
+  <section data-dc-tpl="131" id="problem" style="max-width: 1240px; margin: 0px auto; padding: 76px 24px 68px; scroll-margin-top: 84px;">
+    <div data-dc-tpl="132" class="reveal in" style="display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: 12px;">
+      <span data-dc-tpl="133" class="mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(46, 107, 230);">01 — THE PROBLEM</span>
+    </div>
+    <h2 data-dc-tpl="134" class="disp reveal in" style="margin: 0px 0px 22px; font-size: clamp(30px, 4.6vw, 54px); max-width: 22ch;">
+      <span data-dc-tpl="135" class="en">Shipping is easy. <span data-dc-tpl="136" style="color: transparent; -webkit-text-stroke: 1.5px rgb(11, 21, 38);">Proving it works</span> is not.</span>
+      <span data-dc-tpl="137" class="ar">الإطلاق سهل. أمّا <span data-dc-tpl="138" style="color: rgb(46, 107, 230);">إثبات أنه يعمل</span> فليس كذلك.</span>
+    </h2>
+    <div data-dc-tpl="139" style="border-top: 1.5px solid rgb(11, 21, 38);">
+      <div data-dc-tpl="140" class="reveal in" style="display: grid; grid-template-columns: minmax(56px, 90px) 1fr 1.2fr; gap: 20px; align-items: baseline; padding: 26px 0px; border-bottom: 1px solid rgb(225, 231, 240);">
+        <span data-dc-tpl="141" class="mono" style="font-size: 15px; color: rgb(46, 107, 230);">01</span>
+        <h3 data-dc-tpl="142" style="margin: 0px; font-size: clamp(17px, 2vw, 21px); font-weight: 700;"><span data-dc-tpl="143" class="en">Teams ship faster than they can QA</span><span data-dc-tpl="144" class="ar">الفرق تُطلق أسرع مما تستطيع اختباره</span></h3>
+        <p data-dc-tpl="145" style="margin: 0px; font-size: 15px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="146" class="en">Bugs and unverified AI features reach real users before anyone catches them.</span><span data-dc-tpl="147" class="ar">تصل العيوب وميزات الذكاء الاصطناعي غير المُتحقَّقة إلى المستخدمين قبل اكتشافها.</span></p>
+      </div>
+      <div data-dc-tpl="148" class="reveal in" style="display: grid; grid-template-columns: minmax(56px, 90px) 1fr 1.2fr; gap: 20px; align-items: baseline; padding: 26px 0px; border-bottom: 1px solid rgb(225, 231, 240);">
+        <span data-dc-tpl="149" class="mono" style="font-size: 15px; color: rgb(46, 107, 230);">02</span>
+        <h3 data-dc-tpl="150" style="margin: 0px; font-size: clamp(17px, 2vw, 21px); font-weight: 700;"><span data-dc-tpl="151" class="en">Real QA needs expert testers</span><span data-dc-tpl="152" class="ar">الجودة الحقيقية تحتاج خبراء اختبار</span></h3>
+        <p data-dc-tpl="153" style="margin: 0px; font-size: 15px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="154" class="en">Functional, UX, performance, security — small teams can't staff it.</span><span data-dc-tpl="155" class="ar">الوظائف والتجربة والأداء والأمان — يصعب على الفرق الصغيرة توفيرها.</span></p>
+      </div>
+      <div data-dc-tpl="156" class="reveal in" style="display: grid; grid-template-columns: minmax(56px, 90px) 1fr 1.2fr; gap: 20px; align-items: baseline; padding: 26px 0px; border-bottom: 1px solid rgb(225, 231, 240);">
+        <span data-dc-tpl="157" class="mono" style="font-size: 15px; color: rgb(46, 107, 230);">03</span>
+        <h3 data-dc-tpl="158" style="margin: 0px; font-size: clamp(17px, 2vw, 21px); font-weight: 700;"><span data-dc-tpl="159" class="en">Tools only <em data-dc-tpl="160">find</em> issues</span><span data-dc-tpl="161" class="ar">الأدوات <em data-dc-tpl="162">تجد</em> المشكلات فقط</span></h3>
+        <p data-dc-tpl="163" style="margin: 0px; font-size: 15px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="164" class="en">Nothing closes the loop from find → fix → verify → ship.</span><span data-dc-tpl="165" class="ar">لا شيء يُغلق الحلقة من الاكتشاف إلى الإصلاح إلى التحقّق إلى الإطلاق.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="166" id="how" style="scroll-margin-top: 70px; background: linear-gradient(rgb(240, 243, 248) 1px, transparent 1px) 0% 0% / 64px 64px, linear-gradient(90deg, rgb(240, 243, 248) 1px, transparent 1px) rgb(255, 255, 255); border-block: 1px solid rgb(225, 231, 240);">
+    <div data-dc-tpl="167" style="max-width: 1240px; margin: 0px auto; padding: 80px 24px;">
+      <div data-dc-tpl="168" class="reveal in" style="margin-bottom: 8px;"><span data-dc-tpl="169" class="mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(46, 107, 230);">02 — HOW IT WORKS</span></div>
+      <h2 data-dc-tpl="170" class="disp reveal in" style="margin: 0px 0px 48px; font-size: clamp(30px, 4.6vw, 54px);">
+        <span data-dc-tpl="171" class="en">A closed loop.<br data-dc-tpl="172">Not a checklist.</span>
+        <span data-dc-tpl="173" class="ar">حلقة مُغلقة. لا قائمة تحقّق.</span>
+      </h2>
+      <div data-dc-tpl="174" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center;">
+        <div data-dc-tpl="175" class="reveal in" style="display: flex; justify-content: center; padding: 0px 56px;">
+          <div data-dc-tpl="176" style="position: relative; width: min(380px, 62vw); aspect-ratio: 1 / 1; margin: 14px 0px;">
+            <div data-dc-tpl="177" style="position: absolute; inset: 0px; border: 1.5px dashed rgb(185, 198, 221); border-radius: 50%;"></div>
+            <div data-dc-tpl="178" aria-hidden="true" style="position: absolute; inset: 0px; animation: 8.8s linear 0s infinite normal none running spinOrbit;">
+              <span data-dc-tpl="179" style="position: absolute; top: -8px; left: 50%; margin-left: -8px; width: 16px; height: 16px; border-radius: 50%; background: rgb(46, 107, 230); box-shadow: rgba(46, 107, 230, 0.18) 0px 0px 0px 5px;"></span>
+            </div>
+            <div data-dc-tpl="180" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+              <img data-dc-tpl="181" src="blob:https://vibe-test.oneapp.dev/75f6b4b1-1d9f-4e35-8c91-b5ed39dd0659" alt="" style="width: 84px; height: 84px; border-radius: 50%; border: 1px solid rgb(225, 231, 240); box-shadow: rgba(11, 21, 38, 0.14) 0px 10px 26px;">
+              <div data-dc-tpl="182" class="mono" style="margin-top: 10px; font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(90, 106, 133);"><span data-dc-tpl="183" class="en">CLOSED LOOP</span><span data-dc-tpl="184" class="ar">حلقة مغلقة</span></div>
+            </div>
+            <div data-dc-tpl="185" style="position: absolute; top: 0px; left: 50%; transform: translate(-50%, -50%); background: rgb(255, 255, 255); border: 1px solid rgb(217, 224, 236); border-radius: 100px; padding: 7px 16px; font-weight: 700; font-size: 13.5px; box-shadow: rgba(11, 21, 38, 0.08) 0px 4px 14px; white-space: nowrap;"><span data-dc-tpl="186" class="mono" style="color: rgb(46, 107, 230); font-size: 11px;">01 </span><span data-dc-tpl="187" class="en">Discover</span><span data-dc-tpl="188" class="ar">اكتشاف</span></div>
+            <div data-dc-tpl="189" style="position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); background: rgb(255, 255, 255); border: 1px solid rgb(217, 224, 236); border-radius: 100px; padding: 7px 16px; font-weight: 700; font-size: 13.5px; box-shadow: rgba(11, 21, 38, 0.08) 0px 4px 14px; white-space: nowrap;"><span data-dc-tpl="190" class="mono" style="color: rgb(46, 107, 230); font-size: 11px;">02 </span><span data-dc-tpl="191" class="en">Fix</span><span data-dc-tpl="192" class="ar">إصلاح</span></div>
+            <div data-dc-tpl="193" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); background: rgb(255, 255, 255); border: 1px solid rgb(217, 224, 236); border-radius: 100px; padding: 7px 16px; font-weight: 700; font-size: 13.5px; box-shadow: rgba(11, 21, 38, 0.08) 0px 4px 14px; white-space: nowrap;"><span data-dc-tpl="194" class="mono" style="color: rgb(46, 107, 230); font-size: 11px;">03 </span><span data-dc-tpl="195" class="en">Verify</span><span data-dc-tpl="196" class="ar">تحقّق</span></div>
+            <div data-dc-tpl="197" style="position: absolute; top: 50%; left: 0px; transform: translate(-50%, -50%); background: rgb(255, 255, 255); border: 1px solid rgb(217, 224, 236); border-radius: 100px; padding: 7px 16px; font-weight: 700; font-size: 13.5px; box-shadow: rgba(11, 21, 38, 0.08) 0px 4px 14px; white-space: nowrap;"><span data-dc-tpl="198" class="mono" style="color: rgb(46, 107, 230); font-size: 11px;">04 </span><span data-dc-tpl="199" class="en">Ship</span><span data-dc-tpl="200" class="ar">إطلاق</span></div>
+          </div>
+        </div>
+        <div data-dc-tpl="201" style="display: flex; flex-direction: column; gap: 12px;">
+          <div data-dc-tpl="202" class="reveal in" style="border: 1px solid rgb(225, 231, 240); border-radius: 12px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; animation: 8.8s ease 0s infinite normal none running stageOn;">
+            <span data-dc-tpl="203" class="mono" style="min-width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 12px; font-weight: 700; animation: 8.8s ease 0s infinite normal none running stageNumOn;">01</span>
+            <div data-dc-tpl="204"><strong data-dc-tpl="205" style="font-size: 16px;"><span data-dc-tpl="206" class="en">Discover</span><span data-dc-tpl="207" class="ar">اكتشاف</span></strong><p data-dc-tpl="208" style="margin: 4px 0px 0px; font-size: 14px; line-height: 1.55; color: rgb(90, 106, 133);"><span data-dc-tpl="209" class="en">Agents map your app and surface what's broken.</span><span data-dc-tpl="210" class="ar">يرسم الوكلاء تطبيقك ويكشفون ما هو معطّل.</span></p></div>
+          </div>
+          <div data-dc-tpl="211" class="reveal in" style="border: 1px solid rgb(225, 231, 240); border-radius: 12px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; animation: 8.8s ease 2.2s infinite normal none running stageOn;">
+            <span data-dc-tpl="212" class="mono" style="min-width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 12px; font-weight: 700; animation: 8.8s ease 2.2s infinite normal none running stageNumOn;">02</span>
+            <div data-dc-tpl="213"><strong data-dc-tpl="214" style="font-size: 16px;"><span data-dc-tpl="215" class="en">Fix</span><span data-dc-tpl="216" class="ar">إصلاح</span></strong><p data-dc-tpl="217" style="margin: 4px 0px 0px; font-size: 14px; line-height: 1.55; color: rgb(90, 106, 133);"><span data-dc-tpl="218" class="en">They author the fix and open a reviewable PR.</span><span data-dc-tpl="219" class="ar">يكتبون الإصلاح ويفتحون طلب دمج قابلاً للمراجعة.</span></p></div>
+          </div>
+          <div data-dc-tpl="220" class="reveal in" style="border: 1px solid rgb(225, 231, 240); border-radius: 12px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; animation: 8.8s ease 4.4s infinite normal none running stageOn;">
+            <span data-dc-tpl="221" class="mono" style="min-width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 12px; font-weight: 700; animation: 8.8s ease 4.4s infinite normal none running stageNumOn;">03</span>
+            <div data-dc-tpl="222"><strong data-dc-tpl="223" style="font-size: 16px;"><span data-dc-tpl="224" class="en">Verify</span><span data-dc-tpl="225" class="ar">تحقّق</span></strong><p data-dc-tpl="226" style="margin: 4px 0px 0px; font-size: 14px; line-height: 1.55; color: rgb(90, 106, 133);"><span data-dc-tpl="227" class="en">Re-tested and machine-checked into a receipt.</span><span data-dc-tpl="228" class="ar">يُعاد الاختبار ويُتحقَّق آلياً في إيصال.</span></p></div>
+          </div>
+          <div data-dc-tpl="229" class="reveal in" style="border: 1px solid rgb(225, 231, 240); border-radius: 12px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; animation: 8.8s ease 6.6s infinite normal none running stageOn;">
+            <span data-dc-tpl="230" class="mono" style="min-width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 12px; font-weight: 700; animation: 8.8s ease 6.6s infinite normal none running stageNumOn;">04</span>
+            <div data-dc-tpl="231"><strong data-dc-tpl="232" style="font-size: 16px;"><span data-dc-tpl="233" class="en">Ship</span><span data-dc-tpl="234" class="ar">إطلاق</span></strong><p data-dc-tpl="235" style="margin: 4px 0px 0px; font-size: 14px; line-height: 1.55; color: rgb(90, 106, 133);"><span data-dc-tpl="236" class="en">Merged, deployed, and looped back for the next.</span><span data-dc-tpl="237" class="ar">يُدمج ويُنشر وتعود الحلقة للتالية.</span></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="238" id="services" style="max-width: 1240px; margin: 0px auto; padding: 80px 24px; scroll-margin-top: 70px;">
+    <div data-dc-tpl="239" class="reveal in" style="margin-bottom: 8px;"><span data-dc-tpl="240" class="mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(46, 107, 230);">03 — SERVICES</span></div>
+    <h2 data-dc-tpl="241" class="disp reveal in" style="margin: 0px 0px 36px; font-size: clamp(30px, 4.6vw, 54px);">
+      <span data-dc-tpl="242" class="en">Five agents. <span data-dc-tpl="243" style="color: transparent; -webkit-text-stroke: 1.5px rgb(11, 21, 38);">One QA team.</span></span>
+      <span data-dc-tpl="244" class="ar">خمسة وكلاء. <span data-dc-tpl="245" style="color: rgb(46, 107, 230);">فريق جودة واحد.</span></span>
+    </h2>
+    <div data-dc-tpl="246" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+      <div data-dc-tpl="247" class="reveal scp5 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 26px; position: relative; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;">
+        <div data-dc-tpl="248" class="mono" style="font-size: 12px; color: rgb(185, 198, 221); margin-bottom: 44px;">/01</div>
+        <h3 data-dc-tpl="249" class="disp" style="margin: 0px 0px 8px; font-size: 20px;">Sweep</h3>
+        <p data-dc-tpl="250" style="margin: 0px; font-size: 14.5px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="251" class="en">A smart audit of your site from a single link.</span><span data-dc-tpl="252" class="ar">تدقيق ذكي لموقعك انطلاقاً من رابط واحد.</span></p>
+      </div>
+      <div data-dc-tpl="253" class="reveal scp5 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 26px; position: relative; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;">
+        <div data-dc-tpl="254" class="mono" style="font-size: 12px; color: rgb(185, 198, 221); margin-bottom: 44px;">/02</div>
+        <h3 data-dc-tpl="255" class="disp" style="margin: 0px 0px 8px; font-size: 20px;">Journeys</h3>
+        <p data-dc-tpl="256" style="margin: 0px; font-size: 14.5px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="257" class="en">Value · UX · performance · security, in one pass.</span><span data-dc-tpl="258" class="ar">القيمة · تجربة المستخدم · الأداء · الأمان في جولة واحدة.</span></p>
+      </div>
+      <div data-dc-tpl="259" class="reveal scp5 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 26px; position: relative; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;">
+        <div data-dc-tpl="260" class="mono" style="font-size: 12px; color: rgb(185, 198, 221); margin-bottom: 44px;">/03</div>
+        <h3 data-dc-tpl="261" class="disp" style="margin: 0px 0px 8px; font-size: 20px;">Bug Testing</h3>
+        <p data-dc-tpl="262" style="margin: 0px; font-size: 14.5px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="263" class="en">Evidence-backed re-testing with confidence scores.</span><span data-dc-tpl="264" class="ar">إعادة اختبار مدعومة بالأدلة مع مقاييس ثقة.</span></p>
+      </div>
+      <div data-dc-tpl="265" class="reveal scp5 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 26px; position: relative; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;">
+        <div data-dc-tpl="266" class="mono" style="font-size: 12px; color: rgb(185, 198, 221); margin-bottom: 44px;">/04</div>
+        <h3 data-dc-tpl="267" class="disp" style="margin: 0px 0px 8px; font-size: 20px;">Bug Fixing</h3>
+        <p data-dc-tpl="268" style="margin: 0px; font-size: 14.5px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="269" class="en">Autonomous fix → PR → merge → deploy → hand-off.</span><span data-dc-tpl="270" class="ar">إصلاح ذاتي: fix → PR → merge → deploy → تسليم.</span></p>
+      </div>
+      <div data-dc-tpl="271" class="reveal scp6 in" style="background: rgb(46, 107, 230); border: 1px solid rgb(46, 107, 230); border-radius: 14px; padding: 26px; position: relative; color: rgb(255, 255, 255); transition: transform 0.22s, box-shadow 0.22s;">
+        <div data-dc-tpl="272" class="mono" style="font-size: 12px; color: rgba(255, 255, 255, 0.55); margin-bottom: 44px;">/05</div>
+        <h3 data-dc-tpl="273" class="disp" style="margin: 0px 0px 8px; font-size: 20px;">GenAI Evaluation</h3>
+        <p data-dc-tpl="274" style="margin: 0px; font-size: 14.5px; line-height: 1.6; color: rgb(217, 229, 251);"><span data-dc-tpl="275" class="en">Grades AI features against quality contracts.</span><span data-dc-tpl="276" class="ar">تقييم ميزات الذكاء الاصطناعي وفق عقود جودة.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="277" id="receipt" style="scroll-margin-top: 70px; background: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0% 0% / 64px 64px, linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) rgb(11, 21, 38); color: rgb(230, 236, 247);">
+    <div data-dc-tpl="278" style="max-width: 1240px; margin: 0px auto; padding: 88px 24px;">
+      <div data-dc-tpl="279" class="reveal in" style="margin-bottom: 8px;"><span data-dc-tpl="280" class="mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(110, 155, 240);">04 — THE RECEIPT</span></div>
+      <h2 data-dc-tpl="281" class="disp reveal in" style="margin: 0px 0px 14px; font-size: clamp(34px, 5.4vw, 68px); color: rgb(255, 255, 255);">
+        <span data-dc-tpl="282" class="en">Evidence, <span data-dc-tpl="283" style="color: transparent; -webkit-text-stroke: 1.5px rgb(110, 155, 240);">not claims.</span></span>
+        <span data-dc-tpl="284" class="ar">الأدلة، <span data-dc-tpl="285" style="color: rgb(110, 155, 240);">لا الادعاءات.</span></span>
+      </h2>
+      <div data-dc-tpl="286" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px; align-items: center; margin-top: 30px;">
+        <div data-dc-tpl="287">
+          <p data-dc-tpl="288" class="reveal in" style="margin: 0px 0px 34px; font-size: 16.5px; line-height: 1.7; color: rgb(159, 176, 207); max-width: 46ch;">
+            <span data-dc-tpl="289" class="en">Every verdict ships with a machine-checked receipt: what was tested, the result, the confidence, the timestamp. Proof you can hand to anyone.</span>
+            <span data-dc-tpl="290" class="ar">كل حكم يأتي بإيصال مُتحقَّق آلياً: ما جرى اختباره، والنتيجة، ودرجة الثقة، والطابع الزمني. دليل يمكنك تسليمه لأي شخص.</span>
+          </p>
+          <div data-dc-tpl="291" style="display: flex; flex-direction: column; gap: 22px;">
+            <div data-dc-tpl="292" class="reveal in" style="border-left: 2px solid rgb(46, 107, 230); padding-left: 18px;">
+              <strong data-dc-tpl="293" style="font-size: 16.5px; color: rgb(255, 255, 255);"><span data-dc-tpl="294" class="en">QA memory that compounds</span><span data-dc-tpl="295" class="ar">ذاكرة جودة تتراكم مع كل مشروع</span></strong>
+              <p data-dc-tpl="296" style="margin: 5px 0px 0px; font-size: 14.5px; line-height: 1.6; color: rgb(159, 176, 207);"><span data-dc-tpl="297" class="en">Dependency maps and re-tests grow smarter with every project.</span><span data-dc-tpl="298" class="ar">خرائط ترابط وإعادة اختبار تزداد ذكاءً مع كل مشروع.</span></p>
+            </div>
+            <div data-dc-tpl="299" class="reveal in" style="border-left: 2px solid rgb(46, 107, 230); padding-left: 18px;">
+              <strong data-dc-tpl="300" style="font-size: 16.5px; color: rgb(255, 255, 255);"><span data-dc-tpl="301" class="en">Closes the full loop</span><span data-dc-tpl="302" class="ar">تُغلق الحلقة كاملة</span></strong>
+              <p data-dc-tpl="303" style="margin: 5px 0px 0px; font-size: 14.5px; line-height: 1.6; color: rgb(159, 176, 207);"><span data-dc-tpl="304" class="en">Find → fix → verify, end to end — not a single step.</span><span data-dc-tpl="305" class="ar">اكتشاف → إصلاح → تحقّق، من البداية للنهاية — لا خطوة واحدة.</span></p>
+            </div>
+            <div data-dc-tpl="306" class="reveal in" style="border-left: 2px solid rgb(46, 107, 230); padding-left: 18px;">
+              <strong data-dc-tpl="307" style="font-size: 16.5px; color: rgb(255, 255, 255);"><span data-dc-tpl="308" class="en">Adversarial verification</span><span data-dc-tpl="309" class="ar">تحقّق خصومي من الأحكام</span></strong>
+              <p data-dc-tpl="310" style="margin: 5px 0px 0px; font-size: 14.5px; line-height: 1.6; color: rgb(159, 176, 207);"><span data-dc-tpl="311" class="en">Machine-checked receipts, challenged before they reach you.</span><span data-dc-tpl="312" class="ar">إيصالات مُتحقَّقة آلياً تُختبر بصرامة قبل أن تصلك.</span></p>
+            </div>
+          </div>
+        </div>
+        <div data-dc-tpl="313" class="reveal in" style="display: flex; justify-content: center;">
+          <div data-dc-tpl="314" dir="ltr" style="background: rgb(253, 253, 251); color: rgb(11, 21, 38); width: min(400px, 100%); border-radius: 6px; padding: 26px 26px 20px; transform: rotate(-1.6deg); box-shadow: rgba(0, 0, 0, 0.45) 0px 30px 70px; position: relative; text-align: left;">
+            <div data-dc-tpl="315" aria-hidden="true" class="mono" style="position: absolute; top: 52px; right: 20px; border: 2.5px solid rgb(31, 157, 91); color: rgb(31, 157, 91); border-radius: 8px; padding: 5px 12px; font-size: 12.5px; letter-spacing: 0.18em; font-weight: 700; animation: 9s ease-in-out 0s infinite normal none running rcStamp; opacity: 0;">VERIFIED ✓</div>
+            <div data-dc-tpl="316" style="display: flex; align-items: center; gap: 10px; border-bottom: 1px dashed rgb(201, 207, 201); padding-bottom: 14px; margin-bottom: 16px;">
+              <img data-dc-tpl="317" src="blob:https://vibe-test.oneapp.dev/75f6b4b1-1d9f-4e35-8c91-b5ed39dd0659" alt="" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgb(227, 230, 227);">
+              <div data-dc-tpl="318">
+                <div data-dc-tpl="319" class="mono" style="font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(75, 85, 99);">VIBE-TEST · RECEIPT</div>
+                <div data-dc-tpl="320" class="mono" style="font-size: 10px; color: rgb(46, 107, 230);">#VT-4821</div>
+              </div>
+            </div>
+            <div data-dc-tpl="321" class="mono" style="font-size: 13px; font-weight: 700; margin-bottom: 14px;">CHECKOUT FLOW — PAYMENT</div>
+            <div data-dc-tpl="322" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px;">
+              <div data-dc-tpl="323" class="mono" style="font-size: 12px; color: rgb(55, 65, 81); animation: 9s ease 0.2s infinite normal none running rcRow; opacity: 0;"><span data-dc-tpl="324" style="color: rgb(31, 157, 91);">✓</span> functional ......... 18/18 pass</div>
+              <div data-dc-tpl="325" class="mono" style="font-size: 12px; color: rgb(55, 65, 81); animation: 9s ease 0.9s infinite normal none running rcRow; opacity: 0;"><span data-dc-tpl="326" style="color: rgb(31, 157, 91);">✓</span> performance ... p95 under budget</div>
+              <div data-dc-tpl="327" class="mono" style="font-size: 12px; color: rgb(55, 65, 81); animation: 9s ease 1.6s infinite normal none running rcRow; opacity: 0;"><span data-dc-tpl="328" style="color: rgb(31, 157, 91);">✓</span> security ....... role paths hold</div>
+              <div data-dc-tpl="329" class="mono" style="font-size: 12px; color: rgb(55, 65, 81); animation: 9s ease 2.3s infinite normal none running rcRow; opacity: 0;"><span data-dc-tpl="330" style="color: rgb(31, 157, 91);">✓</span> re-test ×3 . adversarial verify</div>
+            </div>
+            <div data-dc-tpl="331" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px;">
+              <span data-dc-tpl="332" class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: rgb(75, 85, 99);">CONFIDENCE</span>
+              <span data-dc-tpl="333" class="mono" style="font-size: 14px; font-weight: 700;">98.7%</span>
+            </div>
+            <div data-dc-tpl="334" style="height: 7px; background: rgb(237, 239, 234); border-radius: 100px; overflow: hidden; margin-bottom: 16px;">
+              <div data-dc-tpl="335" style="width: 98.7%; height: 100%; background: rgb(46, 107, 230); border-radius: 100px; animation: 9s ease-in-out 0s infinite normal none running rcBar;"></div>
+            </div>
+            <div data-dc-tpl="336" class="mono" style="display: flex; justify-content: space-between; font-size: 10.5px; color: rgb(75, 85, 99); margin-bottom: 16px;">
+              <span data-dc-tpl="337">AGENT: BUG FIXING</span><span data-dc-tpl="338">2026-07-03 14:22Z</span>
+            </div>
+            <div data-dc-tpl="339" aria-hidden="true" style="height: 34px; background: repeating-linear-gradient(90deg, rgb(11, 21, 38) 0px, rgb(11, 21, 38) 2px, transparent 2px, transparent 5px, rgb(11, 21, 38) 5px, rgb(11, 21, 38) 6px, transparent 6px, transparent 10px); border-radius: 2px; opacity: 0.85;"></div>
+            <div data-dc-tpl="340" class="mono" style="text-align: center; font-size: 9.5px; letter-spacing: 0.24em; color: rgb(75, 85, 99); margin-top: 8px;">BACKED BY RECEIPTS · <span data-dc-tpl="341" dir="rtl">مدعوم بالأدلة</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="342" id="who" style="max-width: 1240px; margin: 0px auto; padding: 80px 24px; scroll-margin-top: 70px;">
+    <div data-dc-tpl="343" class="reveal in" style="margin-bottom: 8px;"><span data-dc-tpl="344" class="mono" style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgb(46, 107, 230);">05 — WHO IT'S FOR</span></div>
+    <h2 data-dc-tpl="345" class="disp reveal in" style="margin: 0px 0px 36px; font-size: clamp(30px, 4.6vw, 54px);">
+      <span data-dc-tpl="346" class="en">Built for teams <span data-dc-tpl="347" style="color: transparent; -webkit-text-stroke: 1.5px rgb(11, 21, 38);">without</span> a QA team.</span>
+      <span data-dc-tpl="348" class="ar">مصمَّم للفرق التي <span data-dc-tpl="349" style="color: rgb(46, 107, 230);">بلا</span> فريق جودة.</span>
+    </h2>
+    <div data-dc-tpl="350" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+      <div data-dc-tpl="351" class="reveal scp7 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 24px; transition: transform 0.22s, box-shadow 0.22s;">
+        <h3 data-dc-tpl="352" style="margin: 0px 0px 6px; font-size: 17px; font-weight: 700;"><span data-dc-tpl="353" class="en">Small dev teams &amp; solo developers</span><span data-dc-tpl="354" class="ar">فرق البرمجة الصغيرة والمطوّرون الأفراد</span></h3>
+        <p data-dc-tpl="355" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="356" class="en">Ship with senior-level QA you don't have to hire.</span><span data-dc-tpl="357" class="ar">أطلق بجودة بمستوى خبير دون توظيفه.</span></p>
+      </div>
+      <div data-dc-tpl="358" class="reveal scp7 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 24px; transition: transform 0.22s, box-shadow 0.22s;">
+        <h3 data-dc-tpl="359" style="margin: 0px 0px 6px; font-size: 17px; font-weight: 700;"><span data-dc-tpl="360" class="en">Vibe coders &amp; indie hackers</span><span data-dc-tpl="361" class="ar">مبرمجو الـ vibe و الـ indie hackers</span></h3>
+        <p data-dc-tpl="362" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="363" class="en">Move fast without shipping broken to users.</span><span data-dc-tpl="364" class="ar">تحرّك بسرعة دون إطلاق ما هو معطّل للمستخدمين.</span></p>
+      </div>
+      <div data-dc-tpl="365" class="reveal scp7 in" style="background: rgb(255, 255, 255); border: 1px solid rgb(225, 231, 240); border-radius: 14px; padding: 24px; transition: transform 0.22s, box-shadow 0.22s;">
+        <h3 data-dc-tpl="366" style="margin: 0px 0px 6px; font-size: 17px; font-weight: 700;"><span data-dc-tpl="367" class="en">Early-stage startups</span><span data-dc-tpl="368" class="ar">الشركات الناشئة المبكرة</span></h3>
+        <p data-dc-tpl="369" style="margin: 0px; font-size: 14px; line-height: 1.6; color: rgb(90, 106, 133);"><span data-dc-tpl="370" class="en">Get real QA coverage before you can afford a team.</span><span data-dc-tpl="371" class="ar">تغطية جودة حقيقية قبل أن تقدر على تكوين فريق.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <a data-dc-tpl="372" id="book"></a>
+  <section data-dc-tpl="373" style="background: rgb(46, 107, 230); position: relative; overflow: hidden;">
+    <div data-dc-tpl="374" aria-hidden="true" style="position: absolute; inset: 0px; background: radial-gradient(circle at 85% -10%, rgba(255, 255, 255, 0.25), transparent 55%);"></div>
+    <div data-dc-tpl="375" style="position: relative; max-width: 1240px; margin: 0px auto; padding: 88px 24px; text-align: center; color: rgb(255, 255, 255);">
+      <img data-dc-tpl="376" src="blob:https://vibe-test.oneapp.dev/75f6b4b1-1d9f-4e35-8c91-b5ed39dd0659" alt="" class="reveal in" style="width: 64px; height: 64px; border-radius: 50%; box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 30px; margin-bottom: 22px;">
+      <h2 data-dc-tpl="377" class="disp reveal in" style="margin: 0px auto 14px; max-width: 18ch; font-size: clamp(34px, 6vw, 72px);">
+        <span data-dc-tpl="378" class="en">Ship with confidence.</span>
+        <span data-dc-tpl="379" class="ar">أطلق بثقة.</span>
+      </h2>
+      <p data-dc-tpl="380" class="reveal in" style="margin: 0px auto 30px; max-width: 48ch; font-size: 17px; line-height: 1.65; color: rgb(220, 231, 251);">
+        <span data-dc-tpl="381" class="en">See your first receipt in the demo. Evidence, not claims.</span>
+        <span data-dc-tpl="382" class="ar">شاهد أول إيصال لك في العرض التجريبي. الأدلة، لا الادعاءات.</span>
+      </p>
+      <a data-dc-tpl="383" href="mailto:hello@wewill.tech?subject=Vibe-Test%20Demo" class="reveal scp8 in" style="display: inline-flex; align-items: center; background: rgb(255, 255, 255); color: rgb(11, 21, 38); border-radius: 100px; padding: 16px 40px; font-size: 16.5px; font-weight: 800; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 28px; transition: transform 0.2s, box-shadow 0.2s;">
+        <span data-dc-tpl="384" class="en">Book a Demo</span><span data-dc-tpl="385" class="ar">احجز عرضك التجريبي</span>
+      </a>
+    </div>
+  </section>
+
+  <footer data-dc-tpl="386" style="background: rgb(11, 21, 38); color: rgb(159, 176, 207); overflow: hidden;">
+    <div data-dc-tpl="387" style="max-width: 1240px; margin: 0px auto; padding: 56px 24px 40px;">
+      <div data-dc-tpl="388" class="disp" aria-hidden="true" style="font-size: clamp(52px, 11vw, 150px); color: transparent; -webkit-text-stroke: 1.5px rgba(159, 176, 207, 0.28); white-space: nowrap; line-height: 1;">VIBE-TEST.</div>
+      <div data-dc-tpl="389" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; border-top: 1px solid rgba(159, 176, 207, 0.18); margin-top: 34px; padding-top: 22px;">
+        <div data-dc-tpl="390" style="display: flex; align-items: center; gap: 10px;">
+          <img data-dc-tpl="391" src="blob:https://vibe-test.oneapp.dev/75f6b4b1-1d9f-4e35-8c91-b5ed39dd0659" alt="WE WILL TECH logo" style="width: 28px; height: 28px; border-radius: 50%;">
+          <span data-dc-tpl="392" class="mono" style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;">WE WILL TECH · VIBE-TEST</span>
+        </div>
+        <p data-dc-tpl="393" style="margin: 0px; font-size: 12.5px;">
+          <span data-dc-tpl="394" class="en">© 2026 WE WILL TECH · Evidence, not claims.</span>
+          <span data-dc-tpl="395" class="ar">© 2026 WE WILL TECH · الأدلة، لا الادعاءات.</span>
+        </p>
+      </div>
+    </div>
+  </footer></div></div></div>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'ar'&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;playDemos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.rootRef = React.createRef();
+    this.toggleLang = this.toggleLang.bind(this);
+  }
+
+  applyProps() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const lang = this.props.defaultLang ?? "en";
+    if (!this._userToggled) {
+      root.setAttribute("data-lang", lang);
+      root.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    }
+    const paused = (this.props.playDemos ?? true) === false;
+    root.setAttribute("data-paused", paused ? "1" : "0");
+  }
+
+  toggleLang() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    this._userToggled = true;
+    const next = root.getAttribute("data-lang") === "ar" ? "en" : "ar";
+    root.setAttribute("data-lang", next);
+    root.setAttribute("dir", next === "ar" ? "rtl" : "ltr");
+  }
+
+  componentDidMount() {
+    this.applyProps();
+    const root = this.rootRef.current;
+    if (!root) return;
+    // Hash navigation is inert in this runtime — smooth-scroll manually.
+    this._onNavClick = (ev) => {
+      const a = ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
+      if (!a || !root.contains(a)) return;
+      const id = a.getAttribute("href").slice(1);
+      ev.preventDefault();
+      const header = root.querySelector("header");
+      const offset = (header ? header.offsetHeight : 70) + 10;
+      let top = 0;
+      if (id && id !== "top") {
+        const el = root.querySelector("#" + id) || document.getElementById(id);
+        if (!el) return;
+        top = el.getBoundingClientRect().top + window.scrollY - offset;
+      }
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: Math.max(0, top), behavior: reduced ? "auto" : "smooth" });
+    };
+    root.addEventListener("click", this._onNavClick);
+    const els = root.querySelectorAll(".reveal");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("in"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+    els.forEach((el) => io.observe(el));
+    this._io = io;
+  }
+
+  componentDidUpdate() {
+    this.applyProps();
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._onNavClick && this.rootRef.current) this.rootRef.current.removeEventListener("click", this._onNavClick);
+  }
+
+  renderVals() {
+    return { rootRef: this.rootRef, toggleLang: this.toggleLang };
+  }
+}
+</script>
+
+
+</body></html>
