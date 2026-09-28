@@ -1,0 +1,21 @@
+    <section id="hero" class="hv hv-4">
+      <div class="hv-inner">
+{% include "variants/hero/_copy.html" %}
+        <figure class="hv-visual">
+          <div class="hv-term" role="img" aria-label="Sample Vibe Test QA run log ending in receipt VT-4821 with 98.7% confidence">
+            <div class="hv-term-bar"><span>LIVE QA RUN</span><span class="hv-term-status">RUNNING</span></div>
+            <ol class="hv-term-log">
+              <li><span>sweep · mapping app.yoursite.com … <span class="ok">done</span></span></li>
+              <li><span>journeys · checkout / auth / search … <span class="ok">42 checks</span></span></li>
+              <li><span>issue <span class="ref">#241</span> → fix written · PR opened</span></li>
+              <li><span>re-test ×3 · adversarial verify … <span class="ok">pass</span></span></li>
+              <li><span>receipt <span class="ref">#VT-4821</span> · confidence 98.7% <span class="ok">✓</span></span></li>
+            </ol>
+          </div>
+          <figcaption class="hv-sample">Sample run</figcaption>
+        </figure>
+      </div>
+      <div class="hv-inner hv-inner--go">
+{% include "variants/hero/_go.html" %}
+      </div>
+    </section>
