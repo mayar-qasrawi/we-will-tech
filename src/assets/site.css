@@ -2520,3 +2520,310 @@ html.js-anim.is-loaded .hero .hero-signal   { transition-delay: 620ms; opacity: 
     transition: none !important;
   }
 }
+
+/* =====================================================================
+   HOME — Website Brief §III blocks 3–8 (openspec change: update-home-page)
+   ===================================================================== */
+
+.btn:focus-visible {
+  outline: 2px solid var(--ww-indigo);
+  outline-offset: 3px;
+}
+
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.section-actions.center {
+  justify-content: center;
+}
+
+.section-actions .btn,
+.sara-actions .btn,
+.final-cta-actions .btn {
+  min-height: 44px;
+}
+
+/* Block 3 — "Sample" label on the reused receipt card */
+.sara-sample-label {
+  align-self: flex-start;
+  display: inline-flex;
+  margin: 0 0 10px;
+  padding: 2px 8px;
+  border: 1px dashed rgba(11, 18, 32, 0.3);
+  border-radius: var(--ww-radius-pill);
+  background: var(--ww-surface);
+  color: var(--ww-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Block 4 — use cases preview (NEW) */
+.section-use-cases {
+  background: #ffffff;
+}
+
+.use-case-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.use-case-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 16px;
+  border-radius: var(--ww-radius);
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: var(--ww-shadow-soft);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.use-case-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ww-shadow-strong);
+  border-color: rgba(31, 61, 219, 0.6);
+}
+
+.use-case-card:focus-visible {
+  outline: 2px solid var(--ww-indigo);
+  outline-offset: 3px;
+}
+
+.use-case-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: 34px;
+  height: 24px;
+  border-radius: var(--ww-radius-pill);
+  background: var(--ww-orange-tint-10);
+  color: var(--ww-orange-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.use-case-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.use-case-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ww-text-muted);
+}
+
+.use-case-card .use-case-outcome {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  color: var(--ww-emerald-dark);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .use-case-card,
+  .use-case-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Block 5 — WE WILL expert layer: product + expert offer over the methodology (SA §V diagram) */
+.section-expert-layer {
+  background: var(--ww-soft-gray);
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.expert-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.expert-layer-card {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 22px;
+  border-radius: var(--ww-radius);
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: var(--ww-shadow-soft);
+}
+
+.expert-layer-card .expert-layer-label {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ww-orange-dark);
+}
+
+.expert-layer-card h3 {
+  margin: 0;
+  font-family: var(--ww-font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.expert-layer-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ww-text-muted);
+}
+
+.expert-layer-card .expert-layer-role {
+  font-weight: 600;
+  color: var(--ww-blue-dark);
+}
+
+.expert-layer-services {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.expert-layer-services li {
+  padding-top: 8px;
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  font-size: 0.9rem;
+  color: var(--ww-text-muted);
+}
+
+.expert-layer-services strong {
+  display: block;
+  color: var(--ww-ink);
+}
+
+.expert-layer-card-wide {
+  grid-column: 1 / -1;
+  background: var(--ww-ink);
+  border-color: var(--ww-ink);
+  color: #ffffff;
+}
+
+.expert-layer-card-wide .expert-layer-label {
+  color: #ffb38a;
+}
+
+.expert-layer-card-wide .expert-layer-role {
+  color: #ffffff;
+}
+
+.expert-layer-card-wide p {
+  color: rgba(248, 250, 252, 0.8);
+}
+
+/* Block 6 — selected proof: three static testimonials */
+.t-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.t-grid .t-card {
+  margin: 0;
+  padding: 24px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.t-grid .t-quote {
+  flex: 1;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ww-text-main);
+}
+
+.t-grid .t-quote::before {
+  content: "\201C";
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--ww-font-display);
+  font-size: 2.6rem;
+  line-height: 0.6;
+  color: var(--ww-orange);
+}
+
+.t-grid .t-client {
+  padding-top: 14px;
+  border-top: var(--ww-border);
+}
+
+/* Block 7 — selected resources: three items */
+@media (min-width: 961px) {
+  .knowledge-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Block 8 — final conversion */
+.final-cta-inner {
+  max-width: 760px;
+}
+
+.final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 1100px) {
+  .use-case-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .t-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .use-case-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expert-layer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .use-case-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .final-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

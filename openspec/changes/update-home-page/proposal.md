@@ -76,3 +76,4 @@ None.
 - New: `src/_includes/sections/home/use-cases.html`, `expert-layer.html`, `final-cta.html`
 - `src/assets/site.css`: styles for the new blocks and the static proof grid; the marquee CSS stays only for pages still using it (none after this change; kept, not deleted).
 - `src/assets/site.js`: `translations` keys for the edited and new strings.
+- New: `src/_includes/sections/legacy/knowledge.html`, `src/_includes/sections/legacy/success-stories.html` (unchanged copies from `main`), used by `src/knowledge/index.njk` and `src/success-stories/index.njk` so those pages stay as they were.

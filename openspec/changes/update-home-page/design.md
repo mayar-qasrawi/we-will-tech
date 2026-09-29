@@ -18,6 +18,8 @@ See proposal.md › Why. `src/index.njk` lists one include per section. Section 
 4. **Use-case cards reuse the `.sara-capability-card` visual pattern** (index number + H3 + text) as whole-card links, with a new `.use-case-grid` layout (5 columns at ≥1200 px, 2–3 columns in between, 1 column at 390 px).
 5. **Expert layer** is a CSS grid: two cards over one full-width card, mirroring the SA §V diagram. It uses the existing `.section`, `.section-header` and card surfaces.
 6. **Relocation = removing the includes** from `index.njk` only. The target pages include the same partials in their own changes.
+7. **Frozen copies for the old one-section pages.** `/knowledge/` and `/success-stories/` include the same partials as Home, so editing them would change those pages, which the Checkpoint 1 ruling keeps unchanged (Q2). They now include `sections/legacy/knowledge.html` and `sections/legacy/success-stories.html`, byte-for-byte copies from `main`. Verified: their `<main>` output is identical to `main`. *Alternative:* let them follow Home. Rejected: it breaks the ruling.
+8. **Routing CTAs use the secondary button style** ("Explore Vibe Test", "Explore Solutions", "View Resources", "Discuss a Quality Requirement"). The primary style is kept for "Run a Guided Vibe Test" only (Website Brief §IV: routing CTAs are "not primary conversion actions").
 
 ## Risks / Trade-offs
 
