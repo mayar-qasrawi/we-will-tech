@@ -115,6 +115,27 @@ section[id] {
   color: var(--ww-indigo);
 }
 
+.shell-nav a:focus-visible {
+  outline: 2px solid var(--ww-indigo);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Primary CTA in the menu (Website Brief: "Run a Guided Vibe Test" highlighted) */
+.shell-nav a.shell-nav-cta {
+  max-width: none;
+  min-height: 40px;
+  margin-inline-start: 8px;
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  color: #ffffff;
+  border-radius: var(--ww-radius-pill);
+}
+
+.shell-nav a.shell-nav-cta:hover {
+  color: #ffffff;
+}
+
 .shell-lang-switcher {
   position: static;
   top: auto;
@@ -146,11 +167,156 @@ section[id] {
 
 .shell-footer-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+  grid-template-columns: minmax(120px, 0.5fr) minmax(0, 4fr);
   align-items: start;
-  gap: 32px;
-  padding-top: 24px;
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 32px;
+}
+
+.site-shell-footer .shell-brand-text {
+  white-space: nowrap;
+}
+
+/* Footer navigation: five link groups (Website Brief p. 6) */
+.shell-footer-nav {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px 24px;
+}
+
+.shell-footer-heading {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.72);
+}
+
+.shell-footer-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.shell-footer-group a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 0;
+  color: #f8fafc;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.shell-footer-group a:hover {
+  color: #60a5fa;
+}
+
+.site-shell-footer a:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.shell-footer-group .shell-footer-social-card {
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.shell-footer-group .shell-footer-social-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.shell-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-top: 18px;
   padding-bottom: 24px;
+  border-top: 1px solid rgba(248, 250, 252, 0.12);
+}
+
+.shell-footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(248, 250, 252, 0.78);
+}
+
+.site-shell-footer .shell-footer-endorsement {
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+/* Clearly marked placeholder for content WE WILL still has to supply */
+.content-placeholder {
+  display: block;
+  padding: 14px 18px;
+  border: 1px dashed rgba(11, 18, 32, 0.35);
+  border-radius: var(--ww-radius-sm);
+  background: var(--ww-surface);
+  color: var(--ww-text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.site-shell-footer .content-placeholder-dark {
+  padding: 4px 10px;
+  border-color: rgba(248, 250, 252, 0.35);
+  background: transparent;
+  color: rgba(248, 250, 252, 0.78);
+  font-size: 0.8rem;
+}
+
+.legal-page-inner {
+  max-width: 760px;
+  display: grid;
+  gap: 20px;
+}
+
+.legal-page-inner .section-title {
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .shell-footer-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tighter desktop header between the mobile breakpoint and 1100px so the
+   five items and the CTA fit without truncation. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .site-shell-header .shell-inner {
+    gap: 16px;
+  }
+
+  .shell-nav {
+    column-gap: 14px;
+  }
+
+  .shell-nav a {
+    font-size: 0.86rem;
+  }
+
+  .shell-nav a.shell-nav-cta {
+    margin-inline-start: 2px;
+    padding: 8px 14px;
+    font-size: 0.84rem;
+  }
+
+  .site-shell-header .shell-brand-text {
+    letter-spacing: 0.06em;
+  }
 }
 
 .site-shell-footer .shell-brand,
@@ -281,9 +447,17 @@ section[id] {
   }
 
   .shell-nav a {
-    min-height: 0;
+    min-height: 44px;
     padding: 10px 0;
     border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  }
+
+  .shell-nav a.shell-nav-cta {
+    justify-content: center;
+    min-height: 44px;
+    margin: 8px 0 4px;
+    padding: 12px 18px;
+    border-bottom: 0;
   }
 
   .shell-footer-inner {
@@ -320,6 +494,16 @@ section[id] {
 
   .shell-footer-socials {
     grid-template-columns: 1fr;
+  }
+
+  .shell-footer-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .shell-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

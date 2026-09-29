@@ -2035,6 +2035,33 @@
       resize: vertical;
     }
 
+    /* Request-type field (CTA framework preset). The column is capped so the
+       long option label cannot widen the form beyond its container. */
+    .contact-inner form {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contact-inner .contact-field-label {
+      margin-top: 4px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ww-ink);
+    }
+
+    .contact-inner select {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      min-height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 10px 12px;
+      background: #ffffff;
+      color: var(--ww-ink);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
     .contact-inner button {
       border: none;
       margin-top: 4px;

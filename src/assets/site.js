@@ -204,6 +204,10 @@ const translations = {
         "contact.company": "Company / Product",
         "contact.message": "Tell us briefly about your product and current challenges",
         "contact.submit": "Send Message",
+        "contact.requestType": "Request type",
+        "contact.requestGeneral": "General message",
+        "contact.requestGuided": "Run a Guided Vibe Test",
+        "contact.requestBcq": "Discuss a Business Care Quality Requirement",
         "chat.title": "Chat with WE WILL",
         "chat.subtitle": "Send us a quick message.",
         "chat.placeholder": "Write your message here...",
@@ -422,6 +426,10 @@ const translations = {
         "contact.company": "الشركة / المنتج",
         "contact.message": "أخبرنا بإيجاز عن منتجك والتحديات الحالية",
         "contact.submit": "إرسال الرسالة",
+        "contact.requestType": "",
+        "contact.requestGeneral": "",
+        "contact.requestGuided": "",
+        "contact.requestBcq": "",
         "chat.title": "تواصل مع WE WILL",
         "chat.subtitle": "أرسل لنا رسالة سريعة.",
         "chat.placeholder": "اكتب رسالتك هنا...",
@@ -498,8 +506,8 @@ const siteSettings = {
         "ar": "قلل الوقت، قلل التكلفة، وكن واثقاً"
     },
     "footer_copyright": {
-        "en": "© 2023 WE WILL",
-        "ar": "© 2023 WE WILL"
+        "en": "© 2026 WE WILL Technology.",
+        "ar": "© 2026 WE WILL Technology."
     },
     "footer_rights": {
         "en": "All rights reserved.",
@@ -546,6 +554,22 @@ const siteSettings = {
     "header_nav_vibe_test": {
         "en": "Vibe Test",
         "ar": "Vibe Test"
+    },
+    "header_nav_solutions": {
+        "en": "Solutions",
+        "ar": ""
+    },
+    "header_nav_resources": {
+        "en": "Resources",
+        "ar": ""
+    },
+    "header_nav_about": {
+        "en": "About",
+        "ar": ""
+    },
+    "header_nav_cta": {
+        "en": "Run a Guided Vibe Test",
+        "ar": ""
     }
 };
 const LANGUAGE_STORAGE_KEY = 'ww_language';

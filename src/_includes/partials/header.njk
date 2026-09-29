@@ -10,49 +10,42 @@
         >
         <span class="shell-brand-text" data-site-setting="brand_name">WE WILL</span>
       </a>
-      <nav id="shell-nav" class="shell-nav" aria-label="Section pages">
-                                                <a
-            href="{{ navHomeHref }}"
-            class=""
-            data-site-setting="header_nav_hero"
-          >
-            Home          </a>
-                                                          <a
-            href="{{ navPrefix }}#ai-era-quality-services-promo"
-            class="{% if activeNav == 'ai-era-quality-services-promo' %}is-active{% endif %}"
-            data-site-setting="header_nav_ai_era_quality_services_promo"
-          >
-            AI-Era Quality          </a>
-                                                          <a
-            href="{{ navPrefix }}#why-we-will"
-            class="{% if activeNav == 'why-we-will' %}is-active{% endif %}"
-            data-site-setting="header_nav_why_we_will"
-          >
-            Why WE WILL          </a>
-                                                          <a
-            href="{{ navPrefix }}#quality-canvas"
-            class="{% if activeNav == 'quality-canvas' %}is-active{% endif %}"
-            data-site-setting="header_nav_quality_canvas"
-          >
-            Quality Canvas          </a>
-                                                          <a
-            href="{{ navPrefix }}#how-we-work"
-            class="{% if activeNav == 'how-we-work' %}is-active{% endif %}"
-            data-site-setting="header_nav_how_we_work"
-          >
-            How We Work          </a>
-                                                                                        <a
-            href="{{ navPrefix }}#contact"
-            class="{% if activeNav == 'contact' %}is-active{% endif %}"
-            data-site-setting="header_nav_contact"
-          >
-            Contact          </a>
-                <a
-          href="/blog/"
-          class=""
-          data-site-setting="header_nav_blog"
-        >
-          Blog        </a>
+      <nav id="shell-nav" class="shell-nav" aria-label="Main">
+        <a
+          href="{{ navHomeHref }}"
+          class="{% if activeNav == 'home' %}is-active{% endif %}"
+          {% if activeNav == 'home' %}aria-current="page"{% endif %}
+          data-site-setting="header_nav_hero"
+        >Home</a>
+        <a
+          href="/vibe-test/"
+          class="{% if activeNav == 'vibe-test' %}is-active{% endif %}"
+          {% if activeNav == 'vibe-test' %}aria-current="page"{% endif %}
+          data-site-setting="header_nav_vibe_test"
+        >Vibe Test</a>
+        <a
+          href="/solutions/"
+          class="{% if activeNav == 'solutions' %}is-active{% endif %}"
+          {% if activeNav == 'solutions' %}aria-current="page"{% endif %}
+          data-site-setting="header_nav_solutions"
+        >Solutions</a>
+        <a
+          href="/resources/"
+          class="{% if activeNav == 'resources' %}is-active{% endif %}"
+          {% if activeNav == 'resources' %}aria-current="page"{% endif %}
+          data-site-setting="header_nav_resources"
+        >Resources</a>
+        <a
+          href="/about/"
+          class="{% if activeNav == 'about' %}is-active{% endif %}"
+          {% if activeNav == 'about' %}aria-current="page"{% endif %}
+          data-site-setting="header_nav_about"
+        >About</a>
+        <a
+          href="/contact/?request=guided-vibe-test"
+          class="btn btn-primary shell-nav-cta"
+          data-site-setting="header_nav_cta"
+        >Run a Guided Vibe Test</a>
       </nav>
       <div class="shell-header-actions">
         <div class="lang-switcher shell-lang-switcher" aria-label="Language switcher">
