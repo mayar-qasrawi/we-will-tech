@@ -8,6 +8,15 @@
         "value": "geist mono",
         "createdAt": "2026-09-28T13:41:20.040Z",
         "reason": "agent: Geist Mono is used only for machine data (receipt ID, QA run log) and pairs with the site's existing Geist brand display face"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/assets/layout.css"
+        ],
+        "createdAt": "2026-09-29T12:37:54.134Z",
+        "reason": "Claude triage: only match is the pre-existing .blog-article-body blockquote border-left (also on main), a standard quotation style, not a card side-tab; blog is out of Brief scope"
       }
     ]
   }
