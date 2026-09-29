@@ -369,7 +369,9 @@ const translations = {
         "success.case4.quote": "Working with the WE WILL QA team has been a great experience. Their attention to detail, structured testing approach, and commitment to delivering high quality software have consistently exceeded our expectations. They identified critical issues early, communicated clearly throughout the process, and helped improve the overall reliability of our product. We highly recommend their QA services to any company looking for a dependable and professional testing partner.",
         "success.case5.quote": "Our experience with WE WILL is one of the exceptional experiences that helped achieve stability in our work environment at Rasel. By utilizing their QA services, we improved the performance of the technical team, reduced errors in the system, and significantly enhanced the user experience.",
         "success.case6.quote": "WE WILL TECH has been part of the Darent team since day one. Their QA expertise, strong communication, and quick ramp on our product context have kept our development cycles moving. We don't think of them as a vendor. We think of them as team.",
-        "success.case7.quote": "WE WILL’s professionalism and results-driven approach exceeded our expectations. We wholeheartedly recommend their services to any company striving for excellence in software quality assurance."
+        "success.case7.quote": "WE WILL’s professionalism and results-driven approach exceeded our expectations. We wholeheartedly recommend their services to any company striving for excellence in software quality assurance.",
+        "res.method.title": "Background methodology",
+        "res.method.lead": "BCQ links technical evidence to customer and business risk. It informs Vibe Test and is also delivered through separately scoped expert services."
     },
     "ar": {
         "hero.signalLabel": "كيف يستحق الإصدار قرار GO",
@@ -377,6 +379,8 @@ const translations = {
         "hero.signal2": "الرحلات مُختبَرة",
         "hero.signal3": "الأدلة مُوقَّعة",
         "hero.signal4": "قرار GO مُدافَع عنه",
+        "res.method.title": "",
+        "res.method.lead": "",
         "vibeTest.kicker": "",
         "vibeTest.title": "تعرّف على Vibe Test — اختبار جودة ذاتيّ يمنحك الإيصالات.",
         "vibeTest.subtitle": "",

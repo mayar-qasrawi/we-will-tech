@@ -1,0 +1,37 @@
+---
+layout: "layouts/base.njk"
+title: "Software Quality Resources | WE WILL Technology"
+description: "Insights on software quality, release confidence and the Business Care Quality methodology from WE WILL Technology."
+canonical: "https://wewill.tech/resources/"
+ogType: "website"
+ogTitle: "Software Quality Resources | WE WILL Technology"
+ogDescription: "Insights on software quality, release confidence and the Business Care Quality methodology from WE WILL Technology."
+ogUrl: "https://wewill.tech/resources/"
+ogImage: "https://wewill.tech/og-image.php?title=Resources&amp;kicker=Agentic+Software+Quality&amp;description=Insights+on+software+quality%2C+release+confidence+and+the+Business+Care+Quality+methodology."
+twitterTitle: "Software Quality Resources | WE WILL Technology"
+twitterDescription: "Insights on software quality, release confidence and the Business Care Quality methodology from WE WILL Technology."
+twitterImage: "https://wewill.tech/og-image.php?title=Resources&amp;kicker=Agentic+Software+Quality&amp;description=Insights+on+software+quality%2C+release+confidence+and+the+Business+Care+Quality+methodology."
+navHomeHref: "/"
+navPrefix: "/"
+activeNav: "resources"
+chatWidget: false
+jsonLd:
+  "@context": "https://schema.org"
+  "@type": "CollectionPage"
+  name: "Software Quality Resources"
+  url: "https://wewill.tech/resources/"
+  isPartOf: { "@type": "WebSite", "@id": "https://wewill.tech/#website", url: "https://wewill.tech/" }
+  publisher: { "@type": "Organization", "@id": "https://wewill.tech/#organization", name: "WE WILL Technology", url: "https://wewill.tech/" }
+  hasPart:
+    - { "@type": "BlogPosting", headline: "The Triad Quality Framework", url: "https://wewill.tech/blog/the-triad-quality-framework/" }
+    - { "@type": "BlogPosting", headline: "When software quality becomes a business decision", url: "https://wewill.tech/blog/when-software-quality-becomes-a-business-decision/" }
+---
+{#
+  Resources: Website Brief §III "Resources" blocks, in order — Blog / insights (REUSE), Background methodology (EDIT),
+  followed by the existing Quality Canvas section (unchanged). /blog/ and the posts are unchanged.
+#}
+<div class="res-page">
+{% include "sections/resources/insights.html" %}
+{% include "sections/resources/methodology.html" %}
+{% include "sections/home/quality-canvas.html" %}
+</div>

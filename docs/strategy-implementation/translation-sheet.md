@@ -175,3 +175,12 @@ All in `translations.ar` (value currently `""`). Reused with existing Arabic: `s
 | `sol.lean-team-quality.situation` | Limited QA leadership or capacity. |
 | `sol.lean-team-quality.help` | Vibe Test plus Managed Quality Care: recurring verification with expert oversight. |
 | `sol.lean-team-quality.outcome` | Scalable quality capacity. |
+
+## update-resources-page
+
+All in `translations.ar` (value currently `""`). The blog and methodology cards reuse their existing Arabic through `data-blog-ar` and `data-deep-dive-ar`.
+
+| Key | English |
+|---|---|
+| `res.method.title` | Background methodology |
+| `res.method.lead` | BCQ links technical evidence to customer and business risk. It informs Vibe Test and is also delivered through separately scoped expert services. |
