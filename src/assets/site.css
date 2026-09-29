@@ -1807,135 +1807,53 @@
 
     .section-clients {
       background: var(--ww-soft-gray);
+      padding-block: 48px;
+    }
+
+    .section-clients .section-header {
+      margin-bottom: 22px;
     }
 
     .clients-shell {
-      position: relative;
-      padding: 28px 28px;
+      padding: 16px;
+      border: var(--ww-border);
       border-radius: var(--ww-radius);
-      background: linear-gradient(135deg, var(--ww-soft-gray), #ffffff);
+      background: #ffffff;
       box-shadow: var(--ww-shadow-soft);
     }
 
-    /* Carousel styling — restores the logo strip for the admin-rendered
-       client markup (.clients-row / .client-logo / .clients-nav) that is
-       still live in production. Without these rules the logo images fall
-       back to natural size and square logos blow up to full container width,
-       stacking the section to ~2900px tall. The grid rules below coexist
-       harmlessly (they target .clients-grid / .client-card instead). */
-    .clients-scroller {
-      overflow: hidden;
-    }
-
-    .clients-row {
-      display: flex;
-      gap: 16px;
-      padding: 8px 4px;
-    }
-
-    .client-logo {
-      flex: 0 0 auto;
-      min-width: 150px;
-      max-width: 190px;
-      border-radius: var(--ww-radius);
-      background: #ffffff;
-      border: 1px solid rgba(148,163,184,0.35);
-      box-shadow: 0 12px 30px rgba(15,23,42,0.12);
-      padding: 12px 12px 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-    }
-
-    .client-logo img {
-      max-height: 60px;
-      object-fit: contain;
-      filter: grayscale(50%);
-      opacity: 0.85;
-      transition: filter 0.18s ease, opacity 0.18s ease;
-    }
-
-    .client-logo span {
-      font-size: 0.78rem;
-      color: var(--ww-text-muted);
-      font-weight: 500;
-    }
-
-    .client-logo:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--ww-shadow-strong);
-      border-color: rgba(31,61,219,0.8);
-      background: #ffffff;
-    }
-
-    .client-logo:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
-
-    .client-logo:hover span {
-      color: var(--ww-blue-dark);
-    }
-
-    .clients-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: var(--ww-blue-dark);
-      box-shadow: 0 10px 24px rgba(15,23,42,0.18);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    .clients-nav:hover {
-      transform: translateY(-50%) scale(1.05);
-      box-shadow: 0 14px 32px rgba(15,23,42,0.25);
-      background: #ffffff;
-    }
-
-    .clients-nav-prev { left: 10px; }
-    .clients-nav-next { right: 10px; }
-
-    /* Calm, well-spaced trust-wall grid (replaces the cramped scroller). */
+    /* Compact proof strip: all approved logos remain visible without controls. */
     .clients-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(10, minmax(0, 1fr));
+      gap: 10px;
     }
 
     .client-card {
       margin: 0;
-      border-radius: var(--ww-radius);
-      background: #ffffff;
-      border: 1px solid rgba(148,163,184,0.35);
-      box-shadow: 0 12px 30px rgba(15,23,42,0.12);
-      padding: 16px 12px 12px;
+      min-width: 0;
+      min-height: 92px;
+      padding: 12px 8px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      border: var(--ww-border);
+      border-radius: var(--ww-radius-sm);
+      background: var(--ww-soft-gray);
       text-decoration: none;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
     .client-card-link {
       cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease;
     }
 
     .client-card img {
-      max-height: 60px;
+      display: block;
+      width: 100%;
+      height: 38px;
       object-fit: contain;
       filter: grayscale(50%);
       opacity: 0.85;
@@ -1944,15 +1862,24 @@
 
     .client-card figcaption,
     .client-card span {
+      max-width: 100%;
       font-size: 0.78rem;
       color: var(--ww-text-muted);
-      font-weight: 500;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      overflow-wrap: anywhere;
     }
 
     .client-card-link:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--ww-shadow-strong);
-      border-color: rgba(31,61,219,0.8);
+      border-color: var(--ww-blue);
+      background: #ffffff;
+    }
+
+    .client-card-link:focus-visible {
+      outline: 3px solid var(--ww-orange);
+      outline-offset: 3px;
+      border-color: var(--ww-blue);
       background: #ffffff;
     }
 
@@ -2433,7 +2360,11 @@
       }
 
       .clients-shell {
-        padding-inline: 24px;
+        padding: 14px;
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
       }
     }
 
@@ -2448,12 +2379,21 @@
       }
 
       .clients-shell {
-        padding-inline: 18px;
+        padding: 10px;
       }
 
       .clients-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .client-card {
+        min-height: 82px;
+        padding: 10px 8px 8px;
+      }
+
+      .client-card img {
+        height: 34px;
       }
 
       .t-track .t-card {
