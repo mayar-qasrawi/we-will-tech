@@ -8,6 +8,23 @@
             quality perspective — not a generic sales pitch.
           </p>
         </div>
+        <!--
+          Offer-matched panel (openspec: optimize-leads-seo). Shows the chosen CTA offer, its scope and fit.
+          Sources: Strategic Alignment §V Guided Proof of Value and BCQ Expert Services; §VI supporting subheadline.
+          DRAFT: needs approval (panel text). No price, fee or payer wording by rule.
+        -->
+        <div class="contact-offer" aria-live="polite">
+          <div class="contact-offer-panel" data-offer="guided-vibe-test" hidden>
+            <h3 data-i18n="contact.offer.guided.title">Run a Guided Vibe Test</h3>
+            <p data-i18n="contact.offer.guided.scope">Guided Proof of Value: one environment, 2–3 journeys or one release workflow, and agreed success criteria.</p>
+            <p class="contact-offer-fit" data-i18n="contact.offer.guided.fit">For teams with a live product or executable MVP and a technical owner.</p>
+          </div>
+          <div class="contact-offer-panel" data-offer="bcq-requirement" hidden>
+            <h3 data-i18n="contact.offer.bcq.title">Discuss a Business Care Quality Requirement</h3>
+            <p data-i18n="contact.offer.bcq.scope">BCQ Expert Services add human judgment where risk requires it: Quality Diagnostic, Release Decision or Managed Quality Care.</p>
+          </div>
+        </div>
+
         <form id="contact-form" action="/contact-submit.php" method="post" novalidate data-reveal>
           <label class="visually-hidden" for="contact-name" data-i18n="contact.name">Name</label>
           <input type="text" id="contact-name" name="name" placeholder="Name" data-i18n-placeholder="contact.name" autocomplete="name" required maxlength="200" />
@@ -36,6 +53,8 @@
           </div>
 
           <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Send Message</button>
+          <!-- Next step, from the form's existing success message -->
+          <p class="contact-reassure" data-i18n="contact.reassure">We’ll be in touch within 1 business day.</p>
           <p id="contact-status" class="contact-status" role="status" aria-live="polite" hidden></p>
         </form>
       <script>
@@ -56,6 +75,20 @@
                 requestSelect.value = requestParam;
               }
             });
+          }
+
+          // Show the panel for the selected offer; none for "General message".
+          const offerPanels = document.querySelectorAll('.contact-offer-panel');
+          function showOffer() {
+            const value = requestSelect ? requestSelect.value : '';
+            offerPanels.forEach(function (panel) {
+              panel.hidden = panel.dataset.offer !== value;
+            });
+          }
+          if (requestSelect) {
+            requestSelect.addEventListener('change', showOffer);
+            form.addEventListener('reset', function () { setTimeout(showOffer, 0); });
+            showOffer();
           }
 
           const messages = {

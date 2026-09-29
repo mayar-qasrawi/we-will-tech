@@ -5,7 +5,7 @@
   <meta name="description" content="{{ description | safe }}" />
   <link rel="canonical" href="{{ canonical | safe }}" />
   <meta property="og:type" content="{{ ogType | safe }}" />
-  <meta property="og:site_name" content="WE WILL" />
+  <meta property="og:site_name" content="WE WILL Technology" />
   <meta property="og:title" content="{{ ogTitle | safe }}" />
   <meta property="og:description" content="{{ ogDescription | safe }}" />
   <meta property="og:url" content="{{ ogUrl | safe }}" />
@@ -25,5 +25,6 @@
 {% endif %}{% if reviewAssets %}  <link rel="stylesheet" href="/assets/variants/hero-variants.css">
   <link rel="stylesheet" href="/assets/variants/variant-switcher.css">
   <script src="/assets/variants/variant-switcher.js" defer></script>
+{% endif %}{% if jsonLd %}  <script type="application/ld+json">{{ jsonLd | dump | safe }}</script>
 {% endif %}{% if noindex %}  <meta name="robots" content="noindex" />
 {% endif %}

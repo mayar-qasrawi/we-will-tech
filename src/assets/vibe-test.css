@@ -794,3 +794,61 @@ body.lang-ar .page-vibe-test .vt-conversion-title {
 body.lang-ar .page-vibe-test .vt-mono:not(:lang(en)) {
   unicode-bidi: plaintext;
 }
+
+/* Conversion: fit line + next steps (openspec: optimize-leads-seo) */
+.page-vibe-test .vt-book-fit {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.page-vibe-test .vt-book-steps {
+  list-style: none;
+  margin: 4px 0 6px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.page-vibe-test .vt-book-steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--ww-radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.page-vibe-test .vt-book-steps li + li::before {
+  content: "→";
+  margin-inline-end: 4px;
+  opacity: 0.7;
+}
+
+body.lang-ar .page-vibe-test .vt-book-steps li + li::before {
+  content: "←";
+}
+
+.page-vibe-test .vt-book-steps .vt-mono {
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 560px) {
+  .page-vibe-test .vt-book-steps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-vibe-test .vt-book-steps li {
+    justify-content: center;
+  }
+
+  .page-vibe-test .vt-book-steps li + li::before {
+    content: none;
+  }
+}

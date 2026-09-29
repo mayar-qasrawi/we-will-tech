@@ -115,3 +115,23 @@ All in `translations.ar` (value currently `""`). Every other `vt.*` key reuses t
 | `vt.book.cta` | Run a Guided Vibe Test |
 
 Not translated by design (English in both languages on the original page too): the section kickers ("01 — The problem" …), the eyebrow "AGENTIC QA PLATFORM — MVP · INVITE-ONLY", the terminal and receipt lines, and the agent names (Sweep, Journeys, Bug Testing, Bug Fixing).
+
+## optimize-leads-seo
+
+All in `translations.ar` (value currently `""`).
+
+| Key | English |
+|---|---|
+| `hero.eyebrow` | Agentic Software Quality (replaces the old eyebrow; its Arabic no longer matches) |
+| `hero.audience` | Built for CTOs, engineering leaders and founders in growth-stage SaaS and digital-product companies. |
+| `contact.offer.guided.title` | Run a Guided Vibe Test |
+| `contact.offer.guided.scope` | Guided Proof of Value: one environment, 2–3 journeys or one release workflow, and agreed success criteria. |
+| `contact.offer.guided.fit` | For teams with a live product or executable MVP and a technical owner. |
+| `contact.offer.bcq.title` | Discuss a Business Care Quality Requirement |
+| `contact.offer.bcq.scope` | BCQ Expert Services add human judgment where risk requires it: Quality Diagnostic, Release Decision or Managed Quality Care. |
+| `vt.book.fit` | For teams with a live product or executable MVP and a technical owner. |
+| `vt.book.step1` | Guided Proof of Value |
+| `vt.book.step2` | Evidence Review |
+| `vt.book.step3` | Team Subscription |
+
+Existing Arabic reused: `contact.reassure` (سنعاود التواصل خلال يوم عمل واحد., from the form's success message).

@@ -1664,6 +1664,7 @@
     }
 
     img.t-logo {
+      width: auto;
       height: 36px;
       max-width: 130px;
       object-fit: contain;
@@ -2492,6 +2493,7 @@ html.js-anim [data-reveal-children].is-visible > * {
 html.js-anim .hero .hero-eyebrow,
 html.js-anim .hero .hero-title,
 html.js-anim .hero .hero-subtitle,
+html.js-anim .hero .hero-audience,
 html.js-anim .hero .hero-actions,
 html.js-anim .hero .hero-signal {
   opacity: 0;
@@ -2503,6 +2505,7 @@ html.js-anim .hero .hero-signal {
 html.js-anim.is-loaded .hero .hero-eyebrow  { transition-delay:  80ms; opacity: 1; transform: none; }
 html.js-anim.is-loaded .hero .hero-title    { transition-delay: 180ms; opacity: 1; transform: none; }
 html.js-anim.is-loaded .hero .hero-subtitle { transition-delay: 320ms; opacity: 1; transform: none; }
+html.js-anim.is-loaded .hero .hero-audience { transition-delay: 390ms; opacity: 1; transform: none; }
 html.js-anim.is-loaded .hero .hero-actions  { transition-delay: 460ms; opacity: 1; transform: none; }
 html.js-anim.is-loaded .hero .hero-signal   { transition-delay: 620ms; opacity: 1; transform: none; }
 
@@ -2513,6 +2516,7 @@ html.js-anim.is-loaded .hero .hero-signal   { transition-delay: 620ms; opacity: 
   html.js-anim .hero .hero-eyebrow,
   html.js-anim .hero .hero-title,
   html.js-anim .hero .hero-subtitle,
+  html.js-anim .hero .hero-audience,
   html.js-anim .hero .hero-actions,
   html.js-anim .hero .hero-signal {
     opacity: 1 !important;
@@ -2826,4 +2830,51 @@ html.js-anim.is-loaded .hero .hero-signal   { transition-delay: 620ms; opacity: 
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+/* Home hero target-buyer line (openspec: optimize-leads-seo) */
+.hero .hero-audience {
+  max-width: 640px;
+  margin: -14px auto 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(226, 232, 240, 0.92);
+}
+
+/* Contact: offer-matched panel + next-step line (openspec: optimize-leads-seo) */
+.contact-inner .contact-offer-panel {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border-radius: var(--ww-radius);
+  background: var(--ww-indigo-tint-06);
+  border: 1px solid rgba(31, 61, 219, 0.18);
+  text-align: start;
+}
+
+.contact-inner .contact-offer-panel h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ww-ink);
+}
+
+.contact-inner .contact-offer-panel p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ww-text-muted);
+}
+
+.contact-inner .contact-offer-panel .contact-offer-fit {
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--ww-emerald-dark);
+}
+
+.contact-inner .contact-reassure {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ww-text-muted);
+  text-align: center;
 }

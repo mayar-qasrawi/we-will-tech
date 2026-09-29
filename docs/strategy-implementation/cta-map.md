@@ -27,3 +27,14 @@ The `/contact/` form posts one new field, `request_type`, to `/contact-submit.ph
 The page preselects the option from the `request` query parameter; an unknown or missing value selects "General message".
 
 **For WE WILL's developers:** `/contact-submit.php` must accept and store or forward `request_type`. The prototype is static and cannot send.
+
+## Tracking attributes
+
+Every CTA link carries two attributes for analytics tags (e.g. a Google Tag Manager click trigger on `[data-cta]`). Added in openspec `optimize-leads-seo`.
+
+| Attribute | Values |
+|---|---|
+| `data-cta` | `guided-vibe-test`, `bcq-requirement`, `explore-vibe-test`, `explore-solutions`, `view-resources`, `talk-to-us` |
+| `data-cta-location` | `header`, `footer`, `home-hero`, `home-vibe-test`, `home-use-cases`, `home-expert-layer`, `home-resources`, `home-final`, `vt-hero`, `vt-we-will`, `vt-conversion` (new pages add their own, e.g. `sol-release-verification`) |
+
+The `/contact/` page shows an offer panel for the selected `request_type`, so the destination matches the button the visitor clicked.
