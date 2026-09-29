@@ -15,8 +15,9 @@ Every new or edited English string whose Arabic value is empty. In Arabic mode t
 | `contact.requestGuided` | Run a Guided Vibe Test | `translations.ar` |
 | `contact.requestBcq` | Discuss a Business Care Quality Requirement | `translations.ar` |
 | Footer headings | Product & Solutions · Company · Resources · Get Started · Legal & Social | `partials/footer.html` (no key yet) |
-| Footer links | Vibe Test · Solutions · About · Contact / Talk to Us · Insights / Blog · Methodology resources · Run a Guided Vibe Test · Discuss a Business Care Quality Requirement · Privacy Policy · Terms of Use | `partials/footer.html` (no key yet) |
+| Footer links | Vibe Test · Solutions · About · Methodology resources · Run a Guided Vibe Test · Discuss a Business Care Quality Requirement · Privacy Policy · Terms of Use | `partials/footer.html` (no key yet) |
+| Social links, screen-reader hint | (opens in a new tab) | `partials/footer.html`, `.visually-hidden` span (no key yet) |
 | Footer bottom bar | Vibe Test by WE WILL Technology · Company legal information — to be supplied by WE WILL | `partials/footer.html` (no key yet) |
 | Legal pages | Privacy Policy · Terms of Use · This page is a placeholder. The text will be supplied by WE WILL Technology. | `src/privacy/`, `src/terms/` |
 
-Existing Arabic kept: `header_nav_hero` (الرئيسية), `header_nav_vibe_test` (Vibe Test), LinkedIn (لينكدإن), `footer_rights` (جميع الحقوق محفوظة.).
+Existing Arabic kept: `header_nav_hero` (الرئيسية), `header_nav_vibe_test` (Vibe Test), footer Contact via `header_nav_contact` (تواصل معنا), footer Blog via `header_nav_blog` (المدونة), LinkedIn (لينكدإن), Facebook (فيسبوك), WhatsApp (واتساب), Instagram (إنستغرام), `footer_rights` (جميع الحقوق محفوظة.).

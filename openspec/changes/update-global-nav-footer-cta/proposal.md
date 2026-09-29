@@ -9,7 +9,7 @@ The current header links to Home anchors (AI-Era Quality, Why WE WILL, Quality C
 Action tags follow Website Brief §III/§IV (REUSE / EDIT / NEW). Config verdicts: EDIT → MODIFY, NEW → NEW.
 
 - **EDIT (MODIFY) — Header navigation.** Replace the menu with `Home | Vibe Test | Solutions | Resources | About` plus a highlighted **Run a Guided Vibe Test** button (WB p. 5 "Navigation menu recommendation"). The logo, EN/AR switch and mobile menu toggle are reused as they are.
-- **EDIT (MODIFY) — Footer.** Rebuild the footer as the Brief's six groups: Product & Solutions · Company · Resources · Get Started · Legal & Social · Bottom bar (WB p. 6). Keep LinkedIn. Remove the tagline and the Facebook, WhatsApp and Instagram links (Q14 default). Copyright becomes "© 2026 WE WILL Technology". Company/legal info is a marked placeholder.
+- **EDIT (MODIFY) — Footer.** Rebuild the footer as the Brief's six groups: Product & Solutions · Company · Resources · Get Started · Legal & Social · Bottom bar (WB p. 6). Keep all four social links from the old footer (LinkedIn, Facebook, WhatsApp, Instagram; user decision, 2026-09-29, overriding the Q14 default). Remove the tagline. Links use one word instead of the Brief's slash pairs: "Contact" and "Blog" (user decision). Copyright becomes "© 2026 WE WILL Technology". Company/legal info is a marked placeholder.
 - **NEW — CTA framework.** One destination map for every CTA label in WB §IV:
   - "Run a Guided Vibe Test" → `/contact/?request=guided-vibe-test`
   - "Discuss a Quality Requirement" (buttons) and "Discuss a Business Care Quality Requirement" (footer) → `/contact/?request=bcq-requirement` (Q3, Q4 defaults)

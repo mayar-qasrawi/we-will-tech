@@ -7,22 +7,27 @@ The global footer repeats the site architecture and both conversion paths on eve
 ## ADDED Requirements
 
 ### Requirement: Six footer groups
-**Action: EDIT.** The footer SHALL contain these groups and links, with the headings as written. Source: Website Brief p. 6, Footer Navigation.
+**Action: EDIT.** The footer SHALL contain these groups and links, with the headings as written. Links use a single label, never a slash pair: the Brief's "Contact / Talk to Us" is shown as "Contact" and "Insights / Blog" as "Blog", reusing the old site's labels and their Arabic (user decision, 2026-09-29). Source: Website Brief p. 6, Footer Navigation.
 - Product & Solutions: Vibe Test → `/vibe-test/` · Solutions → `/solutions/`
-- Company: About → `/about/` · Contact / Talk to Us → `/contact/`
-- Resources: Insights / Blog → `/blog/` · Methodology resources → `/resources/#methodology` ("only if retained"; retained under Q12)
+- Company: About → `/about/` · Contact → `/contact/`
+- Resources: Blog → `/blog/` · Methodology resources → `/resources/#methodology` ("only if retained"; retained under Q12)
 - Get Started: Run a Guided Vibe Test → `/contact/?request=guided-vibe-test` · Discuss a Business Care Quality Requirement → `/contact/?request=bcq-requirement`
-- Legal & Social: Privacy Policy → `/privacy/` · Terms of Use → `/terms/` · LinkedIn → `https://www.linkedin.com/company/wewilltech/`
+- Legal & Social: Privacy Policy → `/privacy/` · Terms of Use → `/terms/`, then every social link from the old wewill.tech footer, reused with the same URLs, icons and EN/AR labels: LinkedIn, Facebook, WhatsApp, Instagram (user decision, 2026-09-29; overrides the Q14 default "LinkedIn only")
 
 #### Scenario: Footer links
 - **WHEN** a visitor views the footer on any page
 - **THEN** the five link groups appear with exactly the links above
+- **AND** no footer link label contains "/"
 - **AND** no Cookie Policy link appears
-- **AND** LinkedIn opens in a new tab with `rel="noopener"`
+- **AND** each social link opens in a new tab with `rel="noopener"` and announces "(opens in a new tab)"
+
+#### Scenario: Social links reused
+- **WHEN** the social links are compared with the old footer
+- **THEN** their URLs, icons and Arabic labels are identical
 
 #### Scenario: Removed legacy content
 - **WHEN** a visitor views the footer
-- **THEN** the tagline "Reduce Time, Reduce Cost & Be Confident" and the Facebook, WhatsApp and Instagram links are absent
+- **THEN** the tagline "Reduce Time, Reduce Cost & Be Confident" is absent
 
 ### Requirement: Bottom bar
 **Action: EDIT.** The bottom bar SHALL show "Vibe Test by WE WILL Technology", the copyright "© 2026 WE WILL Technology. All rights reserved." and a clearly marked placeholder for company/legal information. Source: Website Brief p. 6, Brand / Bottom Bar, "Vibe Test by WE WILL Technology · Copyright · company/legal information"; Strategic Alignment §V, "Vibe Test by We Will Technology".

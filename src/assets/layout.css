@@ -224,6 +224,12 @@ section[id] {
   border-radius: 4px;
 }
 
+.shell-footer-group .shell-footer-social-list {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(248, 250, 252, 0.12);
+}
+
 .shell-footer-group .shell-footer-social-card {
   gap: 8px;
   padding: 2px 0;

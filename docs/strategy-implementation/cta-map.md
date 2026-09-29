@@ -6,7 +6,7 @@ Source: Website Brief §IV "CTA Framework" and the §III CTA column. Change: `op
 |---|---|---|---|
 | Run a Guided Vibe Test | Primary acquisition CTA; the proof-of-value entry | `/contact/?request=guided-vibe-test` | Header, Home hero and final block, Vibe Test page, Solutions use cases 1–3, footer |
 | Discuss a Quality Requirement (buttons) / Discuss a Business Care Quality Requirement (footer) | Secondary enterprise / higher-risk path | `/contact/?request=bcq-requirement` | Home expert layer and final block, Vibe Test "WE WILL connection", Solutions use cases 3–5, footer |
-| Talk to Us / Contact / Talk to Us | Contact | `/contact/` | About › Credibility, footer |
+| Talk to Us (button) / Contact (footer link) | Contact | `/contact/` | About › Credibility (button), footer |
 | Explore Vibe Test | Routing | `/vibe-test/` | Home only |
 | Explore Solutions | Routing | `/solutions/` | Home only |
 | View Resources | Routing | `/resources/` | Home › Selected resources |
