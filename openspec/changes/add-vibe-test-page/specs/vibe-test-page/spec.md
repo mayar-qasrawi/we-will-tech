@@ -7,11 +7,11 @@ The Vibe Test page is the lead product's dedicated page inside wewill.tech. It e
 ## ADDED Requirements
 
 ### Requirement: Page in the global site
-**Action: NEW (route).** `/vibe-test/` SHALL use the global header and footer, mark "Vibe Test" as the active nav item, and render its blocks in this order: `#top`, `#problem`, `#what-it-does`, `#how`, `#services`, `#receipt`, `#who`, `#we-will`, `#book`. It SHALL have the title "Vibe Test by WE WILL Technology | Agentic QA Platform", the meta description from the proposal, canonical `https://wewill.tech/vibe-test/`, `lang` set, and exactly one H1. Source: Website Brief §I, Vibe Test, "Dedicated product page within wewill.tech."
+**Action: NEW (route).** `/vibe-test/` SHALL use the global header and footer, mark "Vibe Test" as the active nav item, and render its blocks in this order: `#product-hero` (the old `#top` anchor resolves to the layout's `<body id="top">`), `#problem`, `#what-it-does`, `#how`, `#services`, `#receipt`, `#who`, `#we-will`, `#book`. It SHALL have the title "Vibe Test by WE WILL Technology | Agentic QA Platform", the meta description from the proposal, canonical `https://wewill.tech/vibe-test/`, `lang` set, and exactly one H1. Source: Website Brief §I, Vibe Test, "Dedicated product page within wewill.tech."
 
 #### Scenario: Structure and metadata
 - **WHEN** `/vibe-test/` is built
-- **THEN** the nine IDs appear in order, once each
+- **THEN** the nine block IDs appear in order, once each
 - **AND** the title is ≤ 60 characters, the description ≤ 155, and there is one H1
 
 #### Scenario: Old anchors resolve

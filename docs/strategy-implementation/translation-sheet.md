@@ -78,3 +78,40 @@ All in `translations.ar` (value currently `""`).
 | `finalCta.secondary` | Discuss a Quality Requirement |
 
 Existing Arabic reused: `why.card1.body` (expert layer, methodology card), `success.case3/4/6.quote`, `contact.kicker`, `contact.title`, and the knowledge cards (`data-deep-dive-ar`).
+
+## add-vibe-test-page
+
+All in `translations.ar` (value currently `""`). Every other `vt.*` key reuses the Arabic from vibe-test.oneapp.dev; the capability cards and video label reuse the existing `vibeTest.*` keys.
+
+| Key | English |
+|---|---|
+| `vt.hero.lockup` | Vibe Test by WE WILL Technology |
+| `vt.hero.cta` | Run a Guided Vibe Test |
+| `vt.what.title` | Verify critical journeys. Detect issues. Re-verify fixes. |
+| `vt.cap.c5.title` | AI Feature Evaluation |
+| `vt.cap.c5.body` | A WE WILL-developed approach executed through Vibe Test. |
+| `vt.receipt.sample` | Sample receipt |
+| `vt.who.title` | Built for product teams with live products and recurring releases. |
+| `vt.who.c1.title` | Growth-stage product and engineering teams |
+| `vt.who.c1.body` | Regression backlog, defects and release delay. More coverage and reliable proof across critical journeys. |
+| `vt.who.c2.title` | Enterprise digital teams |
+| `vt.who.c2.body` | A major launch or AI feature with release risk, where the decision must be accountable. |
+| `vt.who.c3.title` | Funded MVP and pre-launch teams |
+| `vt.who.c3.body` | An executable build and a pilot or launch to prepare, with limited QA capacity. |
+| `vt.wewill.title` | Product plus judgment. |
+| `vt.wewill.lead` | Vibe Test verifies; BCQ connects evidence to customer and release risk; expert services support consequential decisions. |
+| `vt.wewill.i1.label` | Lead product |
+| `vt.wewill.i1.title` | Vibe Test by WE WILL Technology |
+| `vt.wewill.i1.body` | Agentic QA platform. Verify critical journeys · Detect issues · Re-verify fixes |
+| `vt.wewill.i2.label` | Methodology |
+| `vt.wewill.i2.title` | Business Care Quality |
+| `vt.wewill.i2.body` | Connects quality evidence with customer impact, business risk and release decisions. |
+| `vt.wewill.i3.label` | Expert offer |
+| `vt.wewill.i3.title` | BCQ Expert Services |
+| `vt.wewill.i3.body` | Quality Diagnostic · Release Decision · Managed Quality Care |
+| `vt.wewill.line` | Use Vibe Test for recurring verification. Add BCQ Expert Services when you need quality strategy, risk interpretation or accountable release support. |
+| `vt.wewill.cta` | Discuss a Quality Requirement |
+| `vt.book.lead` | Start with a Guided Proof of Value: one environment, 2–3 journeys or one release workflow, and agreed success criteria. Evidence, not claims. |
+| `vt.book.cta` | Run a Guided Vibe Test |
+
+Not translated by design (English in both languages on the original page too): the section kickers ("01 — The problem" …), the eyebrow "AGENTIC QA PLATFORM — MVP · INVITE-ONLY", the terminal and receipt lines, and the agent names (Sweep, Journeys, Bug Testing, Bug Fixing).

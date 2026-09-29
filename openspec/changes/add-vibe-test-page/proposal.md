@@ -10,7 +10,7 @@ New route `/vibe-test/` in the global layout (header, footer, EN/AR switch). Its
 
 | # | Block | Action | Source → change |
 |---|---|---|---|
-| 1 | Product hero (`#top`) | REUSE | VT hero: eyebrow "AGENTIC QA PLATFORM — MVP · INVITE-ONLY", "Tests. Fixes. Verifies. Hands you the receipts.", subtitle, LIVE QA RUN terminal, marquee band. Adds the lockup "Vibe Test by WE WILL Technology". CTA "Book a Demo" → **Run a Guided Vibe Test**; "See how it works" kept. |
+| 1 | Product hero (`#product-hero`; old `#top` = page top) | REUSE | VT hero: eyebrow "AGENTIC QA PLATFORM — MVP · INVITE-ONLY", "Tests. Fixes. Verifies. Hands you the receipts.", subtitle, LIVE QA RUN terminal, marquee band. Adds the lockup "Vibe Test by WE WILL Technology". CTA "Book a Demo" → **Run a Guided Vibe Test**; "See how it works" kept. |
 | 2 | Problem / context (`#problem`) | REUSE | VT `#problem`, verbatim. |
 | 3 | What it does (`#what-it-does`) | REUSE | WW Home `#vibe-test` capability cards (Sweep & prove, Test, fix & verify, Receipts you can trust) under a DRAFT H2 taken from the SA diagram. |
 | 4 | How it works (`#how`) | REUSE | VT `#how` "A closed loop. Not a checklist.": Discover, Fix, Verify, Ship. |
@@ -33,7 +33,7 @@ New route `/vibe-test/` in the global layout (header, footer, EN/AR switch). Its
 | H1 | "Vibe Test by WE WILL Technology — Tests. Fixes. Verifies. Hands you the receipts." (lockup + reused proposition in one H1) |
 | H2s | Shipping is easy. Proving it works is not. · Verify critical journeys. Detect issues. Re-verify fixes. · A closed loop. Not a checklist. · Five agents. One QA team. · Evidence, not claims. · Built for product teams with live products and recurring releases. · Product plus judgment. · Ship with confidence. |
 | Seed terms mapped here | agentic QA / agentic software testing (title, eyebrow) · autonomous QA testing (subtitle "Your autonomous QA team") · software release verification / release readiness (conversion copy) · AI testing Saudi Arabia: mapped, **not used** until validated |
-| Alt text | Logo in the lockup: "Vibe Test logo"; decorative repeats `alt=""` |
+| Alt text | Every Vibe Test logo instance is decorative (`alt=""`): in the lockup the visible text "Vibe Test by WE WILL Technology" already names it, so a logo alt would be read twice |
 
 ## Redirects to flag (the team decides)
 
