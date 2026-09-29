@@ -1,0 +1,47 @@
+  {#-
+    One Solutions use case (Website Brief §III Solutions rows 1–5, NEW) with its proof (Solutions › Proof, EDIT).
+    Data: `uc` from src/solutions/index.njk front matter. Copy is DRAFT: needs approval.
+    Proof: an existing testimonial shown verbatim (keys success.caseN.quote), or a marked placeholder.
+  -#}
+  <section id="{{ uc.id }}" class="section sol-case{% if loop.index is even %} sol-case-alt{% endif %}" aria-labelledby="{{ uc.id }}-title">
+    <div class="section-inner sol-case-grid">
+      <div class="sol-case-body" data-reveal>
+        <p class="section-kicker sol-case-kicker"><span data-i18n="sol.label.useCase">Use case</span> {{ uc.num }}</p>
+        <h2 class="section-title" id="{{ uc.id }}-title" data-i18n="sol.{{ uc.id }}.name">{{ uc.name }}</h2>
+        <dl class="sol-case-parts">
+          <div>
+            <dt data-i18n="sol.label.situation">The situation</dt>
+            <dd data-i18n="sol.{{ uc.id }}.situation">{{ uc.situation }}</dd>
+          </div>
+          <div>
+            <dt data-i18n="sol.label.help">How WE WILL helps</dt>
+            <dd data-i18n="sol.{{ uc.id }}.help">{{ uc.help }}</dd>
+          </div>
+          <div class="sol-case-outcome">
+            <dt data-i18n="sol.label.outcome">Outcome</dt>
+            <dd data-i18n="sol.{{ uc.id }}.outcome">{{ uc.outcome }}</dd>
+          </div>
+        </dl>
+        <div class="section-actions">
+          {%- for c in uc.ctas %}
+          <a href="{{ c.href }}" data-cta="{{ c.cta }}" data-cta-location="sol-{{ uc.id }}" class="btn {{ c.style }}" data-i18n="{{ c.key }}">{{ c.label }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+
+      <div class="sol-case-proof" data-reveal>
+        {%- if uc.proof %}
+        <figure class="t-card" data-case="{{ uc.proof.case }}">
+          <blockquote class="t-quote" data-i18n="success.case{{ uc.proof.case }}.quote">{{ uc.proof.quote }}</blockquote>
+          <figcaption class="t-client">
+            <img class="t-logo" src="{{ uc.proof.logo }}" alt="{{ uc.proof.name }} logo" loading="lazy" width="{{ uc.proof.w }}" height="{{ uc.proof.h }}">
+            <span class="t-name">{{ uc.proof.name }}</span>
+          </figcaption>
+        </figure>
+        {%- else %}
+        <!-- PLACEHOLDER: evidence for this use case to be supplied by WE WILL (Strategic Alignment §V "Evidence needed") -->
+        <p class="content-placeholder sol-proof-placeholder" data-i18n="sol.proof.placeholder">Evidence for this use case — to be supplied by WE WILL</p>
+        {%- endif %}
+      </div>
+    </div>
+  </section>

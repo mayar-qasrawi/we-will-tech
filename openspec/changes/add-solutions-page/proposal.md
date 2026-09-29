@@ -68,3 +68,10 @@ None.
 - New: `src/solutions/index.njk`; `src/_includes/sections/solutions/intro.html`, `use-case.njk` (one parameterised partial, used 5×), `methodology.html`
 - Reuses the `src/_includes/sections/home/how-we-work.html` include unchanged
 - `src/assets/site.css`: Solutions layout rules; `src/assets/site.js`: `sol.*` translation keys
+
+## Implementation notes (2026-09-29)
+
+- Follows the `optimize-leads-seo` patterns: every CTA carries `data-cta` / `data-cta-location="sol-<use-case>"`; testimonial logos carry intrinsic width/height.
+- JSON-LD `Service` entries for the three BCQ Expert Services (Quality Diagnostic, Release Decision, Managed Quality Care) with `provider` = WE WILL Technology. Their descriptions use SA §V wording; there are no `offers` or prices.
+- The "Supports:" tags link to the matching use-case anchors, which gives internal links within the page. They are DRAFT.
+- One closing line links the "automation" capability to `/vibe-test/` (DRAFT: "Automated verification runs through Vibe Test, WE WILL's Agentic QA platform.").
