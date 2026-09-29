@@ -75,3 +75,10 @@ None.
 - JSON-LD `Service` entries for the three BCQ Expert Services (Quality Diagnostic, Release Decision, Managed Quality Care) with `provider` = WE WILL Technology. Their descriptions use SA §V wording; there are no `offers` or prices.
 - The "Supports:" tags link to the matching use-case anchors, which gives internal links within the page. They are DRAFT.
 - One closing line links the "automation" capability to `/vibe-test/` (DRAFT: "Automated verification runs through Vibe Test, WE WILL's Agentic QA platform.").
+
+## Review fixes (2026-09-29, user-approved)
+
+- **R1:** a visible "BCQ Expert Services" row in `#methodology` (id `#bcq-expert-services`) lists Quality Diagnostic, Release Decision and Managed Quality Care. It reuses the Home expert-layer keys and SA §V wording without fee terms, and has a "Discuss a Quality Requirement" button (`data-cta-location="sol-methodology"`). This makes the page's `Service` structured data match visible content.
+- **R2:** the first "Vibe Test" mention in use cases 1, 2, 3 and 5 links to `/vibe-test/`. The `sol.<id>.help` translations are HTML (`data-i18n-html`).
+- **R3:** use cases 1 and 2 add "See how it works" → `/vibe-test/#how` (existing Vibe Test label and Arabic, `vt.hero.how`). This is the existing evidence the SA asks for ("Demo and pilot", "Proof of value").
+- Not done: R4, a closing CTA block at the end of the page. The Brief does not list one, so it awaits the user's decision.

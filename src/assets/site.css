@@ -3134,3 +3134,91 @@ body.lang-ar .sol-page .i18n-en { display: none; }
     align-items: stretch;
   }
 }
+
+/* Solutions review fixes (R1–R3) */
+.sol-bcq {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr) auto;
+  gap: 16px 28px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 22px 24px;
+  border-radius: var(--ww-radius);
+  background: var(--ww-ink);
+  color: #ffffff;
+}
+
+.sol-bcq-head h3 {
+  margin: 0;
+  font-family: var(--ww-font-display);
+  font-size: 1.15rem;
+}
+
+.sol-bcq-head p {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: #ffb38a;
+  font-weight: 600;
+}
+
+.sol-bcq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sol-bcq-list li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(248, 250, 252, 0.78);
+}
+
+.sol-bcq-list strong {
+  display: block;
+  color: #ffffff;
+}
+
+.sol-bcq .btn {
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.sol-case-parts dd a {
+  color: var(--ww-blue-dark);
+  font-weight: 600;
+}
+
+.sol-evidence-link {
+  margin: 14px 0 0;
+  font-size: 0.92rem;
+}
+
+.sol-evidence-link a {
+  color: var(--ww-blue-dark);
+  font-weight: 600;
+}
+
+.sol-case-parts dd a:focus-visible,
+.sol-evidence-link a:focus-visible {
+  outline: 2px solid var(--ww-indigo);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .sol-bcq {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sol-bcq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sol-bcq .btn {
+    white-space: normal;
+  }
+}

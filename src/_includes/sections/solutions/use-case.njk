@@ -15,7 +15,7 @@
           </div>
           <div>
             <dt data-i18n="sol.label.help">How WE WILL helps</dt>
-            <dd data-i18n="sol.{{ uc.id }}.help">{{ uc.help }}</dd>
+            <dd data-i18n="sol.{{ uc.id }}.help" data-i18n-html="true">{{ uc.help | safe }}</dd>
           </div>
           <div class="sol-case-outcome">
             <dt data-i18n="sol.label.outcome">Outcome</dt>
@@ -27,6 +27,10 @@
           <a href="{{ c.href }}" data-cta="{{ c.cta }}" data-cta-location="sol-{{ uc.id }}" class="btn {{ c.style }}" data-i18n="{{ c.key }}">{{ c.label }}</a>
           {%- endfor %}
         </div>
+        {%- if uc.evidenceLink %}
+        {#- Existing product evidence for this use case (SA §V "Evidence needed": demo / proof of value). Label reused from the Vibe Test page. #}
+        <p class="sol-evidence-link"><a href="/vibe-test/#how"><span data-i18n="vt.hero.how">See how it works</span><span class="visually-hidden"> — Vibe Test</span></a> <span aria-hidden="true">→</span></p>
+        {%- endif %}
       </div>
 
       <div class="sol-case-proof" data-reveal>
