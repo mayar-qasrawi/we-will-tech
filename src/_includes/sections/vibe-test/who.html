@@ -6,20 +6,32 @@
   -->
   <section id="who" class="vt-section">
     <div class="vt-inner">
-      <p class="vt-kicker vt-mono">06 — Who it's for</p>
+      <p class="vt-kicker vt-mono" data-i18n="vt.kicker.who">06 — Who it's for</p>
       <h2 class="vt-title" data-i18n="vt.who.title">Built for product teams with live products and recurring releases.</h2>
-      <div class="vt-card-grid vt-card-grid-3">
-        <article class="vt-card">
+      <!-- Layout: growth-stage teams lead, per SA §IV (segment marked PRIMARY; "Growth-stage companies lead direct acquisition"). -->
+      <div class="vt-who-grid">
+        <article class="vt-who-lead">
+          <span class="vt-who-num vt-mono" aria-hidden="true">01</span>
           <h3 data-i18n="vt.who.c1.title">Growth-stage product and engineering teams</h3>
           <p data-i18n="vt.who.c1.body">Regression backlog, defects and release delay. More coverage and reliable proof across critical journeys.</p>
+          <!-- Decorative: a release timeline, every third release verified -->
+          <div class="vt-who-cadence" aria-hidden="true">
+            <span></span><span></span><span class="is-verified"></span><span></span><span></span><span class="is-verified"></span><span></span><span></span><span class="is-verified"></span><span></span><span></span><span class="is-verified"></span>
+          </div>
         </article>
-        <article class="vt-card">
-          <h3 data-i18n="vt.who.c2.title">Enterprise digital teams</h3>
-          <p data-i18n="vt.who.c2.body">A major launch or AI feature with release risk, where the decision must be accountable.</p>
+        <article class="vt-who-item">
+          <span class="vt-who-num vt-mono" aria-hidden="true">02</span>
+          <div>
+            <h3 data-i18n="vt.who.c2.title">Enterprise digital teams</h3>
+            <p data-i18n="vt.who.c2.body">A major launch or AI feature with release risk, where the decision must be accountable.</p>
+          </div>
         </article>
-        <article class="vt-card">
-          <h3 data-i18n="vt.who.c3.title">Funded MVP and pre-launch teams</h3>
-          <p data-i18n="vt.who.c3.body">An executable build and a pilot or launch to prepare, with limited QA capacity.</p>
+        <article class="vt-who-item">
+          <span class="vt-who-num vt-mono" aria-hidden="true">03</span>
+          <div>
+            <h3 data-i18n="vt.who.c3.title">Funded MVP and pre-launch teams</h3>
+            <p data-i18n="vt.who.c3.body">An executable build and a pilot or launch to prepare, with limited QA capacity.</p>
+          </div>
         </article>
       </div>
     </div>

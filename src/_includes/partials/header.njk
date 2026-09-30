@@ -41,18 +41,20 @@
           {% if activeNav == 'about' %}aria-current="page"{% endif %}
           data-site-setting="header_nav_about"
         >About</a>
-        <a
-          href="/contact/?request=guided-vibe-test" data-cta="guided-vibe-test" data-cta-location="header"
-          class="btn btn-primary shell-nav-cta"
-          data-site-setting="header_nav_cta"
-        >Run a Guided Vibe Test</a>
       </nav>
       <div class="shell-header-actions">
+        <a
+          href="/contact/?request=guided-vibe-test"
+          class="btn btn-primary shell-header-cta"
+          data-cta="guided-vibe-test"
+          data-cta-location="header"
+          data-site-setting="header_nav_cta"
+        >Run a Guided Vibe Test</a>
         <div class="lang-switcher shell-lang-switcher" aria-label="Language switcher">
           <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
           <button type="button" class="lang-btn" data-lang="ar">AR</button>
         </div>
-        <button type="button" class="shell-nav-toggle" aria-expanded="false" aria-controls="shell-nav">Menu</button>
+        <button type="button" class="shell-nav-toggle" aria-expanded="false" aria-controls="shell-nav" data-i18n="nav.menu">Menu</button>
       </div>
       <div class="shell-nav-backdrop"></div>
     </div>

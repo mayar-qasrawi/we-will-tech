@@ -35,12 +35,14 @@ section[id] {
   gap: 16px;
 }
 
+/* Header spans the full viewport width; only the footer keeps the 1180px cap. */
 .site-shell-header .shell-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 28px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  max-width: none;
+  padding: 10px clamp(20px, 3vw, 56px);
 }
 
 .shell-header-actions {
@@ -121,18 +123,17 @@ section[id] {
   border-radius: 4px;
 }
 
-/* Primary CTA in the menu (Website Brief: "Run a Guided Vibe Test" highlighted) */
-.shell-nav a.shell-nav-cta {
-  max-width: none;
+.shell-header-cta {
+  flex: 0 0 auto;
   min-height: 40px;
-  margin-inline-start: 8px;
   padding: 9px 18px;
   font-size: 0.88rem;
+  line-height: 1.1;
   color: #ffffff;
-  border-radius: var(--ww-radius-pill);
+  white-space: nowrap;
 }
 
-.shell-nav a.shell-nav-cta:hover {
+.shell-header-cta:hover {
   color: #ffffff;
 }
 
@@ -359,8 +360,7 @@ section[id] {
     font-size: 0.86rem;
   }
 
-  .shell-nav a.shell-nav-cta {
-    margin-inline-start: 2px;
+  .shell-header-cta {
     padding: 8px 14px;
     font-size: 0.84rem;
   }
@@ -470,12 +470,16 @@ section[id] {
 
   .site-shell-header .shell-inner {
     display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     width: 100%;
     padding-top: 14px;
     padding-bottom: 14px;
   }
 
   .shell-header-actions {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
     margin-left: auto;
   }
 
@@ -487,6 +491,8 @@ section[id] {
 
   .shell-nav {
     display: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
     width: 100%;
     grid-template-columns: 1fr;
     gap: 8px;
@@ -501,14 +507,6 @@ section[id] {
     min-height: 44px;
     padding: 10px 0;
     border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-  }
-
-  .shell-nav a.shell-nav-cta {
-    justify-content: center;
-    min-height: 44px;
-    margin: 8px 0 4px;
-    padding: 12px 18px;
-    border-bottom: 0;
   }
 
   .shell-footer-inner {
@@ -531,16 +529,30 @@ section[id] {
   }
 
   .shell-header-actions {
-    width: 100%;
-    justify-content: space-between;
+    gap: 8px;
   }
 
   .shell-lang-switcher {
-    order: 1;
+    display: none;
+  }
+
+  .shell-brand-text {
+    display: none;
+  }
+
+  .shell-header-cta {
+    min-height: 38px;
+    max-width: 128px;
+    padding: 7px 11px;
+    font-size: 0.75rem;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
   }
 
   .shell-nav-toggle {
-    order: 2;
+    min-height: 38px;
+    padding: 8px 11px;
   }
 
   .shell-footer-socials {
@@ -572,9 +584,9 @@ section[id] {
 .blog-hero .section-inner,
 .blog-listing .section-inner,
 .blog-article .section-inner {
-  max-width: 1120px;
+  max-width: var(--ww-content-max);
   margin: 0 auto;
-  padding: 56px 6%;
+  padding: 56px var(--ww-gutter);
 }
 
 .blog-hero .section-inner {
@@ -834,5 +846,234 @@ body.lang-ar .blog-article-body {
   .blog-hero .section-inner {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+}
+
+/* About › Quality philosophy: the approach paragraph and closing line sit in one
+   panel under the cards, so they read as the section's conclusion rather than
+   loose text pressed against the grid. */
+.about-philosophy-note {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 26px 30px;
+  background: #ffffff;
+  border: var(--ww-border);
+  border-radius: var(--ww-radius);
+  box-shadow: var(--ww-shadow-soft);
+}
+
+.about-philosophy-approach {
+  margin: 0;
+  max-width: 78ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ww-ink);
+}
+
+.about-philosophy-close {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ww-indigo);
+}
+
+/* About › Credibility: a white band, so it separates clearly from the grey
+   philosophy section above. The client strip and its Talk to Us CTA read as one
+   block, with the CTA centred under the logo wall. */
+.about-credibility {
+  background: var(--ww-bg);
+  padding-bottom: 72px;
+}
+
+.about-credibility .section-clients {
+  background: transparent;
+  padding-top: 72px;
+  padding-bottom: 0;
+}
+
+.about-cta {
+  display: flex;
+  justify-content: center;
+  padding: 32px var(--ww-gutter) 0;
+}
+
+.about-cta .btn {
+  min-width: 200px;
+  padding: 14px 32px;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 640px) {
+  .about-philosophy-note {
+    padding: 20px;
+  }
+
+  .about-credibility {
+    padding-bottom: 48px;
+  }
+
+  .about-credibility .section-clients {
+    padding-top: 48px;
+  }
+
+  .about-cta {
+    padding-top: 24px;
+  }
+
+  .about-cta .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Home › Vibe Test: copy and video share the top row (video fills its column);
+   the three capability cards and the sample receipt share the row below. */
+.section-sara .sara-section-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 40px 36px;
+}
+
+/* If the video is hidden (no valid YouTube link), the copy takes the full row. */
+.section-sara .sara-section-inner:has(.sara-video:not(.is-ready)) .sara-section-copy {
+  grid-column: 1 / -1;
+}
+
+.section-sara .sara-video {
+  grid-column: auto;
+  margin-top: 0;
+}
+
+.section-sara .sara-video-facade {
+  width: 100%;
+}
+
+.section-sara .sara-capability-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.6fr);
+  align-items: stretch;
+  margin-top: 0;
+}
+
+/* Compact receipt so it sits level with the capability cards: two-column
+   checklist and tighter vertical rhythm. */
+.section-sara .sara-capability-grid .sara-visual-card {
+  padding: 16px 18px;
+}
+
+.section-sara .sara-capability-grid .sara-sample-label {
+  margin-bottom: 8px;
+}
+
+.section-sara .sara-capability-grid .sara-verdict-top {
+  margin-bottom: 10px;
+}
+
+.section-sara .sara-capability-grid .sara-verdict-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 14px;
+}
+
+.section-sara .sara-capability-grid .sara-verdict-list li {
+  padding: 6px 0;
+  font-size: 0.8rem;
+}
+
+.section-sara .sara-capability-grid .sara-verdict-conf {
+  margin-top: 6px;
+  padding-top: 8px;
+}
+
+.section-sara .sara-capability-grid .sara-verdict-conf b {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 1100px) {
+  .section-sara .sara-capability-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .section-sara .sara-capability-grid .sara-visual-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 960px) {
+  .section-sara .sara-section-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .section-sara .sara-capability-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section-sara .sara-capability-grid .sara-visual-card {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .section-sara .sara-capability-grid .sara-verdict-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Home › Vibe Test capability cards: content centred in the card (the row is as
+   tall as the sample receipt), with a larger index and title to fill it. */
+.section-sara .sara-capability-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 26px 22px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, var(--ww-indigo-tint-06), transparent 70%),
+    #ffffff;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.section-sara .sara-capability-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(31, 61, 219, 0.35);
+  box-shadow: var(--ww-shadow-strong);
+}
+
+.section-sara .sara-capability-index {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.section-sara .sara-capability-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.section-sara .sara-capability-card p {
+  margin: 0;
+  max-width: 30ch;
+  line-height: 1.6;
+}
+
+/* Equal description height keeps the index and title level across the row
+   when one description runs a line longer. */
+@media (min-width: 961px) {
+  .section-sara .sara-capability-card p {
+    min-height: 6.4em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-sara .sara-capability-card,
+  .section-sara .sara-capability-card:hover {
+    transition: none;
+    transform: none;
   }
 }
