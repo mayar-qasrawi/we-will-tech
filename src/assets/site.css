@@ -3117,8 +3117,7 @@ body.lang-ar .sol-page .i18n-en { display: none; }
   color: var(--ww-indigo);
 }
 
-.sol-jump a:focus-visible,
-.sol-cap-supports a:focus-visible {
+.sol-jump a:focus-visible {
   outline: 2px solid var(--ww-indigo);
   outline-offset: 3px;
 }
@@ -3259,30 +3258,6 @@ body.lang-ar .sol-page .i18n-en { display: none; }
   font-size: 0.9rem;
   line-height: 1.55;
   color: var(--ww-text-muted);
-}
-
-.sol-cap .sol-cap-supports {
-  margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid rgba(148, 163, 184, 0.22);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-.sol-cap-supports > span:first-child {
-  font-weight: 700;
-  color: var(--ww-ink);
-}
-
-.sol-cap-supports a {
-  color: var(--ww-blue-dark);
-  font-weight: 600;
-}
-
-.sol-method-note {
-  margin: 24px 0 0;
-  text-align: center;
-  font-size: 0.95rem;
 }
 
 @media (max-width: 1024px) {

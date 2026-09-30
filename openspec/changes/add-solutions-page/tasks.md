@@ -16,7 +16,7 @@ Depends on: `update-global-nav-footer-cta` (nav, CTA map, `.content-placeholder`
 
 ## 4. Methodology (EDIT)
 
-- [x] 4.1 **Files: `src/_includes/sections/solutions/methodology.html` (new).** Reused heading and lead, the eight capabilities with verbatim copy and "Supports:" tags. Verify: a diff of each description against its source shows no change; no Quality Canvas card; the AI Quality card has no description.
+- [x] 4.1 **Files: `src/_includes/sections/solutions/methodology.html` (new).** Reused heading and lead, the eight capabilities with verbatim copy. Verify: a diff of each description against its source shows no change; no Quality Canvas card; the AI Quality card has no description.
 
 ## 5. Styles and strings
 

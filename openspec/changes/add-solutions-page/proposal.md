@@ -90,3 +90,10 @@ None.
 - R3 removed: no "See how it works" link on use cases 1 and 2.
 - The reused `#how-we-work` section is no longer included: not a Brief Solutions block, and it names Quality Canvas / Triad Quality Framework, which the Brief places in Resources.
 - "on every release" removed from the Release verification help text (not in SA).
+
+## Refactor to the requirement (2026-09-30, user-requested)
+
+- Removed the "Supports:" tags on the capability cards and the closing automation line (`sol.method.vt`): new copy the Brief does not ask for.
+- AI-assisted development help text is now SA §III verbatim: "Vibe Test verifies rapidly changing software."
+- Missing info from the WE WILL brief "Quality as a Business Decision" (31 Aug 2026), user-supplied: only its §13 "Supportable claims" are used, and only where they do not conflict with the Strategic Alignment. The AI Quality & Behavioral Transparency card gets "Vibe Test can evaluate your product’s own AI features against contracts you approve." (DRAFT).
+- Not taken from that brief: the self-serve / "start" CTA, its buyer segments, pricing tiers and AI Evaluation differentiation (conflict with SA §III–VI); client quotes (not cleared for publication there); platform figures (not the evidence SA §V names for use cases 2 and 3, so their placeholders stay).
