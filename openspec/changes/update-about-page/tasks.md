@@ -12,7 +12,7 @@ Depends on: `update-global-nav-footer-cta` (nav, CTA map, `.content-placeholder`
 
 ## 3. Team (REUSE)
 
-- [ ] 3.1 **Files: `src/_includes/sections/home/team.html` (`alt` attributes only).** Add `alt="WE WILL team member"` to the 13 images. Verify: `git diff` shows only alt additions; `/team/` and `/about/` both render all 13 images with non-empty alt.
+- [x] 3.1 **Files: `src/_includes/sections/home/team.html` (`alt` attributes only).** Add `alt="WE WILL team member"` to the 13 images. Verify: `git diff` shows only alt additions; `/team/` and `/about/` both render all 13 images with non-empty alt.
 
 ## 4. Quality philosophy (EDIT)
 

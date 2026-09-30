@@ -321,14 +321,6 @@ section[id] {
   line-height: 1.5;
 }
 
-.site-shell-footer .content-placeholder-dark {
-  padding: 4px 10px;
-  border-color: rgba(248, 250, 252, 0.35);
-  background: transparent;
-  color: rgba(248, 250, 252, 0.78);
-  font-size: 0.8rem;
-}
-
 .legal-page-inner {
   max-width: 760px;
   display: grid;

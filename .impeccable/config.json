@@ -17,6 +17,33 @@
         ],
         "createdAt": "2026-09-29T12:37:54.134Z",
         "reason": "Claude triage: only match is the pre-existing .blog-article-body blockquote border-left (also on main), a standard quotation style, not a card side-tab; blog is out of Brief scope"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "docs/client-report/report.template.html"
+        ],
+        "createdAt": "2026-09-30T11:21:21.995Z",
+        "reason": "Claude: print-only A4 report; fixed-size pages intentionally crop decorative cover circles and the header sun, no interactive popovers"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "docs/client-report/report.template.html"
+        ],
+        "createdAt": "2026-09-30T12:12:31.735Z",
+        "reason": "Claude: print report; 1.12-1.25 leading only on display headings and tiny sitemap-diagram labels, body text is 1.5; verified in rendered pages"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "docs/client-report/report.template.html"
+        ],
+        "createdAt": "2026-09-30T12:12:32.087Z",
+        "reason": "Claude: print report; flagged items are small inline status pills and sitemap diagram boxes sized for an A4 diagram, checked visually in the rendered PDF"
       }
     ]
   }

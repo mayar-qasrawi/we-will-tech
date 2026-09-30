@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WE WILL Technology | Sitemap, Design &amp; SEO Report</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --navy: #000022; --navy-2: #0C1D75; --blue: #1F75FD; --blue-ink: #1F75FD;
+    --yellow: #FFCA05; --green: #27C362; --ink: #000022; --muted: #717383;
+    --line: #C9CCE2; --label: #EDF3FF; --zebra: #F8F9FB;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  body { font-family: Arial, Helvetica, sans-serif; color: var(--ink); font-size: 9.6pt; line-height: 1.5; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #fff; page-break-after: always; break-after: page; }
+
+  /* Running header / footer */
+  .pg-head { position: absolute; top: 0; left: 0; right: 0; height: 17mm; background: var(--navy); display: flex; align-items: center; justify-content: space-between; padding: 0 18mm; overflow: hidden; }
+  .pg-head img { height: 8.5mm; display: block; }
+  .pg-head .doc { color: #C9CCE2; font-size: 8pt; margin-right: 24mm; }
+  .pg-head .sun { position: absolute; right: 9mm; top: -12mm; width: 25mm; height: 25mm; border-radius: 50%; background: var(--yellow); }
+  .pg-body { position: absolute; top: 27mm; left: 18mm; right: 18mm; bottom: 21mm; overflow: hidden; }
+  .pg-foot { position: absolute; left: 18mm; right: 18mm; bottom: 8mm; border-top: 1px solid var(--line); padding-top: 2.6mm; display: flex; justify-content: space-between; align-items: center; font-size: 7.6pt; color: var(--muted); }
+  .pg-num { width: 8mm; height: 8mm; border-radius: 50%; background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 7.6pt; display: flex; align-items: center; justify-content: center; }
+
+  /* Type */
+  .kicker { color: var(--blue); font-weight: 700; font-size: 8.4pt; letter-spacing: .02em; text-transform: uppercase; margin: 0 0 1.5mm; }
+  h2.sec { font-size: 21pt; line-height: 1.15; margin: 0 0 2.5mm; color: var(--navy); }
+  .bars { display: flex; gap: 1.4mm; margin: 0 0 4mm; }
+  .bars i { display: block; height: 1.4mm; border-radius: 1mm; background: var(--yellow); width: 18mm; }
+  .bars i + i { background: var(--green); width: 4.5mm; }
+  .lead { font-size: 11.6pt; line-height: 1.5; color: var(--muted); margin: 0 0 5mm; }
+  h3 { font-size: 14.5pt; color: var(--blue-ink); margin: 6mm 0 2.5mm; line-height: 1.2; }
+  h4 { font-size: 10.6pt; color: var(--navy); margin: 4.5mm 0 1.5mm; }
+  p { margin: 0 0 2.8mm; }
+  .pg-body > :first-child { margin-top: 0; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  code, .mono { font-family: Consolas, "Courier New", monospace; font-size: 8.4pt; }
+  ul.plain { margin: 0 0 3mm; padding-left: 5mm; }
+  ul.plain li { margin: 0 0 1.2mm; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 8.6pt; line-height: 1.42; }
+  th { background: var(--navy); color: #fff; text-align: left; font-weight: 700; padding: 2.2mm 2.4mm; vertical-align: top; }
+  td { padding: 2mm 2.4mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:nth-child(even) td { background: var(--zebra); }
+  table.kv td:first-child { background: var(--label) !important; font-weight: 700; width: 30%; }
+  table.kv td { border: 1px solid var(--line); }
+  table.kv { margin-bottom: 3mm; }
+  .chars { color: #717383; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 6.8pt; font-weight: 700; padding: .3mm 1.6mm; border-radius: 2mm; background: var(--label); color: var(--blue-ink); letter-spacing: .03em; vertical-align: 1px; }
+  .tag.new { background: #E9F9EF; color: #1A8A45; }
+  .tag.edit { background: #FFF4C2; color: #7A5B00; }
+  .tag.warn { background: #FDECEC; color: #D63637; }
+  td.num, th.num { text-align: center; white-space: nowrap; }
+
+  /* TOC */
+  table.toc { font-size: 10.4pt; }
+  table.toc td { padding: 2.5mm 2.4mm; }
+  table.toc tr.main td { font-weight: 700; }
+  table.toc tr.main td:first-child { background: var(--yellow) !important; width: 8mm; text-align: center; color: var(--navy); }
+  table.toc tr.sub td { padding: .9mm 2.4mm; border-bottom: none; font-size: 9pt; color: var(--muted); background: #fff !important; }
+  table.toc tr.sub td:first-child { background: #fff !important; }
+  table.toc tr.sub td .n { color: var(--blue); margin-right: 1.5mm; }
+  table.toc td.pg { text-align: right; width: 12mm; color: var(--blue); font-weight: 700; }
+  table.toc tr.sub td.pg { font-weight: 400; color: var(--muted); }
+  table.toc a { color: inherit; text-decoration: none; }
+
+  /* Callouts */
+  .note { border-left: 1.2mm solid var(--yellow); background: #FFF8DC; padding: 2.8mm 3.5mm; margin: 0 0 4mm; border-radius: 0 1.5mm 1.5mm 0; }
+  .note.green { border-color: var(--green); background: #E9F9EF; }
+  .note.blue { border-color: var(--blue); background: #EDF3FF; }
+  .note p:last-child { margin-bottom: 0; }
+  pre.xml { background: var(--navy); color: #F8F9FB; border-radius: 2mm; padding: 3.5mm 4mm; font-size: 7.8pt; line-height: 1.5; margin: 0 0 4mm; white-space: pre-wrap; }
+  pre.xml .c { color: #898989; }
+  pre.xml .t { color: var(--yellow); }
+
+  /* Sitemap tree */
+  .tree { margin: 1mm 0 5mm; }
+  .t-root { width: 44mm; margin: 0 auto; background: var(--navy); color: #fff; font-weight: 700; text-align: center; padding: 3.2mm; border-radius: 1.8mm; font-size: 10.5pt; }
+  .t-stem { width: 0; height: 5mm; border-left: 1.5px solid var(--blue); margin: 0 auto; }
+  .t-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm; position: relative; padding-top: 4mm; }
+  .t-cols::before { content: ""; position: absolute; top: 0; left: 10%; right: 10%; border-top: 1.5px solid var(--blue); }
+  .t-col { position: relative; }
+  .t-col::before { content: ""; position: absolute; top: -4mm; left: 50%; height: 4mm; border-left: 1.5px solid var(--blue); }
+  .t-node { border: 1.5px solid var(--blue); background: var(--label); border-radius: 1.8mm; text-align: center; font-weight: 700; font-size: 9pt; padding: 2.6mm 1.5mm; min-height: 12mm; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2; }
+  .t-node small { display: block; font-weight: 400; font-size: 7pt; color: var(--muted); margin-top: .6mm; }
+  .t-node.cta { background: var(--yellow); border-color: var(--yellow); }
+  .t-kids { list-style: none; margin: 2.5mm 0 0 3mm; padding: 0 0 0 3mm; border-left: 1.5px solid var(--blue); }
+  .t-kids li { position: relative; border: 1px solid var(--blue); border-radius: 1.4mm; background: #fff; font-size: 7.2pt; line-height: 1.25; padding: 1.4mm 1.6mm; margin: 0 0 1.6mm; text-align: center; }
+  .t-kids li::before { content: ""; position: absolute; left: -3.1mm; top: 50%; width: 3mm; border-top: 1.5px solid var(--blue); }
+  .t-kids li.sub { margin-left: 3mm; border-style: dashed; }
+  .t-kids li.sub::before { left: -6.1mm; width: 6mm; }
+  .supporting { display: flex; gap: 3mm; align-items: center; margin: 0 0 5mm; font-size: 8pt; }
+  .supporting b { color: var(--muted); font-size: 8pt; }
+  .supporting span { border: 1px solid var(--line); background: var(--zebra); border-radius: 1.4mm; padding: 1.6mm 3mm; }
+
+  /* Journey strip */
+  .journey { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin: 0 0 5mm; }
+  .journey div { background: var(--navy); color: #fff; border-radius: 1.8mm; padding: 3mm 2.4mm; font-size: 7.8pt; line-height: 1.35; }
+  .journey div b { display: block; color: var(--yellow); font-size: 9.6pt; margin-bottom: 1mm; }
+  .journey div:last-child { background: var(--yellow); color: var(--navy); }
+  .journey div:last-child b { color: var(--navy); }
+
+  /* Covers */
+  .cover { background: var(--navy); color: #fff; }
+  .cover .c1 { position: absolute; width: 150mm; height: 150mm; border-radius: 50%; background: var(--blue); right: -75mm; top: -60mm; }
+  .cover .c2 { position: absolute; width: 50mm; height: 50mm; border-radius: 50%; background: var(--yellow); right: 12mm; top: 88mm; }
+  .cover .c3 { position: absolute; width: 17mm; height: 17mm; border-radius: 50%; border: 1.6px solid var(--green); left: 124mm; top: 136mm; }
+  .cover .c4 { position: absolute; width: 5.5mm; height: 5.5mm; border-radius: 50%; background: var(--green); right: 17mm; top: 152mm; }
+  .cover .c5 { position: absolute; width: 110mm; height: 110mm; border-radius: 50%; background: var(--navy-2); left: -62mm; bottom: -52mm; }
+  .cover .dots { position: absolute; left: 142mm; top: 210mm; display: grid; grid-template-columns: repeat(5, 5.6mm); gap: 3.2mm 0; }
+  .cover .dots i { width: .9mm; height: .9mm; background: #fff; border-radius: 50%; display: block; }
+  .cover .in { position: absolute; left: 19mm; right: 19mm; top: 21mm; bottom: 14mm; }
+  .cover .logo { height: 15mm; display: block; }
+  .cover .spark { color: var(--green); font-weight: 700; font-size: 8.4pt; letter-spacing: .04em; margin-top: 3mm; }
+  .cover .pill { display: inline-block; background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 8.4pt; padding: 2.2mm 5mm; border-radius: 5mm; margin-top: 30mm; }
+  .cover h1 { font-size: 38pt; line-height: 1.12; margin: 7mm 0 4mm; max-width: 120mm; }
+  .cover .ybar { width: 17mm; height: 1.5mm; background: var(--yellow); border-radius: 1mm; margin-bottom: 7mm; }
+  .cover .sub { font-size: 13pt; color: #C9CCE2; }
+  .cover .meta { position: absolute; left: 0; top: 183mm; font-size: 10.5pt; }
+  .cover .meta div { display: flex; margin-bottom: 3.2mm; }
+  .cover .meta b { width: 43mm; color: var(--yellow); font-size: 8.2pt; letter-spacing: .03em; padding-top: .6mm; }
+  .cover .addr { position: absolute; left: 0; bottom: 0; font-size: 7.8pt; color: #C9CCE2; }
+  .back .in { top: 96mm; }
+  .back h2 { font-size: 21pt; margin: 9mm 0 1.5mm; }
+  .back .sub { font-size: 10pt; }
+  .back .meta { top: 60mm; position: relative; }
+  .back .c1 { width: 44mm; height: 44mm; right: 11mm; top: 23mm; background: var(--yellow); }
+  .back .c4 { right: auto; left: 150mm; top: 81mm; width: 8mm; height: 8mm; }
+  .back .c5 { width: 150mm; height: 150mm; background: var(--blue); left: -60mm; bottom: -90mm; }
+
+  bdi[lang="ar"] { font-family: "Segoe UI", Tahoma, Arial, sans-serif; font-size: 10.4pt; }
+  #flow { display: none; }
+</style>
+</head>
+<body>
+<div id="pages">
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="c2"></div><div class="c3"></div><div class="c4"></div><div class="c5"></div>
+  <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="in">
+    <img class="logo" src="digify-logo-white.png" alt="Digify Digital Agency">
+    <div class="spark">WE SPARK GROWTH</div>
+    <div class="pill">CLIENT REPORT&nbsp; | &nbsp;WE WILL TECHNOLOGY, PHASE 2</div>
+    <h1>Your New Website, Explained</h1>
+    <div class="ybar"></div>
+    <div class="sub">Sitemap, page design and SEO, page by page</div>
+    <div class="meta">
+      <div><b>PREPARED FOR</b><span>WE WILL Technology</span></div>
+      <div><b>PREPARED BY</b><span>Digify Digital Agency</span></div>
+      <div><b>PREVIEW ADDRESS</b><span>we-will-tech.vercel.app</span></div>
+      <div><b>DATE</b><span>September 2026</span></div>
+    </div>
+    <div class="addr">digifyagency.co &nbsp; | &nbsp; Al-Amal Tower, FL6, Al Balou', Ramallah, Palestine &nbsp; | &nbsp; +970 593 382 332</div>
+  </div>
+</section>
+
+<!-- ============ BACK COVER (kept last) ============ -->
+<section class="page cover back" id="back">
+  <div class="c1"></div><div class="c4"></div>
+  <div class="in">
+    <img class="logo" src="digify-logo-white.png" alt="Digify Digital Agency">
+    <h2>Let's keep growing together.</h2>
+    <div class="sub">Questions about anything in this report? We are always just one message away.</div>
+    <div class="meta">
+      <div><b>ADDRESS</b><span>Al-Amal Tower, FL6, Al Balou', Ramallah, Palestine</span></div>
+      <div><b>PHONE / WHATSAPP</b><span>+970 593 382 332</span></div>
+      <div><b>EMAIL</b><span>info@digifyagency.co</span></div>
+      <div><b>WEBSITE</b><span>digifyagency.co</span></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<template id="tpl">
+  <section class="page">
+    <div class="pg-head"><img src="digify-logo-white.png" alt=""><span class="doc">WE WILL Technology &nbsp;|&nbsp; Sitemap, Design &amp; SEO Report</span><span class="sun"></span></div>
+    <div class="pg-body"></div>
+    <div class="pg-foot"><span>Prepared by Digify Digital Agency for WE WILL Technology &nbsp;|&nbsp; digifyagency.co</span><span class="pg-num"></span></div>
+  </section>
+</template>
+
+<!-- ======================= FLOW CONTENT ======================= -->
+<div id="flow">
+
+<!-- ---------- CONTENTS ---------- -->
+<div class="sec-head" data-break="before">
+  <div class="kicker">Inside this report</div>
+  <h2 class="sec">What you'll find in these pages</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">Here's a quick map of the report. Each section builds on the one before, but they all make sense on their own too, so feel free to jump straight to what matters most to you.</p>
+</div>
+<table class="toc">
+  <tbody>
+    <tr class="main"><td>•</td><td><a href="#s0">A quick word before you dive in</a></td><td class="pg" data-toc="s0"></td></tr>
+    <tr class="main"><td>1</td><td><a href="#s1">The new sitemap</a></td><td class="pg" data-toc="s1"></td></tr>
+    <tr class="main"><td>2</td><td><a href="#s2">How visitors move through the site</a></td><td class="pg" data-toc="s2"></td></tr>
+    <tr class="main"><td>3</td><td><a href="#s3">A walk through every page</a></td><td class="pg" data-toc="s3"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.1</span>Home</td><td class="pg" data-toc="p-home"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.2</span>Vibe Test (lead product)</td><td class="pg" data-toc="p-vt"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.3</span>Solutions</td><td class="pg" data-toc="p-sol"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.4</span>Resources</td><td class="pg" data-toc="p-res"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.5</span>About</td><td class="pg" data-toc="p-about"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.6</span>Contact</td><td class="pg" data-toc="p-contact"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.7</span>Blog and articles</td><td class="pg" data-toc="p-blog"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.8</span>Privacy Policy and Terms of Use</td><td class="pg" data-toc="p-legal"></td></tr>
+    <tr class="sub"><td></td><td><span class="n">3.9</span>Pages that left the menu, and where they went</td><td class="pg" data-toc="p-old"></td></tr>
+    <tr class="main"><td>4</td><td><a href="#s4">The SEO groundwork behind the whole site</a></td><td class="pg" data-toc="s4"></td></tr>
+    <tr class="main"><td>5</td><td><a href="#s5">The exact SEO content on every page</a></td><td class="pg" data-toc="s5"></td></tr>
+    <tr class="main"><td>6</td><td><a href="#s6">Easy to use and quick to load, for everyone</a></td><td class="pg" data-toc="s6"></td></tr>
+    <tr class="main"><td>7</td><td><a href="#s7">Arabic and English</a></td><td class="pg" data-toc="s7"></td></tr>
+    <tr class="main"><td>•</td><td><a href="#s8">A final word</a></td><td class="pg" data-toc="s8"></td></tr>
+  </tbody>
+</table>
+
+<!-- ---------- 0. QUICK WORD ---------- -->
+<div class="sec-head" data-break="before" id="s0">
+  <div class="kicker">Before we begin</div>
+  <h2 class="sec">A quick word before you dive in</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">This report is a guided tour of your website's new structure. We'll walk you through why each page is there, what people see when they land on it, and how we've set it up so the right buyers can find you on Google. Whenever a technical term pops up, we'll tell you what it actually means for you.</p>
+</div>
+<p><strong>In short:</strong> your website now tells one clear story. WE WILL Technology is an <strong>Agentic Software Quality</strong> company that helps product teams <em>know what is safe to ship, at the speed they build</em>. Vibe Test is the lead product, and it now lives on wewill.tech itself. Business Care Quality (BCQ) is the methodology behind it, and BCQ Expert Services add human judgment when a release carries real risk. Every page, from the main menu to the last button, leads to one next step: <strong>Run a Guided Vibe Test</strong>.</p>
+<p>We did this <strong>without changing how WE WILL looks</strong>. Your colours, fonts and components are the ones you already know. As the Brief asked, we reused, regrouped and relocated your existing approved content first, and only wrote new copy where a block didn't exist yet.</p>
+<table>
+  <thead><tr><th style="width:26%">What</th><th>Where things stand</th></tr></thead>
+  <tbody>
+    <tr><td>Pages</td><td>11 pages in the new structure. 9 are open to Google and listed in the sitemap; Privacy Policy and Terms of Use stay out of Google until their legal text is ready</td></tr>
+    <tr><td>Main menu</td><td>Home, Vibe Test, Solutions, Resources, About, plus one highlighted button: Run a Guided Vibe Test</td></tr>
+    <tr><td>Home</td><td>14 long sections trimmed to 8 focused blocks, in the exact order the Brief set</td></tr>
+    <tr><td>Vibe Test</td><td>Moved from a separate address (vibe-test.oneapp.dev), which had no page title or description, onto wewill.tech/vibe-test/</td></tr>
+    <tr><td>Solutions</td><td>Organised around your five approved buyer problems instead of an internal list of services</td></tr>
+    <tr><td>Strategy fit</td><td>All 30 page blocks in the Brief are in place, in the Brief's order</td></tr>
+    <tr><td>Honesty</td><td>No invented numbers, quotes or claims. Sample material is labelled "Sample", and anything still missing is a clearly marked placeholder</td></tr>
+    <tr><td>Search health</td><td>Every public page has exactly one main heading, a description that fits in full in Google, and structured data; old duplicate pages are kept out of search results</td></tr>
+    <tr><td>Look and feel</td><td>Unchanged: same WE WILL colours, fonts (Inter, Geist, and Tajawal for Arabic) and components</td></tr>
+  </tbody>
+</table>
+<h4 class="keep">What guided our work</h4>
+<p>Two documents shaped every decision. The first is the <strong>Strategic Alignment 2.0</strong>: Positioning, Messaging and Buyer Segmentation (GSG Elevate 2026, prepared by Digify / Rajai Nuseibeh). It sets out who WE WILL is, who it sells to and what it offers. The second is the <strong>Website Optimization &amp; Information Architecture Brief</strong>, which turns that strategy into pages, blocks and buttons, and tags each block as REUSE, EDIT or NEW. We followed those tags. New wording comes from the Strategic Alignment's approved phrasing and is marked as a draft for your approval.</p>
+<p>Now and then the two documents said slightly different things. When that happened we didn't quietly pick one; we found a way to respect both:</p>
+<table>
+  <thead><tr><th style="width:36%">Where they differed</th><th>What we did</th></tr></thead>
+  <tbody>
+    <tr><td>Main button: "Run a guided Vibe Test proof of value" (Strategic Alignment) or "Run a Guided Vibe Test" (Brief)</td><td>The button uses the Brief's shorter label everywhere. "Proof of value" appears right next to it, in the closing copy and on the contact page</td></tr>
+    <tr><td>Secondary button: "Discuss a Business Care Quality Requirement" (Brief, footer) or "Discuss a Quality Requirement" (Brief, Home)</td><td>Buttons inside pages use the short label; the footer and the contact form use the full one</td></tr>
+    <tr><td>The Home hero should "clarify the target buyer", but the approved headline names no buyer</td><td>We kept the approved headline word for word and added the Brief's primary buyer as one line underneath, marked as a draft</td></tr>
+  </tbody>
+</table>
+
+<!-- ---------- 1. SITEMAP ---------- -->
+<div class="sec-head" data-break="before" id="s1">
+  <div class="kicker">Section 1</div>
+  <h2 class="sec">The new sitemap</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">Think of a sitemap as the floor plan of your website: which rooms exist and how they connect. Here's yours, with the main menu along the top and the sections inside each page underneath.</p>
+</div>
+<div class="tree">
+  <div class="t-root">Home</div>
+  <div class="t-stem"></div>
+  <div class="t-cols">
+    <div class="t-col"><div class="t-node">Vibe Test<small>lead product</small></div>
+      <ul class="t-kids"><li>Product hero</li><li>Problem</li><li>What it does</li><li>How it works</li><li>Capabilities &amp; evidence</li><li>Who it's for</li><li>WE WILL connection</li><li>Conversion</li></ul></div>
+    <div class="t-col"><div class="t-node">Solutions<small>five buyer problems</small></div>
+      <ul class="t-kids"><li>Introduction</li><li>1 Release verification</li><li>2 AI-assisted development</li><li>3 AI Feature Evaluation</li><li>4 Release decision</li><li>5 Lean-team quality</li><li>Methodology &amp; capabilities</li></ul></div>
+    <div class="t-col"><div class="t-node">Resources<small>authority</small></div>
+      <ul class="t-kids"><li>Insights</li><li class="sub">Blog</li><li class="sub">2 articles</li><li>Background methodology</li></ul></div>
+    <div class="t-col"><div class="t-node">About<small>credibility</small></div>
+      <ul class="t-kids"><li>Company story</li><li>Team</li><li>Quality philosophy</li><li>Credibility</li></ul></div>
+    <div class="t-col"><div class="t-node cta">Run a Guided Vibe Test<small style="color:#000022">main button</small></div>
+      <ul class="t-kids"><li>Contact page, with the right offer already selected</li></ul></div>
+  </div>
+</div>
+<div class="supporting"><b>Supporting pages:</b><span>Contact</span><span>Blog + 2 articles</span><span>Privacy Policy</span><span>Terms of Use</span></div>
+<p>Your main menu now reads <strong>Home, Vibe Test, Solutions, Resources, About</strong>, with a highlighted <strong>Run a Guided Vibe Test</strong> button on the right and the EN | AR switch beside it. That's exactly the menu the Brief recommends. We kept it short on purpose: a busy CTO should be able to glance at it and understand what WE WILL does and where to start. Every section listed under a page has its own link, for example <span class="mono">/solutions/#release-decision</span>, so you can send a prospect straight to the part that fits them.</p>
+<table>
+  <thead><tr><th style="width:23%">Page</th><th style="width:37%">Web address</th><th>What it's there for</th></tr></thead>
+  <tbody>
+    <tr><td>Home</td><td class="mono">wewill.tech/</td><td>Positioning and routing: the whole story in eight blocks</td></tr>
+    <tr><td>Vibe Test</td><td class="mono">wewill.tech/vibe-test/</td><td>Your lead product, explained and proven</td></tr>
+    <tr><td>Solutions</td><td class="mono">wewill.tech/solutions/</td><td>The five release situations buyers face, and how WE WILL helps with each</td></tr>
+    <tr><td>Resources</td><td class="mono">wewill.tech/resources/</td><td>Your insights and background methodology in one place</td></tr>
+    <tr><td>About</td><td class="mono">wewill.tech/about/</td><td>Company story, team, quality philosophy and credibility</td></tr>
+    <tr><td>Contact</td><td class="mono">wewill.tech/contact/</td><td>Where every button leads; the form adapts to the offer the visitor picked</td></tr>
+    <tr><td>Blog</td><td class="mono">wewill.tech/blog/</td><td>The full article listing, reached from Resources and the footer</td></tr>
+    <tr><td>Article</td><td class="mono">/blog/the-triad-quality-framework/</td><td>The Triad Quality Framework</td></tr>
+    <tr><td>Article</td><td class="mono">/blog/when-software-quality-becomes-a-business-decision/</td><td>When software quality becomes a business decision</td></tr>
+    <tr><td>Privacy Policy</td><td class="mono">wewill.tech/privacy/</td><td>Legal page, linked from the footer (text to come from you)</td></tr>
+    <tr><td>Terms of Use</td><td class="mono">wewill.tech/terms/</td><td>Legal page, linked from the footer (text to come from you)</td></tr>
+  </tbody>
+</table>
+<h4 class="keep">The footer</h4>
+<p>The footer follows the Brief's six groups, so anyone who scrolls to the bottom finds every important link in one tidy place:</p>
+<table>
+  <thead><tr><th style="width:26%">Footer group</th><th>Links</th></tr></thead>
+  <tbody>
+    <tr><td>Product &amp; Solutions</td><td>Vibe Test · Solutions</td></tr>
+    <tr><td>Company</td><td>About · Contact</td></tr>
+    <tr><td>Resources</td><td>Blog · Methodology resources</td></tr>
+    <tr><td>Get Started</td><td>Run a Guided Vibe Test · Discuss a Business Care Quality Requirement</td></tr>
+    <tr><td>Legal &amp; Social</td><td>Privacy Policy · Terms of Use · LinkedIn · Facebook · WhatsApp · Instagram (all four social links from the old footer are kept)</td></tr>
+    <tr><td>Bottom bar</td><td>"Vibe Test by WE WILL Technology" · © 2026 WE WILL Technology (the old footer still said © 2023)</td></tr>
+  </tbody>
+</table>
+<p>The Brief lists a Cookie Policy "if applicable". Today the site sets no cookies and loads no analytics, so we left it out. If you add analytics later, a Cookie Policy link should join the Legal group.</p>
+
+<!-- ---------- 2. JOURNEY ---------- -->
+<div class="sec-head" data-break="before" id="s2">
+  <div class="kicker">Section 2</div>
+  <h2 class="sec">How visitors move through the site</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">Your Brief describes five stages your priority buyer goes through before getting in touch: CTOs, engineering leaders and founders in growth-stage SaaS and digital-product companies, with Saudi Arabia as the beachhead. Instead of just describing those stages, we built them into the site, so each block gently leads to the next.</p>
+</div>
+<div class="journey">
+  <div><b>1. Land</b>"WE WILL helps product teams know what is safe to ship"</div>
+  <div><b>2. Recognise</b>"That's my release situation"</div>
+  <div><b>3. Evaluate</b>"Vibe Test, or the right use case, fits"</div>
+  <div><b>4. Trust</b>"Real clients, real evidence, real experts"</div>
+  <div><b>5. Convert</b>Run a Guided Vibe Test</div>
+</div>
+<table>
+  <thead><tr><th style="width:22%">Stage</th><th>Where it happens on the site</th></tr></thead>
+  <tbody>
+    <tr><td>1. Land</td><td>The Home hero: the category line "Agentic Software Quality", the approved headline "Know what is safe to ship at the speed you build", the line naming who it's for, and the "How a release earns its GO" track</td></tr>
+    <tr><td>2. Recognise</td><td>"Which release situation are you facing?" on Home, with five cards, each linking to its section on Solutions</td></tr>
+    <tr><td>3. Evaluate</td><td>The Vibe Test introduction on Home, the full Vibe Test page, and the five use cases on Solutions</td></tr>
+    <tr><td>4. Trust</td><td>The client-logo strip right under the hero, three selected testimonials, the sample receipt and product video, the WE WILL expert layer, and the Credibility block on About</td></tr>
+    <tr><td>5. Convert</td><td>Run a Guided Vibe Test, which opens the contact form with the Guided Proof of Value already selected. Enterprise and higher-risk buyers take the second path: Discuss a Quality Requirement</td></tr>
+  </tbody>
+</table>
+<h4 class="keep">One clear next step</h4>
+<p>The old site had several buttons competing for attention: Book a Clarity Session, Book a Demo, Start a Vibe Test, Talk to WE WILL, Explore Services. Each made sense on its own, but together they left visitors unsure which to click, and "Start a Vibe Test" sent them away to another domain. Now there's one main action everywhere, and every other button has a clear supporting role:</p>
+<table>
+  <thead><tr><th style="width:27%">Button</th><th style="width:20%">Role</th><th>Where you'll find it</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Run a Guided Vibe Test</strong></td><td>The main action</td><td>Header (desktop and mobile), Home hero and closing block, Vibe Test hero and closing block, Solutions use cases 1 to 3, footer</td></tr>
+    <tr><td>Discuss a Quality Requirement</td><td>Enterprise and higher-risk path</td><td>Home expert layer and closing block, "Product plus judgment" on Vibe Test, Solutions use cases 3 to 5, footer (full label)</td></tr>
+    <tr><td>Explore Vibe Test · Explore Solutions · View Resources</td><td>Routing only</td><td>Home only, as the Brief asks, so they guide without competing with the main action</td></tr>
+    <tr><td>Talk to Us · Contact</td><td>General enquiries</td><td>About (Credibility block) and the footer</td></tr>
+  </tbody>
+</table>
+<h4 class="keep">The contact page meets visitors where they are</h4>
+<p>Both main buttons lead to the contact page, but it doesn't treat everyone the same. The form reads which button was clicked and pre-selects the matching request type. It then shows a short panel for that offer. For the Guided Vibe Test, that's <em>"Guided Proof of Value: one environment, 2–3 journeys or one release workflow, and agreed success criteria"</em>, followed by who it's for: <em>"teams with a live product or executable MVP and a technical owner."</em> Next to the send button, visitors see <em>"We'll be in touch within 1 business day."</em> So a prospect always knows what they're asking for and what happens next.</p>
+<div class="note blue"><p><strong>Ready for tracking.</strong> Every button carries two small hidden labels: which offer it is and which block it sits in, for example <span class="mono">data-cta="guided-vibe-test"</span> and <span class="mono">data-cta-location="home-hero"</span>. Once you add Google Tag Manager or similar, you'll be able to see exactly which block on which page produced each lead, with no extra development.</p></div>
+
+<!-- ---------- 3. PAGES ---------- -->
+<div class="sec-head" data-break="before" id="s3">
+  <div class="kicker">Section 3</div>
+  <h2 class="sec">A walk through every page</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">This is the heart of the report. For each page you'll find a quick summary, what visitors actually see, and a short note on how Google sees it. The tags show how the Brief classed each block: <span class="tag">REUSE</span> existing content, <span class="tag edit">EDIT</span> existing content, or <span class="tag new">NEW</span>.</p>
+</div>
+
+<h3 id="p-home" class="keep">3.1 Home</h3>
+<table class="kv"><tbody>
+  <tr><td>Web address</td><td class="mono">wewill.tech/</td></tr>
+  <tr><td>Its job</td><td>Establish the proposition, introduce Vibe Test, surface buyer problems, build trust and drive the next action</td></tr>
+  <tr><td>Search themes</td><td>agentic QA, release verification, continuous software quality</td></tr>
+  <tr><td>Labels for Google</td><td>Organization, WebSite</td></tr>
+</tbody></table>
+<h4 class="keep">What visitors see</h4>
+<p>The old Home page was one very long scroll of 14 sections. It now has the 8 blocks the Brief set, in the Brief's order:</p>
+<table>
+  <thead><tr><th style="width:5%">#</th><th style="width:22%">Block</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Hero <span class="tag edit">EDIT</span></td><td>Opens with the category "Agentic Software Quality", the approved headline <em>"Know what is safe to ship at the speed you build"</em> and the approved subheadline. One line names the buyer: CTOs, engineering leaders and founders in growth-stage SaaS and digital-product companies. The "How a release earns its GO" track from the old hero stays.</td></tr>
+    <tr><td>2</td><td>Social proof strip <span class="tag edit">EDIT</span></td><td>The large client wall used to sit near the bottom. It's now a compact strip right under the hero, with 10 logos: One Studio, ID8 Media, Darent, iStoria, Masterteam, MICEtribe, SellEnvo, Famcare, Rasel and I Plan 2. We also fixed two logos whose descriptions named the wrong company.</td></tr>
+    <tr><td>3</td><td>Vibe Test introduction <span class="tag edit">EDIT</span></td><td>"Vibe Test by WE WILL Technology", described as your Agentic QA platform, with the product video, three capability cards and a receipt clearly labelled "Sample". The button now goes to your own Vibe Test page instead of opening another website.</td></tr>
+    <tr><td>4</td><td>Buyer problems <span class="tag new">NEW</span></td><td>"Which release situation are you facing?" Five cards, one per approved use case, each linking to its section on Solutions.</td></tr>
+    <tr><td>5</td><td>WE WILL expert layer <span class="tag edit">EDIT</span></td><td>A simple three-layer picture: Vibe Test (lead product), BCQ Expert Services (Quality Diagnostic, Release Decision, Managed Quality Care) and the Business Care Quality methodology underneath. Button: Discuss a Quality Requirement.</td></tr>
+    <tr><td>6</td><td>Selected proof <span class="tag edit">EDIT</span></td><td>Three testimonials, word for word: iStoria, Darent and SellEnvo. The old version repeated seven quotes as 29 moving cards, with one quote appearing twice in the same row.</td></tr>
+    <tr><td>7</td><td>Selected resources <span class="tag">REUSE</span></td><td>The Triad Quality Framework, "When software quality becomes a business decision" and the Interview with Our Founder. Button: View Resources.</td></tr>
+    <tr><td>8</td><td>Final conversion <span class="tag edit">EDIT</span></td><td>"Let's Talk About Your Product's Quality." with both buttons side by side. The long form now lives only on the contact page.</td></tr>
+  </tbody>
+</table>
+<p><strong>Where the other old sections went.</strong> Nothing was thrown away. Team and Why WE WILL moved to About; Services and How We Work moved into Solutions; Quality Canvas moved to Resources. Three sections are resting for now: the AI-Era Quality promo (its offer now lives on Solutions); "Our Methodology", which describes an AI Feature Evaluation method the Strategic Alignment asks us to publish only once the framework is documented; and "Impact", whose figures have no source on file yet. Their files are kept, ready to return once approved.</p>
+<h4 class="keep">How Google sees it</h4>
+<p>The Home page is where Google first gets to know WE WILL, so it carries your organisation profile behind the scenes: name, logo and social profiles, plus a website label that lists both English and Arabic. Its description leads with your headline and includes the buyer terms "agentic QA" and "release verification". It links to each Solutions section with descriptive wording ("Release verification", "Release decision" and so on), which helps those sections rank for their own topics.</p>
+
+<h3 id="p-vt" class="keep">3.2 Vibe Test (lead product)</h3>
+<table class="kv"><tbody>
+  <tr><td>Web address</td><td class="mono">wewill.tech/vibe-test/</td></tr>
+  <tr><td>Its job</td><td>Explain the product's value, how it works and the evidence, and start the guided proof of value</td></tr>
+  <tr><td>Search themes</td><td>agentic QA, autonomous testing, regression testing, release verification</td></tr>
+  <tr><td>Labels for Google</td><td>SoftwareApplication (no price or rating), Organization</td></tr>
+</tbody></table>
+<h4 class="keep">What visitors see</h4>
+<p>Vibe Test used to live on a separate address, vibe-test.oneapp.dev. It's now a proper page inside wewill.tech, with your header, footer and language switch. The strong, product-first content was kept, and the Brief's two missing pieces were added.</p>
+<table>
+  <thead><tr><th style="width:5%">#</th><th style="width:25%">Block</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Product hero <span class="tag">REUSE</span></td><td>"Vibe Test by WE WILL Technology" above the original line <em>"Tests. Fixes. Verifies. Hands you the receipts."</em>, with the live QA run terminal. "Book a Demo" became Run a Guided Vibe Test.</td></tr>
+    <tr><td>2</td><td>Problem <span class="tag">REUSE</span></td><td>"Shipping is easy. Proving it works is not."</td></tr>
+    <tr><td>3</td><td>What it does <span class="tag">REUSE</span></td><td>"Verify critical journeys. Detect issues. Re-verify fixes." with the three capability cards</td></tr>
+    <tr><td>4</td><td>How it works <span class="tag">REUSE</span></td><td>"A closed loop. Not a checklist." Discover, Fix, Verify, Ship</td></tr>
+    <tr><td>5</td><td>Capabilities &amp; evidence <span class="tag">REUSE</span></td><td>"Five agents. One QA team." and "Evidence, not claims." The receipts are labelled "Sample", the product video is here, and there's a marked spot for real product screenshots</td></tr>
+    <tr><td>6</td><td>Who it's for <span class="tag edit">EDIT</span></td><td>"Built for teams without a QA team" (solo developers, early startups) became <em>"Built for product teams with live products and recurring releases."</em>, matching your approved buyer segments</td></tr>
+    <tr><td>7</td><td>WE WILL connection <span class="tag new">NEW</span></td><td>"Product plus judgment." Shows how Vibe Test, the BCQ methodology and BCQ Expert Services fit together. Button: Discuss a Quality Requirement</td></tr>
+    <tr><td>8</td><td>Conversion <span class="tag edit">EDIT</span></td><td>"Ship with confidence." The generic demo became the Guided Proof of Value, with its scope, who qualifies, and the three next steps: Guided Proof of Value, Evidence Review, Team Subscription. No prices, as the Strategic Alignment asks</td></tr>
+  </tbody>
+</table>
+<h4 class="keep">How Google sees it</h4>
+<p>The old Vibe Test page had no title, no description and no language label, so Google had very little to go on, and whatever authority it earned stayed on another domain. Now it has its own title, description and product label, and it builds authority for wewill.tech instead of competing with it. The page keeps the old section links (#problem, #how, #services, #receipt, #who, #book), so once the old address redirects here, every old link lands on the matching section.</p>
+
+<h3 id="p-sol" class="keep">3.3 Solutions</h3>
+<table class="kv"><tbody>
+  <tr><td>Web address</td><td class="mono">wewill.tech/solutions/</td></tr>
+  <tr><td>Its job</td><td>Organise the offer around the buyer's problem, not an internal services catalogue</td></tr>
+  <tr><td>Search themes</td><td>software release verification, AI software testing, AI feature evaluation, release decision support, managed QA</td></tr>
+  <tr><td>Labels for Google</td><td>Service (Quality Diagnostic, Release Decision, Managed Quality Care), Organization</td></tr>
+</tbody></table>
+<h4 class="keep">What visitors see</h4>
+<p>The page opens with <em>"Solutions for the release situations product teams face."</em> and jump links to the five use cases. Each use case follows the same shape: the situation, how WE WILL helps, the outcome, and the right button. All five come straight from the Strategic Alignment's priority use cases:</p>
+<table>
+  <thead><tr><th style="width:4%">#</th><th style="width:19%">Use case</th><th style="width:27%">Situation</th><th style="width:28%">How WE WILL helps</th><th>Button</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Release verification</td><td>Frequent releases</td><td>Vibe Test on critical journeys, for faster evidence-based cycles</td><td>Run a Guided Vibe Test</td></tr>
+    <tr><td>2</td><td>AI-assisted development</td><td>Output exceeds QA capacity</td><td>Vibe Test on changes, so verification keeps pace</td><td>Run a Guided Vibe Test</td></tr>
+    <tr><td>3</td><td>AI Feature Evaluation</td><td>An AI-feature launch</td><td>The WE WILL approach executed through Vibe Test: evidence against risk criteria</td><td>Both buttons</td></tr>
+    <tr><td>4</td><td>Release decision</td><td>A high-impact launch</td><td>BCQ Expert Services with test evidence, for accountable go / no-go advice</td><td>Discuss a Quality Requirement</td></tr>
+    <tr><td>5</td><td>Lean-team quality</td><td>Limited QA leadership</td><td>Vibe Test plus Managed Quality Care, for scalable quality capacity</td><td>Discuss a Quality Requirement</td></tr>
+  </tbody>
+</table>
+<p>Below the use cases, <strong>Methodology &amp; supporting capabilities</strong> <span class="tag edit">EDIT</span> brings together your existing capability copy, word for word, from the old Services section and the AI-Era Quality page: Quality as a Service, Risk Prevention for Releases, Quality Strategy, User Journey Testing, Release Readiness Reviews, Role-Aware Security Testing and Risk Reports for PMs. Each is tagged with the use cases it supports. The four-step "A Quality Process Built Around Decisions" follows.</p>
+<p><strong>Proof sits beside the problem it proves</strong> <span class="tag edit">EDIT</span>: Darent next to Release verification, iStoria next to Release decision and SellEnvo next to Lean-team quality. Use cases 2 and 3 have marked placeholders until you share evidence for them. One careful detail: AI Feature Evaluation is described only as a "WE WILL-developed approach executed through Vibe Test". The Strategic Alignment asks us not to claim a unique method or protected IP until the framework, criteria and customer proof are documented.</p>
+<h4 class="keep">How Google sees it</h4>
+<p>This page is the natural home for most of the Brief's seed search terms, because each use case heading is a phrase buyers actually type: release verification, AI-assisted development, AI feature evaluation, release decision. Each BCQ Expert Service is also labelled for Google as a service WE WILL provides.</p>
+
+<h3 id="p-res" class="keep">3.4 Resources</h3>
+<table class="kv"><tbody>
+  <tr><td>Web address</td><td class="mono">wewill.tech/resources/</td></tr>
+  <tr><td>Its job</td><td>Build authority and give your existing content a home</td></tr>
+  <tr><td>Search themes</td><td>software quality insights, Business Care Quality methodology</td></tr>
+  <tr><td>Labels for Google</td><td>CollectionPage listing both articles (BlogPosting), WebSite, Organization</td></tr>
+</tbody></table>
+<h4 class="keep">What visitors see</h4>
+<p>Your insight content used to be scattered across the Blog, a set of cards on Home and the Quality Canvas section, none of which had a place in the new menu. Resources gathers it in two blocks. <strong>Insights</strong> <span class="tag">REUSE</span> opens with <em>"Insights, quality thinking, and product lessons."</em> and shows both articles and the founder interview, with a link to the full blog. <strong>Background methodology</strong> <span class="tag edit">EDIT</span> explains in one line how BCQ links technical evidence to customer and business risk, then shows the Business-Care Quality and Quality Canvas cards and the full Quality Canvas section, including "Generate Your Quality Canvas".</p>
+<p>A small fix with a big effect: the Business-Care Quality card on the old site linked to a page that doesn't exist (it returned a "page not found" error). It now points to the methodology section on Solutions.</p>
+<h4 class="keep">How Google sees it</h4>
+<p>The page tells Google it's a collection of articles. It links into Solutions and Vibe Test, passing the authority your articles earn on to your commercial pages.</p>
+
+<h3 id="p-about" class="keep">3.5 About</h3>
+<table class="kv"><tbody>
+  <tr><td>Web address</td><td class="mono">wewill.tech/about/</td></tr>
+  <tr><td>Its job</td><td>Company credibility: who WE WILL is and how it thinks about quality</td></tr>
+  <tr><td>Search themes</td><td>WE WILL Technology, Agentic Software Quality company</td></tr>
+  <tr><td>Labels for Google</td><td>AboutPage, WebSite, Organization</td></tr>
+</tbody></table>
+<h4 class="keep">What visitors see</h4>
+<p>WE WILL didn't have a company page before; the team and philosophy were buried in the long Home page. About now has the Brief's four blocks. <strong>Company story</strong> <span class="tag edit">EDIT</span> opens with <em>"WE WILL Technology is an Agentic Software Quality company."</em>, the first time the site states your approved category plainly, plus a marked spot for your short company background and the founder interview. <strong>Team</strong> <span class="tag">REUSE</span> shows the existing team section as it was. <strong>Quality philosophy</strong> <span class="tag edit">EDIT</span> reuses "Quality That Thinks With You, Not After You." (Business-Care Quality, Risk-Driven Thinking, Strategic Partnership) and closes with the Strategic Alignment's line <em>"Internal QA retains product context and decision ownership."</em> <strong>Credibility</strong> <span class="tag">REUSE</span> shows the client-logo strip and a Talk to Us button, without repeating the whole Home proof stack.</p>
+<h4 class="keep">How Google sees it</h4>
+<p>This is usually the page Google shows when someone searches for WE WILL by name. Having your category, story and team together gives Google a clear, confident picture of who you are.</p>
+
+<h3 id="p-contact" class="keep">3.6 Contact</h3>
+<table class="kv"><tbody>
+  <tr><td>Web address</td><td class="mono">wewill.tech/contact/</td></tr>
+  <tr><td>Its job</td><td>Where every lead lands, with the right offer already selected</td></tr>
+  <tr><td>Where it sits</td><td>Behind every main button, and in the footer's Company group</td></tr>
+  <tr><td>Labels for Google</td><td>ContactPage, WebSite, Organization</td></tr>
+</tbody></table>
+<p>The form keeps its existing fields, checks and spam protection. It adds one choice, <strong>Request type</strong> (General message, Run a Guided Vibe Test, or Discuss a Business Care Quality Requirement), which is pre-selected from the button the visitor clicked and explained by the offer panel described in Section 2. Its new title and description are built from your approved messaging.</p>
+<p>The page's headline, <em>"Let's Talk About Your Product's Quality."</em>, is now its main heading (H1), so Google reads it as the topic of the page. The form sends to <span class="mono">/contact-submit.php</span> on your live server, which needs to accept the new <span class="mono">request_type</span> field so each lead keeps the offer it asked for.</p>
+
+<h3 id="p-blog" class="keep">3.7 Blog and articles</h3>
+<table class="kv"><tbody>
+  <tr><td>Web addresses</td><td class="mono">/blog/ · /blog/the-triad-quality-framework/ · /blog/when-software-quality-becomes-a-business-decision/</td></tr>
+  <tr><td>Its job</td><td>Your full article listing and the two articles, unchanged in content</td></tr>
+  <tr><td>Where it sits</td><td>Under Resources in the menu, and in the footer</td></tr>
+</tbody></table>
+<p>The articles read exactly as before; the menu now highlights Resources while someone reads them. Three small improvements: each article is now labelled for Google as a blog post by WE WILL Technology; both descriptions were tightened to fit in full in search results; and the "Read the original WE WILL article" links, which led to a "page not found" error, have been removed in English and Arabic. One note for the live site: it addresses articles as <span class="mono">/blog/?slug=…</span>, while the new structure uses cleaner addresses like <span class="mono">/blog/the-triad-quality-framework/</span>, so the old form should redirect to the new one.</p>
+
+<h3 id="p-legal" class="keep">3.8 Privacy Policy and Terms of Use</h3>
+<table class="kv"><tbody>
+  <tr><td>Web addresses</td><td class="mono">wewill.tech/privacy/ · wewill.tech/terms/</td></tr>
+  <tr><td>Status</td><td>Clearly marked placeholders, waiting for your reviewed legal text</td></tr>
+  <tr><td>On Google</td><td>Kept out of search results on purpose (noindex) until the real text is in</td></tr>
+</tbody></table>
+<p>The Brief asks for both links in the footer, so the pages exist and are linked, but they say plainly that the text will be supplied by WE WILL Technology. Once your legal adviser has signed off the wording, the noindex tag can come off.</p>
+
+<h3 id="p-old" class="keep">3.9 Pages that left the menu, and where they went</h3>
+<p>Your live sitemap lists ten "one-section" pages that simply repeat a Home section word for word, plus the AI-Era Quality landing page. Google sees repeated text like this as duplicate content, which splits your search strength. In the new structure each of these has a proper home. We've already marked every one of these old pages <em>noindex</em>, so they stop competing with the new pages in Google while still opening for anyone with an old link. On the live site, the next step is a <strong>permanent (301) redirect</strong> from each to its new home, which sends visitors, and any search strength the old page built up, to the right place. Here's where each one should point:</p>
+<table>
+  <thead><tr><th style="width:33%">Old address</th><th style="width:33%">Suggested new home</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td class="mono">vibe-test.oneapp.dev (any path)</td><td class="mono">/vibe-test/</td><td>Same section links kept, so old anchors land in the right place</td></tr>
+    <tr><td class="mono">/ai-era-quality-services/</td><td class="mono">/solutions/</td><td>Its capability copy now lives in Solutions › Methodology</td></tr>
+    <tr><td class="mono">/services/</td><td class="mono">/solutions/#methodology</td><td>Moved to Solutions</td></tr>
+    <tr><td class="mono">/how-we-work/</td><td class="mono">/solutions/#how-we-work</td><td>Moved to Solutions</td></tr>
+    <tr><td class="mono">/genai-based-systems/</td><td class="mono">/solutions/#ai-feature-evaluation</td><td>Closest approved topic</td></tr>
+    <tr><td class="mono">/why-we-will/</td><td class="mono">/about/#philosophy</td><td>Now About › Quality philosophy</td></tr>
+    <tr><td class="mono">/team/</td><td class="mono">/about/#team</td><td>Now About › Team</td></tr>
+    <tr><td class="mono">/clients/</td><td class="mono">/about/#credibility</td><td>The logo strip lives on Home and About</td></tr>
+    <tr><td class="mono">/success-stories/</td><td class="mono">/#success-stories</td><td>Now Home › Selected proof</td></tr>
+    <tr><td class="mono">/quality-canvas/</td><td class="mono">/resources/#quality-canvas</td><td>Now Resources › Background methodology</td></tr>
+    <tr><td class="mono">/knowledge/</td><td class="mono">/resources/</td><td>Now Resources › Insights</td></tr>
+    <tr><td class="mono">/impact/</td><td class="mono">/</td><td>Its figures are resting until a source is confirmed</td></tr>
+  </tbody>
+</table>
+
+<!-- ---------- 4. SEO GROUNDWORK ---------- -->
+<div class="sec-head" data-break="before" id="s4">
+  <div class="kicker">Section 4</div>
+  <h2 class="sec">The SEO groundwork behind the whole site</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">Good search results come partly from each page and partly from the groundwork underneath. Here's what we've put in place across the whole site, and why it matters to you.</p>
+</div>
+<h4 class="keep">Speaking your buyers' language</h4>
+<p>The Brief lists seed search terms "for the website team to validate through keyword research". We gave each one a natural home, in page descriptions, headings and the text itself. Following the Brief's own note, the Saudi-specific terms are mapped but not yet written into the copy; they go in once research confirms real search demand.</p>
+<table>
+  <thead><tr><th style="width:42%">What people search for</th><th>Where it lives on the site</th></tr></thead>
+  <tbody>
+    <tr><td>agentic QA / agentic software testing</td><td>Home (category line, description) and Vibe Test (description, product hero)</td></tr>
+    <tr><td>autonomous QA testing / autonomous software testing</td><td>Vibe Test (description) and Home ("autonomous QA that hands you the receipts")</td></tr>
+    <tr><td>software release verification / release readiness testing</td><td>Solutions (use case 1, "Release Readiness Reviews"), plus the Home and Vibe Test descriptions</td></tr>
+    <tr><td>AI software testing / AI-assisted development testing</td><td>Solutions (use case 2)</td></tr>
+    <tr><td>AI feature testing / AI feature evaluation</td><td>Solutions (use case 3, and its description)</td></tr>
+    <tr><td>continuous software quality / continuous QA</td><td>Home expert layer ("Continuous verification and accountable quality judgment…") and Solutions</td></tr>
+    <tr><td>QA as a service / managed QA services</td><td>Solutions ("Quality as a Service", Managed Quality Care), framed as expert care rather than generic outsourcing</td></tr>
+    <tr><td>software quality consulting / release decision support</td><td>Solutions (use case 4 and the BCQ Expert Services labels)</td></tr>
+    <tr><td>software testing / QA services / AI testing Saudi Arabia</td><td>Mapped to Home, Solutions and Vibe Test; held back from the copy until validated</td></tr>
+  </tbody>
+</table>
+<p>The Strategic Alignment also asks to keep four buyer terms: AI software testing, autonomous testing, regression testing and release verification. All four appear in the Vibe Test description.</p>
+<h4 class="keep">Fewer pages, but stronger ones</h4>
+<p>The live sitemap lists 16 addresses, and 10 of them repeat Home content word for word. The new sitemap lists 9 pages, each with one clear job and its own title, description and main heading. That gives each page a real chance of ranking for its topic instead of competing with copies of itself.</p>
+<h4 class="keep">Honest from top to bottom</h4>
+<p>Every claim on the site traces back to your existing website or your Strategic Alignment. There are no invented numbers anywhere. The old Impact figures and the AI Feature Evaluation method text are resting until they can be backed up; the Vibe Test receipts are clearly labelled "Sample"; testimonials are word for word; and gaps are marked placeholders rather than filler. That protects your credibility with exactly the kind of careful, technical buyer you're targeting.</p>
+<h4 class="keep">The technical groundwork, in plain English</h4>
+<table>
+  <thead><tr><th style="width:30%">What it is</th><th>What it means for you</th></tr></thead>
+  <tbody>
+    <tr><td>Consistent page titles</td><td>Every title follows one pattern, "WE WILL Tech | Page", short enough that Google never cuts it off</td></tr>
+    <tr><td>Unique descriptions</td><td>Every page has its own summary for Google, written from your approved messaging</td></tr>
+    <tr><td>Canonical tags</td><td>Each page names its official wewill.tech address, so copies and tracking links never compete with the original</td></tr>
+    <tr><td>Social sharing settings</td><td>Links shared on LinkedIn, WhatsApp or X show a proper title, description and a branded image made for that page. The site name now reads "WE WILL Technology" (it used to say "WE WILL")</td></tr>
+    <tr><td>Structured data</td><td>Behind-the-scenes labels that tell Google who WE WILL is, what Vibe Test is and which services you offer (table below)</td></tr>
+    <tr><td>Sitemap file</td><td>A list of the 9 public pages for Google to read (shown in full in Section 5)</td></tr>
+    <tr><td>Kept out on purpose</td><td>Privacy Policy and Terms of Use carry a noindex tag until their real text exists, and so do the old one-section pages, so they no longer compete with the new ones</td></tr>
+    <tr><td>Image sizes</td><td>Images declare their size, so pages don't jump while loading. A small 112-pixel copy of the Vibe Test logo replaces the large original where it's shown small</td></tr>
+    <tr><td>Lead tracking hooks</td><td>Every button is labelled for analytics (Section 2)</td></tr>
+  </tbody>
+</table>
+<table>
+  <thead><tr><th style="width:30%">Type of label</th><th style="width:22%">Where it's used</th><th>What it tells Google</th></tr></thead>
+  <tbody>
+    <tr><td>Organization, WebSite</td><td>Home</td><td>Who WE WILL Technology is: name, logo, social profiles, and that the site is in English and Arabic</td></tr>
+    <tr><td>SoftwareApplication</td><td>Vibe Test</td><td>That Vibe Test is a software product by WE WILL Technology (no price or rating, as none is published)</td></tr>
+    <tr><td>Service</td><td>Solutions</td><td>That Quality Diagnostic, Release Decision and Managed Quality Care are services WE WILL provides</td></tr>
+    <tr><td>CollectionPage, BlogPosting</td><td>Resources</td><td>That the page is a collection of your articles</td></tr>
+    <tr><td>AboutPage</td><td>About</td><td>That this is the company's own page about itself</td></tr>
+    <tr><td>ContactPage</td><td>Contact</td><td>That this is how to reach WE WILL Technology</td></tr>
+    <tr><td>BlogPosting</td><td>Both articles</td><td>That each article is a blog post published by WE WILL Technology, with its cover image</td></tr>
+  </tbody>
+</table>
+
+<!-- ---------- 5. EXACT SEO ---------- -->
+<div class="sec-head" data-break="before" id="s5">
+  <div class="kicker">Section 5</div>
+  <h2 class="sec">The exact SEO content on every page</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">Section 3 explained the thinking behind each page. This section is your handy reference: the actual titles, descriptions and settings on every page, taken from the finished build on 30 September 2026.</p>
+</div>
+<h4 class="keep">A few words to help you read the tables</h4>
+<p>The <strong>meta title</strong> is the clickable blue headline people see in Google, and the <strong>meta description</strong> is the short summary underneath. Google usually shows around 60 characters of a title and around 155 of a description. The <strong>main heading</strong> (H1) is the page's biggest headline, and every page should have exactly one. <strong>Links pointing here</strong> counts how many links across your 11 pages lead to each page, which is a good sign of how central it is.</p>
+<p>One note about keywords: Google stopped using the "keywords" tag to rank pages a long time ago, so we didn't add one. Your buyers' vocabulary does its work where Google actually reads it: the description, the headings and the words on the page.</p>
+<h4 class="keep">At a glance</h4>
+<!--SEO_GLANCE-->
+<h4 class="keep">Settings every page shares</h4>
+<p>These are the same on every page, so rather than repeat them eleven times, here they are once.</p>
+<table class="kv"><tbody>
+  <tr><td>Page language</td><td>English (en). Arabic is switched in the browser on the same address (see Section 7)</td></tr>
+  <tr><td>Character set</td><td>UTF-8</td></tr>
+  <tr><td>Viewport</td><td>width=device-width, initial-scale=1</td></tr>
+  <tr><td>Indexing</td><td>Open to search engines, except Privacy Policy and Terms of Use (noindex)</td></tr>
+  <tr><td>Open Graph (social sharing)</td><td>og:title and og:description mirror the page; og:url = the canonical address; og:type = website; og:site_name = WE WILL Technology; og:locale = en_US, with ar_SA as the alternate</td></tr>
+  <tr><td>Twitter / X card</td><td>summary_large_image, with title, description and image mirroring Open Graph</td></tr>
+  <tr><td>Social image</td><td>A branded image generated for each page by og-image.php on your live server; the two articles use their own cover images</td></tr>
+  <tr><td>Fonts</td><td>Preconnect to fonts.googleapis.com and fonts.gstatic.com, then one stylesheet (Inter, Geist, Tajawal)</td></tr>
+  <tr><td>Organization profile</td><td>Name WE WILL Technology, also known as WE WILL; logo; LinkedIn, Facebook and Instagram profiles</td></tr>
+</tbody></table>
+<h4 class="keep">Page by page</h4>
+<p class="keep">Here's the exact SEO content for every page. Heading counts cover the page's own content; the five small footer headings, which appear on every page, aren't counted.</p>
+<!--SEO_PAGES-->
+<h4 class="keep">The sitemap file</h4>
+<p>This is the list Google reads to discover your public pages. The live site generates its own sitemap, so this is the list for your developers to publish at launch, in place of the current one that still lists the old one-section pages.</p>
+<!--SITEMAP_XML-->
+<p>The live <span class="mono">robots.txt</span> already points to <span class="mono">/sitemap.xml</span>, so it doesn't need to change.</p>
+
+<!-- ---------- 6. A11Y / PERF ---------- -->
+<div class="sec-head" data-break="before" id="s6">
+  <div class="kicker">Section 6</div>
+  <h2 class="sec">Easy to use and quick to load, for everyone</h2>
+  <div class="bars"><i></i><i></i></div>
+  <p class="lead">A site that's easy for everyone to use and quick to load is better for your visitors, and Google rewards it too. Along the way we fixed several small gaps from the old site.</p>
+</div>
+<p><strong>Calmer and clearer.</strong> The endlessly scrolling testimonial rows are gone, replaced by three quotes that stay still and can actually be read. If someone has asked their device to reduce motion, the site's entrance animations switch off. The menu tells screen readers which page you're on, the mobile menu announces whether it's open or closed, and social links say they open in a new tab.</p>
+<p><strong>Quicker to load.</strong> Images declare their size so nothing jumps around while the page loads, and images further down the page only load when someone scrolls to them. The Vibe Test video shows a lightweight preview image and only loads YouTube's player when someone chooses to watch. The Vibe Test logo, which used to be a large file shown at a small size, now has a right-sized copy.</p>
+<p><strong>Tidier details.</strong> Two client logos whose descriptions named the wrong company now describe the right one, the copyright year is current, the broken Business-Care Quality and "original article" links are gone, and the WhatsApp button now uses a correctly formatted phone number (the old one had a space in it). Every page has exactly one main heading, and every description fits in full in Google.</p>
+<p><strong>Every image described.</strong> The 13 team photos, which had no text description on the old site, now have one for screen readers and Google Images. It currently reads "WE WILL team member", and can become each person's name and role.</p>
+
+<!-- ---------- 7. ARABIC ---------- -->
+<div class="sec-head" id="s7">
+  <div class="kicker">Section 7</div>
+  <h2 class="sec">Arabic and English</h2>
+  <div class="bars"><i></i><i></i></div>
+</div>
+<p>Every page, including the new Vibe Test page, switches between English and Arabic with the EN | AR button in the header, and the whole layout flips to read right to left. The new copy has Arabic throughout, and we ran a terminology review so technical words are used consistently. For example, a <em>release</em> (a version, <bdi lang="ar" dir="rtl">الإصدار</bdi>) is kept distinct from a <em>launch</em> (going live, <bdi lang="ar" dir="rtl">الإطلاق</bdi>); QA is <bdi lang="ar" dir="rtl">ضمان الجودة</bdi>; BCQ is <bdi lang="ar" dir="rtl">جودة رعاية الأعمال</bdi>; and GO / NO-GO is spelled one way everywhere. We'd still ask a native-speaking member of your team to give the Arabic a final read before launch.</p>
+<div class="note blue"><p><strong>One important SEO point for Saudi Arabia.</strong> Today Arabic is switched inside the browser on the same web address, so Google only ever sees, and ranks, the English version. Since Saudi Arabia is your priority market, we recommend giving Arabic its own addresses (for example <span class="mono">wewill.tech/ar/solutions/</span>), linked to their English twins with "hreflang" tags. That tells Google which language version to show to which searcher, so Arabic searches can find you too. It's a platform decision for your team.</p></div>
+
+<!-- ---------- FINAL WORD ---------- -->
+<div class="sec-head" data-break="before" id="s8">
+  <div class="kicker">To close</div>
+  <h2 class="sec">A final word</h2>
+  <div class="bars"><i></i><i></i></div>
+</div>
+<p>Your website is now clearer, more focused and better prepared for Google than before, and it still looks and feels like WE WILL. A CTO landing on it can understand in seconds what you do, recognise their own release situation, see real clients and real evidence, and take one clear next step: running a Guided Vibe Test.</p>
+<div class="note"><p><strong>A few details still need to be added from your side.</strong> Wherever the site needs a fact only you can confirm, we've left a clearly marked placeholder rather than guess: approval of the draft wording, product screenshots and real receipts, evidence for the AI use cases, names and roles for testimonials and team photos, a short company background, two missing client logos, and your legal text. Your developers will also need to connect the contact form's new request type on the live server and publish the new sitemap and redirects. Send them over whenever they're ready and we'll drop them straight in.</p></div>
+<p>We'd love to walk you through the live preview and answer any questions about this report. Thank you for trusting us with it.</p>
+
+</div><!-- /flow -->
+
+<script>
+(function () {
+  const flow = document.getElementById('flow');
+  const pages = document.getElementById('pages');
+  const back = document.getElementById('back');
+  const tpl = document.getElementById('tpl');
+  const blocks = Array.from(flow.children);
+  flow.remove();
+  let body, n = 1; // cover is page 1
+  const KEEP = '.keep, .sec-head, h3, h4';
+  function newPage() {
+    const p = tpl.content.firstElementChild.cloneNode(true);
+    pages.insertBefore(p, back);
+    body = p.querySelector('.pg-body');
+    p.querySelector('.pg-num').textContent = ++n;
+  }
+  const over = () => body.scrollHeight > body.clientHeight + 1;
+  function carryHeads() {
+    const carry = [];
+    while (body.lastElementChild && body.lastElementChild.matches(KEEP) && body.children.length > carry.length) {
+      const el = body.lastElementChild; carry.unshift(el); el.remove();
+      if (!body.lastElementChild) break;
+    }
+    return carry;
+  }
+  function freshPage(carry) { newPage(); (carry || []).forEach(c => body.appendChild(c)); }
+  function placeTable(t) {
+    const rows = Array.from(t.tBodies[0].rows);
+    const shell = () => { const c = t.cloneNode(false); if (t.tHead) c.appendChild(t.tHead.cloneNode(true)); const tb = document.createElement('tbody'); c.appendChild(tb); return c; };
+    let cur = shell(), prev = null; body.appendChild(cur);
+    for (const r of rows) {
+      const tb = cur.tBodies[0];
+      tb.appendChild(r);
+      if (!over()) continue;
+      tb.removeChild(r);
+      if (tb.rows.length === 0) { cur.remove(); freshPage(carryHeads()); }
+      else { freshPage(); }
+      prev = cur;
+      cur = shell(); body.appendChild(cur); cur.tBodies[0].appendChild(r);
+    }
+    // No lone row at the top of a page: pull one more row over from the previous fragment
+    if (prev && cur.tBodies[0].rows.length === 1 && prev.tBodies[0].rows.length > 3) {
+      cur.tBodies[0].insertBefore(prev.tBodies[0].lastElementChild, cur.tBodies[0].firstElementChild);
+    }
+  }
+  newPage();
+  for (const b of blocks) {
+    if (b.dataset.break === 'before' && body.children.length) newPage();
+    body.appendChild(b);
+    if (!over()) continue;
+    b.remove();
+    if (b.tagName === 'TABLE' && !b.classList.contains('kv') && b.tBodies[0] && b.tBodies[0].rows.length > 1) {
+      // Start the table here only if at least the header and two rows fit; otherwise move on.
+      placeTable(b); continue;
+    }
+    freshPage(carryHeads());
+    body.appendChild(b);
+    if (over() && b.tagName === 'TABLE' && !b.classList.contains('kv')) { b.remove(); placeTable(b); }
+  }
+  // Page numbers in the contents table
+  const all = Array.from(document.querySelectorAll('.page'));
+  document.querySelectorAll('[data-toc]').forEach(td => {
+    const el = document.getElementById(td.dataset.toc);
+    if (el) td.textContent = all.indexOf(el.closest('.page')) + 1;
+  });
+  // Avoid a table ending with a lone header on a page
+  document.querySelectorAll('.pg-body table').forEach(t => { if (t.tBodies[0] && t.tBodies[0].rows.length === 0) t.remove(); });
+  // Preview helper: report.html#pages=5-8 shows only those pages (used for screenshots; ignored when printing)
+  const r = location.hash.match(/pages=(\d+)-(\d+)/);
+  if (r) all.forEach((p, i) => { if (i + 1 < +r[1] || i + 1 > +r[2]) p.style.display = 'none'; });
+  // Flag any page whose content overflows its body
+  document.querySelectorAll('.pg-body').forEach((b, i) => { if (b.scrollHeight > b.clientHeight + 1) console.warn('overflow on page', i + 2); });
+})();
+</script>
+</body>
+</html>
