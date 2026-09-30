@@ -11,7 +11,6 @@ const translations = {
         "footer.link.methodology": "Methodology resources",
         "footer.link.privacy": "Privacy Policy",
         "footer.link.terms": "Terms of Use",
-        "footer.legalPlaceholder": "Company legal information — to be supplied by WE WILL",
         "legal.placeholder": "This page is a placeholder. The text will be supplied by WE WILL Technology.",
         "blog.date.2024-04-03": "Apr 3, 2024",
         "blog.date.2024-06-22": "Jun 22, 2024",
@@ -424,7 +423,6 @@ const translations = {
         "footer.link.methodology": "موارد المنهجية", // DRAFT: needs approval
         "footer.link.privacy": "سياسة الخصوصية", // DRAFT: needs approval
         "footer.link.terms": "شروط الاستخدام", // DRAFT: needs approval
-        "footer.legalPlaceholder": "المعلومات القانونية للشركة — تُقدَّم من WE WILL", // DRAFT: needs approval
         "legal.placeholder": "هذه الصفحة مؤقتة. سيُقدَّم نصها من WE WILL Technology.", // DRAFT: needs approval
         "blog.date.2024-04-03": "3 أبريل 2024", // DRAFT: needs approval
         "blog.date.2024-06-22": "22 يونيو 2024", // DRAFT: needs approval
@@ -922,7 +920,7 @@ const siteSettings = {
                 "en": "WhatsApp",
                 "ar": "واتساب"
             },
-            "url": "https://api.whatsapp.com/send/?phone=002 01023833940"
+            "url": "https://api.whatsapp.com/send/?phone=201023833940"
         },
         {
             "platform": "instagram",
