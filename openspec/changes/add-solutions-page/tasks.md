@@ -4,7 +4,7 @@ Depends on: `update-global-nav-footer-cta` (nav, CTA map, `.content-placeholder`
 
 ## 1. Route
 
-- [x] 1.1 **Files: `src/solutions/index.njk` (new).** Front matter (title, description, canonical, OG/Twitter, `activeNav: solutions`, the use-case data) and includes: intro, 5 × use-case, methodology, how-we-work. Verify: the build writes `_site/solutions/index.html` with the eight IDs in order and one H1.
+- [x] 1.1 **Files: `src/solutions/index.njk` (new).** Front matter (title, description, canonical, OG/Twitter, `activeNav: solutions`, the use-case data) and includes: intro, 5 × use-case, methodology. Verify: the build writes `_site/solutions/index.html` with the seven IDs in order and one H1.
 
 ## 2. Introduction (NEW)
 

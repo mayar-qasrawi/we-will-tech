@@ -82,3 +82,11 @@ None.
 - **R2:** the first "Vibe Test" mention in use cases 1, 2, 3 and 5 links to `/vibe-test/`. The `sol.<id>.help` translations are HTML (`data-i18n-html`).
 - **R3:** use cases 1 and 2 add "See how it works" → `/vibe-test/#how` (existing Vibe Test label and Arabic, `vt.hero.how`). This is the existing evidence the SA asks for ("Demo and pilot", "Proof of value").
 - Not done: R4, a closing CTA block at the end of the page. The Brief does not list one, so it awaits the user's decision.
+
+## Removals (2026-09-30, user-requested: remove anything the Brief / SA do not require)
+
+- R1 button removed: `#methodology` has no CTA (Brief §III Methodology: "—"). The BCQ Expert Services row itself stays (SA §V content; matches the `Service` structured data).
+- R2 removed: the "Vibe Test" words in the use-case help text are plain text again (Brief §IV: routing links are for Home sections only). The `sol.method.vt` line stays as text without its link.
+- R3 removed: no "See how it works" link on use cases 1 and 2.
+- The reused `#how-we-work` section is no longer included: not a Brief Solutions block, and it names Quality Canvas / Triad Quality Framework, which the Brief places in Resources.
+- "on every release" removed from the Release verification help text (not in SA).

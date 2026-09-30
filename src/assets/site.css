@@ -3118,8 +3118,7 @@ body.lang-ar .sol-page .i18n-en { display: none; }
 }
 
 .sol-jump a:focus-visible,
-.sol-cap-supports a:focus-visible,
-.sol-method-note a:focus-visible {
+.sol-cap-supports a:focus-visible {
   outline: 2px solid var(--ww-indigo);
   outline-offset: 3px;
 }
@@ -3286,11 +3285,6 @@ body.lang-ar .sol-page .i18n-en { display: none; }
   font-size: 0.95rem;
 }
 
-.sol-method-note a {
-  color: var(--ww-blue-dark);
-  font-weight: 600;
-}
-
 @media (max-width: 1024px) {
   .sol-cap-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3313,10 +3307,10 @@ body.lang-ar .sol-page .i18n-en { display: none; }
   }
 }
 
-/* Solutions review fixes (R1–R3) */
+/* Solutions: BCQ Expert Services row */
 .sol-bcq {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr) auto;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
   gap: 16px 28px;
   align-items: center;
   margin-bottom: 20px;
@@ -3359,32 +3353,6 @@ body.lang-ar .sol-page .i18n-en { display: none; }
   color: #ffffff;
 }
 
-.sol-bcq .btn {
-  min-height: 44px;
-  white-space: nowrap;
-}
-
-.sol-case-parts dd a {
-  color: var(--ww-blue-dark);
-  font-weight: 600;
-}
-
-.sol-evidence-link {
-  margin: 14px 0 0;
-  font-size: 0.92rem;
-}
-
-.sol-evidence-link a {
-  color: var(--ww-blue-dark);
-  font-weight: 600;
-}
-
-.sol-case-parts dd a:focus-visible,
-.sol-evidence-link a:focus-visible {
-  outline: 2px solid var(--ww-indigo);
-  outline-offset: 3px;
-}
-
 @media (max-width: 1024px) {
   .sol-bcq {
     grid-template-columns: minmax(0, 1fr);
@@ -3394,10 +3362,6 @@ body.lang-ar .sol-page .i18n-en { display: none; }
 @media (max-width: 600px) {
   .sol-bcq-list {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-.sol-bcq .btn {
-    white-space: normal;
   }
 }
 
