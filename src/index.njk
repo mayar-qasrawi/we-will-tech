@@ -1,31 +1,51 @@
 ---
 layout: "layouts/base.njk"
-title: "WE WILL - Home"
-description: "WE WILL helps software teams ship with confidence — quality strategy, agentic regression, and AI-aware product care."
+title: "Agentic Software Quality | WE WILL Technology"
+description: "Know what is safe to ship at the speed you build: agentic QA and release verification with Vibe Test, plus BCQ expert judgment where risk requires it."
 canonical: "https://wewill.tech/"
 ogType: "website"
-ogTitle: "WE WILL - Home"
-ogDescription: "WE WILL helps software teams ship with confidence — quality strategy, agentic regression, and AI-aware product care."
+ogTitle: "Agentic Software Quality | WE WILL Technology"
+ogDescription: "Know what is safe to ship at the speed you build: agentic QA and release verification with Vibe Test, plus BCQ expert judgment where risk requires it."
 ogUrl: "https://wewill.tech/"
-ogImage: "https://wewill.tech/og-image.php?title=We+don%27t+just+test+software.+We+protect+product+decisions.&amp;kicker=Software+Quality+%E2%80%A2+Business-Care+%E2%80%A2+AI-Aware&amp;description=WE+WILL+helps+software+teams+ship+with+confidence+%E2%80%94+quality+strategy%2C+agentic+regression%2C+and+AI-aware+product+care."
-twitterTitle: "WE WILL - Home"
-twitterDescription: "WE WILL helps software teams ship with confidence — quality strategy, agentic regression, and AI-aware product care."
-twitterImage: "https://wewill.tech/og-image.php?title=We+don%27t+just+test+software.+We+protect+product+decisions.&amp;kicker=Software+Quality+%E2%80%A2+Business-Care+%E2%80%A2+AI-Aware&amp;description=WE+WILL+helps+software+teams+ship+with+confidence+%E2%80%94+quality+strategy%2C+agentic+regression%2C+and+AI-aware+product+care."
+ogImage: "https://wewill.tech/og-image.php?title=Know+what+is+safe+to+ship+-+at+the+speed+you+build.&amp;kicker=Agentic+Software+Quality&amp;description=Know+what+is+safe+to+ship+at+the+speed+you+build%3A+agentic+QA+and+release+verification+with+Vibe+Test%2C+plus+BCQ+expert+judgment+where+risk+requires+it."
+twitterTitle: "Agentic Software Quality | WE WILL Technology"
+twitterDescription: "Know what is safe to ship at the speed you build: agentic QA and release verification with Vibe Test, plus BCQ expert judgment where risk requires it."
+twitterImage: "https://wewill.tech/og-image.php?title=Know+what+is+safe+to+ship+-+at+the+speed+you+build.&amp;kicker=Agentic+Software+Quality&amp;description=Know+what+is+safe+to+ship+at+the+speed+you+build%3A+agentic+QA+and+release+verification+with+Vibe+Test%2C+plus+BCQ+expert+judgment+where+risk+requires+it."
 navHomeHref: "#hero"
+activeNav: "home"
 navPrefix: ""
 chatWidget: true
+jsonLd:
+  "@context": "https://schema.org"
+  "@graph":
+    - "@type": "Organization"
+      "@id": "https://wewill.tech/#organization"
+      name: "WE WILL Technology"
+      alternateName: "WE WILL"
+      url: "https://wewill.tech/"
+      logo: "https://wewill.tech/uploads/7f2b7b2a3047ff5ea3ec0fcf.jpg"
+      sameAs:
+        - "https://www.linkedin.com/company/wewilltech/"
+        - "https://www.facebook.com/wewillquality"
+        - "https://www.instagram.com/wewill.tech/"
+    - "@type": "WebSite"
+      "@id": "https://wewill.tech/#website"
+      name: "WE WILL Technology"
+      url: "https://wewill.tech/"
+      inLanguage: ["en", "ar"]
+      publisher:
+        "@id": "https://wewill.tech/#organization"
 ---
+{#
+  Home = the Website Brief §III Home blocks, in order.
+  Sections that left Home (files kept): ai-era-quality-services-promo, genai-based-systems, impact (not shown, Q1);
+  why-we-will, team -> About; services, how-we-work -> Solutions; quality-canvas -> Resources.
+#}
 {% include "sections/home/hero.html" %}
-{% include "sections/home/vibe-test.html" %}
-{% include "sections/home/ai-era-quality-services-promo.html" %}
-{% include "sections/home/genai-based-systems.html" %}
-{% include "sections/home/why-we-will.html" %}
-{% include "sections/home/services.html" %}
-{% include "sections/home/quality-canvas.html" %}
-{% include "sections/home/impact.html" %}
-{% include "sections/home/how-we-work.html" %}
-{% include "sections/home/team.html" %}
-{% include "sections/home/success-stories.html" %}
 {% include "sections/home/clients.html" %}
+{% include "sections/home/vibe-test.html" %}
+{% include "sections/home/use-cases.html" %}
+{% include "sections/home/expert-layer.html" %}
+{% include "sections/home/success-stories.html" %}
 {% include "sections/home/knowledge.html" %}
-{% include "sections/home/contact.html" %}
+{% include "sections/home/final-cta.html" %}

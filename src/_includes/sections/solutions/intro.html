@@ -1,0 +1,21 @@
+  <!--
+    Website Brief §III Solutions › Page introduction (NEW): "Frame the page around buyer problems, not an internal
+    services catalogue." Lead: Strategic Alignment §V (verbatim, brand casing per site convention).
+  -->
+  <section id="intro" class="section sol-intro">
+    <div class="section-inner">
+      <div class="section-header" data-reveal>
+        <p class="section-kicker" data-i18n="sol.intro.kicker">Solutions</p>
+        <!-- DRAFT: needs approval (H1) -->
+        <h1 class="section-title sol-title" data-i18n="sol.intro.title">Solutions for the release situations product teams face.</h1>
+        <p class="section-subtitle sol-lead" data-i18n="sol.intro.lead">WE WILL Technology helps digital-product teams verify critical software journeys, understand release risk and ship with greater confidence.</p>
+      </div>
+      <nav class="sol-jump" aria-label="Use cases on this page">
+        <ol>
+          {%- for uc in useCases %}
+          <li><a href="#{{ uc.id }}"><span class="sol-jump-num" aria-hidden="true">{{ uc.num }}</span> <span data-i18n="sol.{{ uc.id }}.name">{{ uc.name }}</span></a></li>
+          {%- endfor %}
+        </ol>
+      </nav>
+    </div>
+  </section>

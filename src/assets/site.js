@@ -1,21 +1,203 @@
 const translations = {
     "en": {
+        "nav.menu": "Menu",
+        "a11y.newTab": " (opens in a new tab)",
+        "a11y.allPosts": ": all posts",
+        "footer.group.product": "Product & Solutions",
+        "footer.group.company": "Company",
+        "footer.group.resources": "Resources",
+        "footer.group.start": "Get Started",
+        "footer.group.legal": "Legal & Social",
+        "footer.link.methodology": "Methodology resources",
+        "footer.link.privacy": "Privacy Policy",
+        "footer.link.terms": "Terms of Use",
+        "footer.legalPlaceholder": "Company legal information — to be supplied by WE WILL",
+        "legal.placeholder": "This page is a placeholder. The text will be supplied by WE WILL Technology.",
+        "blog.date.2024-04-03": "Apr 3, 2024",
+        "blog.date.2024-06-22": "Jun 22, 2024",
+        "vt.hero.eyebrow": "AGENTIC QA PLATFORM — MVP · INVITE-ONLY",
+        "vt.kicker.problem": "01 — The problem",
+        "vt.kicker.what": "02 — What it does",
+        "vt.kicker.how": "03 — How it works",
+        "vt.kicker.cap": "04 — Capabilities",
+        "vt.kicker.receipt": "05 — The receipt",
+        "vt.kicker.who": "06 — Who it's for",
+        "vt.kicker.wewill": "07 — WE WILL Technology",
+        "vt.screens.placeholder": "Product screenshots — to be supplied by WE WILL",
+        "about.story.title": "About WE WILL Technology",
+        "about.story.lead": "WE WILL Technology is an Agentic Software Quality company in Saudi Arabia. Vibe Test applies Agentic QA to recurring verification; BCQ connects quality evidence to customer impact, business risk and release decisions.",
+        "about.story.line": "WE WILL brings testing, automation and release-support experience to product teams.",
+        "about.story.placeholder": "Company background — to be supplied by WE WILL",
+        "about.philosophy.kicker": "Quality philosophy",
+        "about.philosophy.approach": "WE WILL Technology combines recurring verification through Vibe Test with BCQ-informed quality judgment. It shows what has been verified, what risk remains and when expert review is needed. BCQ Expert Services add human judgment for consequential decisions.",
+        "about.philosophy.close": "Internal QA retains product context and decision ownership.",
+        "about.cta.talk": "Talk to Us",
         "hero.signalLabel": "How a release earns its GO",
         "hero.signal1": "Risks mapped",
         "hero.signal2": "Journeys tested",
         "hero.signal3": "Evidence signed",
         "hero.signal4": "GO defended",
-        "vibeTest.kicker": "Vibe Test",
+        "vibeTest.kicker": "Vibe Test by WE WILL Technology",
         "vibeTest.title": "Meet Vibe Test — autonomous QA that hands you the receipts.",
-        "vibeTest.subtitle": "An autonomous QA team as a service: agents sweep, test, and fix your product across web, mobile, and GenAI — then prove every verdict with a machine-checked receipt. Built for teams shipping faster than they can test.",
+        "vibeTest.subtitle": "Vibe Test is WE WILL's Agentic QA platform: agents sweep, test, and fix your product across web, mobile, and GenAI — then prove every verdict with a machine-checked receipt. Built for teams shipping faster than they can test.",
         "vibeTest.card1.title": "Sweep & prove",
         "vibeTest.card1.body": "Autonomous exploratory sweeps and business-value journeys across web, mobile, and GenAI.",
         "vibeTest.card2.title": "Test, fix & verify",
         "vibeTest.card2.body": "Vibe Test finds bugs, fixes them, and re-verifies. No unreviewed code reaches production.",
         "vibeTest.card3.title": "Receipts you can trust",
         "vibeTest.card3.body": "Every verdict is challenged before it reaches you. No receipt, no result — and your code and credentials stay yours.",
-        "vibeTest.ctaPrimary": "Start a Vibe Test",
-        "vibeTest.ctaSecondary": "Talk to WE WILL",
+        "vibeTest.ctaPrimary": "Explore Vibe Test",
+        "vibeTest.sampleLabel": "Sample",
+        "useCases.kicker": "Use cases",
+        "useCases.title": "Which release situation are you facing?",
+        "useCases.subtitle": "Software output is accelerating while manual or brittle verification struggles to keep pace.",
+        "useCases.uc1.title": "Release verification",
+        "useCases.uc1.body": "Frequent releases; Vibe Test on critical journeys",
+        "useCases.uc1.outcome": "Faster evidence-based cycles",
+        "useCases.uc2.title": "AI-assisted development",
+        "useCases.uc2.body": "Output exceeds QA; Vibe Test on changes",
+        "useCases.uc2.outcome": "Verification keeps pace",
+        "useCases.uc3.title": "AI Feature Evaluation",
+        "useCases.uc3.body": "AI-feature launch; WE WILL approach executed by Vibe Test",
+        "useCases.uc3.outcome": "Evidence against risk criteria",
+        "useCases.uc4.title": "Release decision",
+        "useCases.uc4.body": "High-impact launch; BCQ Expert Services with test evidence",
+        "useCases.uc4.outcome": "Accountable go / no-go advice",
+        "useCases.uc5.title": "Lean-team quality",
+        "useCases.uc5.body": "Limited QA leadership; Vibe Test plus Managed Quality Care",
+        "useCases.uc5.outcome": "Scalable quality capacity",
+        "useCases.cta": "Explore Solutions",
+        "expertLayer.kicker": "Business Care Quality",
+        "expertLayer.title": "Continuous verification and accountable quality judgment for release decisions.",
+        "expertLayer.subtitle": "WE WILL Technology combines Vibe Test Agentic QA with BCQ methodology and expert judgment to help product teams release with confidence.",
+        "expertLayer.product.label": "Lead product",
+        "expertLayer.product.title": "Vibe Test",
+        "expertLayer.product.role": "Agentic QA platform",
+        "expertLayer.product.body": "Verify critical journeys · Detect issues · Re-verify fixes",
+        "expertLayer.expert.label": "Expert offer",
+        "expertLayer.expert.title": "BCQ Expert Services",
+        "expertLayer.expert.role": "Human quality judgment",
+        "expertLayer.expert.body": "Assess risk · Advise on release",
+        "expertLayer.expert.s1.name": "Quality Diagnostic",
+        "expertLayer.expert.s1.body": "review of product and release risks",
+        "expertLayer.expert.s2.name": "Release Decision",
+        "expertLayer.expert.s2.body": "review of evidence and go / no-go criteria",
+        "expertLayer.expert.s3.name": "Managed Quality Care",
+        "expertLayer.expert.s3.body": "expert oversight",
+        "expertLayer.method.label": "Methodology",
+        "expertLayer.method.title": "Business Care Quality methodology",
+        "expertLayer.method.role": "Connects quality evidence with customer impact, business risk and release decisions",
+        "expertLayer.cta": "Discuss a Quality Requirement",
+        "knowledge.cta": "View Resources",
+        "finalCta.subtitle": "Start with a guided Vibe Test proof of value, or discuss a BCQ Expert Services requirement when a release needs expert judgment.",
+        "finalCta.primary": "Run a Guided Vibe Test",
+        "finalCta.secondary": "Discuss a Quality Requirement",
+        "vt.hero.lockup": "Vibe Test by WE WILL Technology",
+        "vt.hero.title": "<span>Tests.</span> <span class=\"vt-outline\">Fixes.</span> <span>Verifies.</span> <span class=\"vt-accent\">Hands you the receipts.</span>",
+        "vt.hero.subtitle": "Your autonomous QA team. Connect your app or repo — expert agents run the QA a senior team would, and prove it with evidence, not claims.",
+        "vt.hero.cta": "Run a Guided Vibe Test",
+        "vt.hero.how": "See how it works",
+        "vt.problem.title": "Shipping is easy. <span class=\"vt-outline\">Proving it works</span> is not.",
+        "vt.problem.p1.title": "Teams ship faster than they can QA",
+        "vt.problem.p1.body": "Bugs and unverified AI features reach real users before anyone catches them.",
+        "vt.problem.p2.title": "Real QA needs expert testers",
+        "vt.problem.p2.body": "Functional, UX, performance, security — small teams can't staff it.",
+        "vt.problem.p3.title": "Tools only find issues",
+        "vt.problem.p3.body": "Nothing closes the loop from find → fix → verify → ship.",
+        "vt.what.title": "Verify critical journeys. Detect issues. Re-verify fixes.",
+        "vt.how.title": "A closed loop. <span class=\"vt-outline\">Not a checklist.</span>",
+        "vt.how.loop": "Closed loop",
+        "vt.how.s1.title": "Discover",
+        "vt.how.s1.body": "Agents map your app and surface what's broken.",
+        "vt.how.s2.title": "Fix",
+        "vt.how.s2.body": "They author the fix and open a reviewable PR.",
+        "vt.how.s3.title": "Verify",
+        "vt.how.s3.body": "Re-tested and machine-checked into a receipt.",
+        "vt.how.s4.title": "Ship",
+        "vt.how.s4.body": "Merged, deployed, and looped back for the next.",
+        "vt.cap.title": "Five agents. <span class=\"vt-outline\">One QA team.</span>",
+        "vt.cap.c1.body": "A smart audit of your site from a single link.",
+        "vt.cap.c2.body": "Value · UX · performance · security, in one pass.",
+        "vt.cap.c3.body": "Evidence-backed re-testing with confidence scores.",
+        "vt.cap.c4.body": "Autonomous fix → PR → merge → deploy → hand-off.",
+        "vt.cap.c5.title": "AI Feature Evaluation",
+        "vt.cap.c5.body": "A WE WILL-developed approach executed through Vibe Test.",
+        "vt.receipt.title": "Evidence, <span class=\"vt-outline\">not claims.</span>",
+        "vt.receipt.lead": "Every verdict ships with a machine-checked receipt: what was tested, the result, the confidence, the timestamp. Proof you can hand to anyone.",
+        "vt.receipt.p1.title": "QA memory that compounds",
+        "vt.receipt.p1.body": "Dependency maps and re-tests grow smarter with every project.",
+        "vt.receipt.p2.title": "Closes the full loop",
+        "vt.receipt.p2.body": "Find → fix → verify, end to end — not a single step.",
+        "vt.receipt.p3.title": "Adversarial verification",
+        "vt.receipt.p3.body": "Machine-checked receipts, challenged before they reach you.",
+        "vt.receipt.sample": "Sample receipt",
+        "vt.who.title": "Built for product teams with live products and recurring releases.",
+        "vt.who.c1.title": "Growth-stage product and engineering teams",
+        "vt.who.c1.body": "Regression backlog, defects and release delay. More coverage and reliable proof across critical journeys.",
+        "vt.who.c2.title": "Enterprise digital teams",
+        "vt.who.c2.body": "A major launch or AI feature with release risk, where the decision must be accountable.",
+        "vt.who.c3.title": "Funded MVP and pre-launch teams",
+        "vt.who.c3.body": "An executable build and a pilot or launch to prepare, with limited QA capacity.",
+        "vt.wewill.title": "Product plus judgment.",
+        "vt.wewill.master": "Agentic Software Quality",
+        "vt.wewill.lead": "Vibe Test verifies; BCQ connects evidence to customer and release risk; expert services support consequential decisions.",
+        "vt.wewill.i1.label": "Lead product",
+        "vt.wewill.i1.title": "Vibe Test by WE\u00a0WILL Technology",
+        "vt.wewill.i1.body": "Agentic QA platform.",
+        "vt.wewill.i1.v1": "Verify critical journeys",
+        "vt.wewill.i1.v2": "Detect issues",
+        "vt.wewill.i1.v3": "Re-verify fixes",
+        "vt.wewill.i2.label": "Methodology",
+        "vt.wewill.i2.title": "Business Care Quality",
+        "vt.wewill.i2.body": "Connects quality evidence with customer impact, business risk and release decisions.",
+        "vt.wewill.i3.label": "Expert offer",
+        "vt.wewill.i3.title": "BCQ Expert Services",
+        "vt.wewill.i3.body": "Human quality judgment.",
+        "vt.wewill.i3.v1": "Quality Diagnostic",
+        "vt.wewill.i3.v2": "Release Decision",
+        "vt.wewill.i3.v3": "Managed Quality Care",
+        "vt.wewill.line": "Use Vibe Test for recurring verification. Add BCQ Expert Services when you need quality strategy, risk interpretation or accountable release support.",
+        "vt.wewill.cta": "Discuss a Quality Requirement",
+        "vt.book.title": "Ship with confidence.",
+        "vt.book.lead": "Start with a Guided Proof of Value: one environment, 2–3 journeys or one release workflow, and agreed success criteria. Evidence, not claims.",
+        "vt.book.cta": "Run a Guided Vibe Test",
+        "vt.book.fit": "For teams with a live product or executable MVP and a technical owner.",
+        "vt.book.step1": "Guided Proof of Value",
+        "vt.book.step2": "Evidence Review",
+        "vt.book.step3": "Team Subscription",
+        "sol.intro.kicker": "Solutions",
+        "sol.intro.title": "Solutions for the release situations product teams face.",
+        "sol.intro.lead": "WE WILL Technology helps digital-product teams verify critical software journeys, understand release risk and ship with greater confidence.",
+        "sol.label.useCase": "Use case",
+        "sol.label.situation": "The situation",
+        "sol.label.help": "How WE WILL helps",
+        "sol.label.outcome": "Outcome",
+        "sol.label.supports": "Supports:",
+        "sol.proof.placeholder": "Evidence for this use case — to be supplied by WE WILL",
+        "sol.method.kicker": "Business Care Quality",
+        "sol.method.vt": "Automated verification runs through Vibe Test, WE WILL’s Agentic QA platform.",
+        "sol.cta.guided": "Run a Guided Vibe Test",
+        "sol.cta.bcq": "Discuss a Quality Requirement",
+        "sol.release-verification.name": "Release verification",
+        "sol.release-verification.situation": "Frequent releases, and QA capacity has to scale as repetitive work grows.",
+        "sol.release-verification.help": "<a href=\"/vibe-test/\">Vibe Test</a> verifies and re-verifies critical journeys on every release.",
+        "sol.release-verification.outcome": "Faster evidence-based cycles.",
+        "sol.ai-assisted-development.name": "AI-assisted development",
+        "sol.ai-assisted-development.situation": "Development output exceeds QA capacity.",
+        "sol.ai-assisted-development.help": "<a href=\"/vibe-test/\">Vibe Test</a> verifies changes in rapidly changing software, so verification keeps pace with how fast you build.",
+        "sol.ai-assisted-development.outcome": "Verification keeps pace.",
+        "sol.ai-feature-evaluation.name": "AI Feature Evaluation",
+        "sol.ai-feature-evaluation.situation": "You are launching an AI feature and need to assess uncertain AI behaviour.",
+        "sol.ai-feature-evaluation.help": "A WE WILL-developed approach executed through <a href=\"/vibe-test/\">Vibe Test</a>, with expert interpretation as needed.",
+        "sol.ai-feature-evaluation.outcome": "Evidence against risk criteria.",
+        "sol.release-decision.name": "Release decision",
+        "sol.release-decision.situation": "A high-impact launch where the go / no-go decision must be accountable.",
+        "sol.release-decision.help": "BCQ Expert Services with test evidence: a Release Decision review of evidence and go / no-go criteria.",
+        "sol.release-decision.outcome": "Accountable go / no-go advice.",
+        "sol.lean-team-quality.name": "Lean-team quality",
+        "sol.lean-team-quality.situation": "Limited QA leadership or capacity.",
+        "sol.lean-team-quality.help": "<a href=\"/vibe-test/\">Vibe Test</a> plus Managed Quality Care: recurring verification with expert oversight.",
+        "sol.lean-team-quality.outcome": "Scalable quality capacity.",
         "vibeTest.videoLabel": "Watch Vibe Test in action",
         "genai.kicker": "GenAI-based Systems",
         "genai.title": "Our Methodology.",
@@ -97,11 +279,11 @@ const translations = {
         "sara.cta.kicker": "Ready for decision-grade quality?",
         "sara.cta.title": "Let Sara pressure-test your next product decision.",
         "sara.cta.button": "Talk to WE WILL",
-        "hero.eyebrow": "Software Quality • Business-Care • AI-Aware",
-        "hero.title": "We don’t just test software.<br/>\n            We <span>protect product decisions</span>.",
-        "hero.subtitle": "Quality is no longer a checklist. It’s a strategic layer that protects your idea, reduces release risks, and gives you decision clarity beyond traditional QA.",
-        "hero.ctaPrimary": "Book a Clarity Session",
-        "hero.ctaSecondary": "Explore Services",
+        "hero.eyebrow": "Agentic Software Quality",
+        "hero.audience": "Built for CTOs, engineering leaders and founders in growth-stage SaaS and digital-product companies.",
+        "hero.title": "Know what is safe to ship <br/><span>at the speed you build</span>",
+        "hero.subtitle": "Vibe Test verifies critical journeys using WE WILL's quality methodology; BCQ Expert Services add human judgment where risk requires it.",
+        "hero.ctaPrimary": "Run a Guided Vibe Test",
         "hero.chip1": "Business-Care Quality",
         "hero.chip2": "AI-Aware Quality Strategy",
         "hero.chip3": "Risk-first Quality Planning",
@@ -205,6 +387,16 @@ const translations = {
         "contact.company": "Company / Product",
         "contact.message": "Tell us briefly about your product and current challenges",
         "contact.submit": "Send Message",
+        "contact.requestType": "Request type",
+        "contact.requestGeneral": "General message",
+        "contact.requestGuided": "Run a Guided Vibe Test",
+        "contact.requestBcq": "Discuss a Business Care Quality Requirement",
+        "contact.offer.guided.title": "Run a Guided Vibe Test",
+        "contact.offer.guided.scope": "Guided Proof of Value: one environment, 2–3 journeys or one release workflow, and agreed success criteria.",
+        "contact.offer.guided.fit": "For teams with a live product or executable MVP and a technical owner.",
+        "contact.offer.bcq.title": "Discuss a Business Care Quality Requirement",
+        "contact.offer.bcq.scope": "BCQ Expert Services add human judgment where risk requires it: Quality Diagnostic, Release Decision or Managed Quality Care.",
+        "contact.reassure": "We’ll be in touch within 1 business day.",
         "chat.title": "Chat with WE WILL",
         "chat.subtitle": "Send us a quick message.",
         "chat.placeholder": "Write your message here...",
@@ -216,25 +408,211 @@ const translations = {
         "success.case4.quote": "Working with the WE WILL QA team has been a great experience. Their attention to detail, structured testing approach, and commitment to delivering high quality software have consistently exceeded our expectations. They identified critical issues early, communicated clearly throughout the process, and helped improve the overall reliability of our product. We highly recommend their QA services to any company looking for a dependable and professional testing partner.",
         "success.case5.quote": "Our experience with WE WILL is one of the exceptional experiences that helped achieve stability in our work environment at Rasel. By utilizing their QA services, we improved the performance of the technical team, reduced errors in the system, and significantly enhanced the user experience.",
         "success.case6.quote": "WE WILL TECH has been part of the Darent team since day one. Their QA expertise, strong communication, and quick ramp on our product context have kept our development cycles moving. We don't think of them as a vendor. We think of them as team.",
-        "success.case7.quote": "WE WILL’s professionalism and results-driven approach exceeded our expectations. We wholeheartedly recommend their services to any company striving for excellence in software quality assurance."
+        "success.case7.quote": "WE WILL’s professionalism and results-driven approach exceeded our expectations. We wholeheartedly recommend their services to any company striving for excellence in software quality assurance.",
+        "res.method.title": "Background methodology",
+        "res.method.lead": "BCQ links technical evidence to customer and business risk. It informs Vibe Test and is also delivered through separately scoped expert services."
     },
     "ar": {
+        "nav.menu": "القائمة", // DRAFT: needs approval
+        "a11y.newTab": " (يُفتح في علامة تبويب جديدة)", // DRAFT: needs approval
+        "a11y.allPosts": ": جميع المقالات", // DRAFT: needs approval
+        "footer.group.product": "المنتج والحلول", // DRAFT: needs approval
+        "footer.group.company": "الشركة", // DRAFT: needs approval
+        "footer.group.resources": "الموارد", // DRAFT: needs approval
+        "footer.group.start": "ابدأ الآن", // DRAFT: needs approval
+        "footer.group.legal": "الشؤون القانونية والتواصل", // DRAFT: needs approval
+        "footer.link.methodology": "موارد المنهجية", // DRAFT: needs approval
+        "footer.link.privacy": "سياسة الخصوصية", // DRAFT: needs approval
+        "footer.link.terms": "شروط الاستخدام", // DRAFT: needs approval
+        "footer.legalPlaceholder": "المعلومات القانونية للشركة — تُقدَّم من WE WILL", // DRAFT: needs approval
+        "legal.placeholder": "هذه الصفحة مؤقتة. سيُقدَّم نصها من WE WILL Technology.", // DRAFT: needs approval
+        "blog.date.2024-04-03": "3 أبريل 2024", // DRAFT: needs approval
+        "blog.date.2024-06-22": "22 يونيو 2024", // DRAFT: needs approval
+        "vt.hero.eyebrow": "منصة ضمان جودة قائمة على الوكلاء — MVP · بالدعوة فقط", // DRAFT: needs approval
+        "vt.kicker.problem": "01 — المشكلة", // DRAFT: needs approval
+        "vt.kicker.what": "02 — ما الذي يفعله", // DRAFT: needs approval
+        "vt.kicker.how": "03 — كيف يعمل", // DRAFT: needs approval
+        "vt.kicker.cap": "04 — القدرات", // DRAFT: needs approval
+        "vt.kicker.receipt": "05 — الإيصال", // DRAFT: needs approval
+        "vt.kicker.who": "06 — لمن صُمّم", // DRAFT: needs approval
+        "vt.kicker.wewill": "07 — WE WILL Technology", // DRAFT: needs approval
+        "vt.screens.placeholder": "لقطات شاشة المنتج — تُقدَّم من WE WILL", // DRAFT: needs approval
+        "about.story.title": "عن WE WILL Technology", // DRAFT: needs approval
+        "about.story.lead": "WE WILL Technology شركة متخصصة في جودة البرمجيات القائمة على الوكلاء في المملكة العربية السعودية. يطبّق Vibe Test ضمان الجودة القائم على الوكلاء على التحقق المتكرر، وتربط BCQ أدلة الجودة بأثرها على العملاء ومخاطر الأعمال وقرارات الإطلاق.", // DRAFT: needs approval
+        "about.story.line": "تقدّم WE WILL لفرق المنتجات خبرتها في الاختبار والأتمتة ودعم الإصدارات.", // DRAFT: needs approval
+        "about.story.placeholder": "نبذة عن الشركة — تُقدَّم من WE WILL", // DRAFT: needs approval
+        "about.philosophy.kicker": "فلسفة الجودة", // DRAFT: needs approval
+        "about.philosophy.approach": "تجمع WE WILL Technology بين التحقق المتكرر عبر Vibe Test وحكم الجودة المستند إلى BCQ؛ فتوضّح ما تم التحقق منه، وما تبقّى من مخاطر، ومتى تلزم مراجعة الخبراء. وتضيف خدمات خبراء BCQ الحكم البشري للقرارات المصيرية.", // DRAFT: needs approval
+        "about.philosophy.close": "يحتفظ فريق ضمان الجودة الداخلي بسياق المنتج وملكية القرار.", // DRAFT: needs approval
+        "about.cta.talk": "تحدّث إلينا", // DRAFT: needs approval
         "hero.signalLabel": "كيف يستحق الإصدار قرار GO",
         "hero.signal1": "المخاطر مُحدَّدة",
         "hero.signal2": "الرحلات مُختبَرة",
         "hero.signal3": "الأدلة مُوقَّعة",
         "hero.signal4": "قرار GO مُدافَع عنه",
-        "vibeTest.kicker": "Vibe Test",
+        "res.method.title": "المنهجية الأساسية", // DRAFT: needs approval
+        "res.method.lead": "تربط BCQ الأدلة التقنية بمخاطر العملاء والأعمال. وهي تُغذّي Vibe Test، وتُقدَّم أيضًا عبر خدمات خبراء محددة النطاق بشكل منفصل.", // DRAFT: needs approval
+        "vibeTest.kicker": "Vibe Test من WE WILL Technology", // DRAFT: needs approval
         "vibeTest.title": "تعرّف على Vibe Test — اختبار جودة ذاتيّ يمنحك الإيصالات.",
-        "vibeTest.subtitle": "فريق اختبار جودة ذاتيّ كخدمة: وكلاء يمسحون منتجك ويختبرونه ويصلحونه عبر الويب والموبايل والذكاء الاصطناعي التوليدي — ثم يُثبتون كل حكم بإيصال مُتحقَّق آليًا. مصمّم للفرق التي تُطلق أسرع مما تختبر.",
+        "vibeTest.subtitle": "Vibe Test منصة ضمان الجودة القائمة على الوكلاء من WE WILL: يمسح الوكلاء منتجك ويختبرونه ويصلحونه عبر الويب والموبايل والذكاء الاصطناعي التوليدي — ثم يثبتون كل حكم بإيصال مُتحقَّق آليًا. صُمّم للفرق التي تُطلق أسرع مما تستطيع اختباره.", // DRAFT: needs approval
         "vibeTest.card1.title": "المسح والإثبات",
         "vibeTest.card1.body": "عمليات مسح استكشافية ذاتية ورحلات ذات قيمة تجارية عبر الويب والموبايل والذكاء الاصطناعي التوليدي.",
         "vibeTest.card2.title": "اختبار وإصلاح وتحقّق",
         "vibeTest.card2.body": "يكتشف Vibe Test الأخطاء ويصلحها ويعيد التحقق منها. لا يصل أي كود غير مُراجَع إلى الإنتاج.",
         "vibeTest.card3.title": "إيصالات جديرة بالثقة",
         "vibeTest.card3.body": "كل حكم يُتحدّى قبل أن يصلك. لا إيصال، لا نتيجة — وكودك وبياناتك تبقى ملكك.",
-        "vibeTest.ctaPrimary": "ابدأ Vibe Test",
-        "vibeTest.ctaSecondary": "تحدّث إلى WE WILL",
+        "vibeTest.ctaPrimary": "اكتشف Vibe Test", // DRAFT: needs approval
+        "vibeTest.sampleLabel": "نموذج", // DRAFT: needs approval
+        "useCases.kicker": "حالات الاستخدام", // DRAFT: needs approval
+        "useCases.title": "أيّ موقف إصدار تواجهه؟", // DRAFT: needs approval
+        "useCases.subtitle": "يتسارع إنتاج البرمجيات بينما يعجز التحقق اليدوي أو الهشّ عن مواكبته.", // DRAFT: needs approval
+        "useCases.uc1.title": "التحقق من الإصدارات", // DRAFT: needs approval
+        "useCases.uc1.body": "إصدارات متكررة؛ Vibe Test على الرحلات الحرجة", // DRAFT: needs approval
+        "useCases.uc1.outcome": "دورات أسرع قائمة على الأدلة", // DRAFT: needs approval
+        "useCases.uc2.title": "التطوير بمساعدة الذكاء الاصطناعي", // DRAFT: needs approval
+        "useCases.uc2.body": "الإنتاج يتجاوز قدرة ضمان الجودة؛ Vibe Test على التغييرات", // DRAFT: needs approval
+        "useCases.uc2.outcome": "التحقق يواكب السرعة", // DRAFT: needs approval
+        "useCases.uc3.title": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
+        "useCases.uc3.body": "إطلاق ميزة ذكاء اصطناعي؛ نهج WE WILL يُنفَّذ عبر Vibe Test", // DRAFT: needs approval
+        "useCases.uc3.outcome": "أدلة مقابل معايير المخاطر", // DRAFT: needs approval
+        "useCases.uc4.title": "قرار الإطلاق", // DRAFT: needs approval
+        "useCases.uc4.body": "إطلاق عالي التأثير؛ خدمات خبراء BCQ مع أدلة الاختبار", // DRAFT: needs approval
+        "useCases.uc4.outcome": "مشورة مسؤولة بشأن GO / NO-GO", // DRAFT: needs approval
+        "useCases.uc5.title": "الجودة للفرق الصغيرة", // DRAFT: needs approval
+        "useCases.uc5.body": "قيادة محدودة لضمان الجودة؛ Vibe Test مع رعاية الجودة المُدارة", // DRAFT: needs approval
+        "useCases.uc5.outcome": "قدرة جودة قابلة للتوسّع", // DRAFT: needs approval
+        "useCases.cta": "استكشف الحلول", // DRAFT: needs approval
+        "expertLayer.kicker": "جودة رعاية الأعمال", // DRAFT: needs approval
+        "expertLayer.title": "تحقق مستمر وحكم جودة مسؤول لقرارات الإطلاق.", // DRAFT: needs approval
+        "expertLayer.subtitle": "تجمع WE WILL Technology بين ضمان الجودة القائم على الوكلاء في Vibe Test ومنهجية BCQ وحكم الخبراء، لمساعدة فرق المنتجات على الإطلاق بثقة.", // DRAFT: needs approval
+        "expertLayer.product.label": "المنتج الرئيسي", // DRAFT: needs approval
+        "expertLayer.product.title": "Vibe Test", // DRAFT: needs approval
+        "expertLayer.product.role": "منصة ضمان جودة قائمة على الوكلاء", // DRAFT: needs approval
+        "expertLayer.product.body": "التحقق من الرحلات الحرجة · اكتشاف المشكلات · إعادة التحقق من الإصلاحات", // DRAFT: needs approval
+        "expertLayer.expert.label": "عرض الخبراء", // DRAFT: needs approval
+        "expertLayer.expert.title": "خدمات خبراء BCQ", // DRAFT: needs approval
+        "expertLayer.expert.role": "حكم بشري على الجودة", // DRAFT: needs approval
+        "expertLayer.expert.body": "تقييم المخاطر · المشورة بشأن الإطلاق", // DRAFT: needs approval
+        "expertLayer.expert.s1.name": "تشخيص الجودة", // DRAFT: needs approval
+        "expertLayer.expert.s1.body": "مراجعة مخاطر المنتج والإصدار", // DRAFT: needs approval
+        "expertLayer.expert.s2.name": "قرار الإطلاق", // DRAFT: needs approval
+        "expertLayer.expert.s2.body": "مراجعة الأدلة ومعايير GO / NO-GO", // DRAFT: needs approval
+        "expertLayer.expert.s3.name": "رعاية الجودة المُدارة", // DRAFT: needs approval
+        "expertLayer.expert.s3.body": "إشراف الخبراء", // DRAFT: needs approval
+        "expertLayer.method.label": "المنهجية", // DRAFT: needs approval
+        "expertLayer.method.title": "منهجية جودة رعاية الأعمال", // DRAFT: needs approval
+        "expertLayer.method.role": "تربط أدلة الجودة بأثرها على العملاء ومخاطر الأعمال وقرارات الإطلاق", // DRAFT: needs approval
+        "expertLayer.cta": "ناقش متطلبات الجودة لديك", // DRAFT: needs approval
+        "knowledge.cta": "عرض الموارد", // DRAFT: needs approval
+        "finalCta.subtitle": "ابدأ بإثبات قيمة موجَّه عبر Vibe Test، أو ناقش متطلبات خدمات خبراء BCQ عندما يحتاج الإصدار إلى حكم الخبراء.", // DRAFT: needs approval
+        "finalCta.primary": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
+        "finalCta.secondary": "ناقش متطلبات الجودة لديك", // DRAFT: needs approval
+        "vt.hero.lockup": "Vibe Test من WE WILL Technology", // DRAFT: needs approval
+        "vt.hero.title": "<span>يختبر.</span> <span class=\"vt-outline\">ويُصلح.</span> <span>ويتحقّق.</span> <span class=\"vt-accent\">ثم يسلّمك الأدلة.</span>",
+        "vt.hero.subtitle": "فريق ضمان جودتك ذاتيّ التشغيل. اربط تطبيقك أو مستودعك — فيُجري وكلاء خبراء اختبارات الجودة التي يجريها فريقٌ متمرّس، ويُثبتونها بالأدلة لا بالادعاءات.",
+        "vt.hero.cta": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
+        "vt.hero.how": "شاهد كيف يعمل",
+        "vt.problem.title": "الإطلاق سهل. <span class=\"vt-outline\">أمّا إثبات أنه يعمل</span> فليس كذلك.",
+        "vt.problem.p1.title": "الفرق تُطلق أسرع مما تستطيع اختباره",
+        "vt.problem.p1.body": "تصل العيوب وميزات الذكاء الاصطناعي غير المُتحقَّقة إلى المستخدمين قبل اكتشافها.",
+        "vt.problem.p2.title": "الجودة الحقيقية تحتاج خبراء اختبار",
+        "vt.problem.p2.body": "الوظائف والتجربة والأداء والأمان — يصعب على الفرق الصغيرة توفيرها.",
+        "vt.problem.p3.title": "الأدوات تجد المشكلات فقط",
+        "vt.problem.p3.body": "لا شيء يُغلق الحلقة من الاكتشاف إلى الإصلاح إلى التحقّق إلى الإطلاق.",
+        "vt.what.title": "تحقّق من الرحلات الحرجة. اكتشف المشكلات. أعد التحقق من الإصلاحات.", // DRAFT: needs approval
+        "vt.how.title": "حلقة مُغلقة. <span class=\"vt-outline\">لا قائمة تحقّق.</span>",
+        "vt.how.loop": "حلقة مغلقة",
+        "vt.how.s1.title": "اكتشاف",
+        "vt.how.s1.body": "يرسم الوكلاء تطبيقك ويكشفون ما هو معطّل.",
+        "vt.how.s2.title": "إصلاح",
+        "vt.how.s2.body": "يكتبون الإصلاح ويفتحون طلب دمج قابلاً للمراجعة.",
+        "vt.how.s3.title": "تحقّق",
+        "vt.how.s3.body": "يُعاد الاختبار ويُتحقَّق آلياً في إيصال.",
+        "vt.how.s4.title": "إطلاق",
+        "vt.how.s4.body": "يُدمج ويُنشر وتعود الحلقة للتالية.",
+        "vt.cap.title": "خمسة وكلاء. <span class=\"vt-outline\">فريق جودة واحد.</span>",
+        "vt.cap.c1.body": "تدقيق ذكي لموقعك انطلاقاً من رابط واحد.",
+        "vt.cap.c2.body": "القيمة · تجربة المستخدم · الأداء · الأمان في جولة واحدة.",
+        "vt.cap.c3.body": "إعادة اختبار مدعومة بالأدلة مع مقاييس ثقة.",
+        "vt.cap.c4.body": "إصلاح ذاتي: fix → PR → merge → deploy → تسليم.",
+        "vt.cap.c5.title": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
+        "vt.cap.c5.body": "نهج طوّرته WE WILL يُنفَّذ عبر Vibe Test.", // DRAFT: needs approval
+        "vt.receipt.title": "الأدلة، <span class=\"vt-outline\">لا الادعاءات.</span>",
+        "vt.receipt.lead": "كل حكم يأتي بإيصال مُتحقَّق آلياً: ما جرى اختباره، والنتيجة، ودرجة الثقة، والطابع الزمني. دليل يمكنك تسليمه لأي شخص.",
+        "vt.receipt.p1.title": "ذاكرة جودة تتراكم مع كل مشروع",
+        "vt.receipt.p1.body": "خرائط ترابط وإعادة اختبار تزداد ذكاءً مع كل مشروع.",
+        "vt.receipt.p2.title": "تُغلق الحلقة كاملة",
+        "vt.receipt.p2.body": "اكتشاف → إصلاح → تحقّق، من البداية للنهاية — لا خطوة واحدة.",
+        "vt.receipt.p3.title": "تحقّق خصومي من الأحكام",
+        "vt.receipt.p3.body": "إيصالات مُتحقَّقة آلياً تُختبر بصرامة قبل أن تصلك.",
+        "vt.receipt.sample": "نموذج إيصال", // DRAFT: needs approval
+        "vt.who.title": "مصمَّم لفرق المنتجات التي تملك منتجات قائمة وإصدارات متكررة.", // DRAFT: needs approval
+        "vt.who.c1.title": "فرق المنتج والهندسة في مرحلة النمو", // DRAFT: needs approval
+        "vt.who.c1.body": "تراكم في اختبارات الانحدار، وعيوب، وتأخّر في الإصدارات. تغطية أوسع وإثبات موثوق عبر الرحلات الحرجة.", // DRAFT: needs approval
+        "vt.who.c2.title": "الفرق الرقمية في المؤسسات", // DRAFT: needs approval
+        "vt.who.c2.body": "إطلاق كبير أو ميزة ذكاء اصطناعي تنطوي على مخاطر إصدار، حيث يجب أن يكون القرار مسؤولًا.", // DRAFT: needs approval
+        "vt.who.c3.title": "فرق MVP المموّلة وفرق ما قبل الإطلاق", // DRAFT: needs approval
+        "vt.who.c3.body": "نسخة قابلة للتشغيل وتجربة أولية أو إطلاق قيد التحضير، مع قدرة محدودة لضمان الجودة.", // DRAFT: needs approval
+        "vt.wewill.title": "منتجٌ وحكمٌ خبير.", // DRAFT: needs approval
+        "vt.wewill.master": "جودة البرمجيات القائمة على الوكلاء", // DRAFT: needs approval
+        "vt.wewill.lead": "يتحقق Vibe Test، وتربط BCQ الأدلة بمخاطر العملاء والإصدار، وتدعم خدمات الخبراء القرارات المصيرية.", // DRAFT: needs approval
+        "vt.wewill.i1.label": "المنتج الرئيسي", // DRAFT: needs approval
+        "vt.wewill.i1.title": "Vibe Test من WE\u00a0WILL Technology", // DRAFT: needs approval
+        "vt.wewill.i1.body": "منصة ضمان جودة قائمة على الوكلاء.", // DRAFT: needs approval
+        "vt.wewill.i1.v1": "التحقق من الرحلات الحرجة", // DRAFT: needs approval
+        "vt.wewill.i1.v2": "اكتشاف المشكلات", // DRAFT: needs approval
+        "vt.wewill.i1.v3": "إعادة التحقق من الإصلاحات", // DRAFT: needs approval
+        "vt.wewill.i2.label": "المنهجية", // DRAFT: needs approval
+        "vt.wewill.i2.title": "جودة رعاية الأعمال", // DRAFT: needs approval
+        "vt.wewill.i2.body": "تربط أدلة الجودة بأثرها على العملاء ومخاطر الأعمال وقرارات الإطلاق.", // DRAFT: needs approval
+        "vt.wewill.i3.label": "عرض الخبراء", // DRAFT: needs approval
+        "vt.wewill.i3.title": "خدمات خبراء BCQ", // DRAFT: needs approval
+        "vt.wewill.i3.body": "حكم بشري على الجودة.", // DRAFT: needs approval
+        "vt.wewill.i3.v1": "تشخيص الجودة", // DRAFT: needs approval
+        "vt.wewill.i3.v2": "قرار الإطلاق", // DRAFT: needs approval
+        "vt.wewill.i3.v3": "رعاية الجودة المُدارة", // DRAFT: needs approval
+        "vt.wewill.line": "استخدم Vibe Test للتحقق المتكرر، وأضف خدمات خبراء BCQ عندما تحتاج إلى إستراتيجية جودة أو تفسير للمخاطر أو دعم مسؤول للإطلاق.", // DRAFT: needs approval
+        "vt.wewill.cta": "ناقش متطلبات الجودة لديك", // DRAFT: needs approval
+        "vt.book.title": "أطلق بثقة.",
+        "vt.book.lead": "ابدأ بإثبات قيمة موجَّه: بيئة واحدة، ومن رحلتين إلى ثلاث رحلات أو مسار إصدار واحد، ومعايير نجاح متفق عليها. أدلة، لا ادعاءات.", // DRAFT: needs approval
+        "vt.book.cta": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
+        "vt.book.fit": "للفرق التي تملك منتجًا قائمًا أو MVP قابلًا للتشغيل، ومسؤولًا تقنيًا.", // DRAFT: needs approval
+        "vt.book.step1": "إثبات قيمة موجَّه", // DRAFT: needs approval
+        "vt.book.step2": "مراجعة الأدلة", // DRAFT: needs approval
+        "vt.book.step3": "اشتراك الفريق", // DRAFT: needs approval
+        "sol.intro.kicker": "الحلول", // DRAFT: needs approval
+        "sol.intro.title": "حلول لمواقف الإصدار التي تواجهها فرق المنتجات.", // DRAFT: needs approval
+        "sol.intro.lead": "تساعد WE WILL Technology فرق المنتجات الرقمية على التحقق من رحلات البرمجيات الحرجة، وفهم مخاطر الإصدار، والإطلاق بثقة أكبر.", // DRAFT: needs approval
+        "sol.label.useCase": "حالة استخدام", // DRAFT: needs approval
+        "sol.label.situation": "الموقف", // DRAFT: needs approval
+        "sol.label.help": "كيف تساعد WE WILL", // DRAFT: needs approval
+        "sol.label.outcome": "النتيجة", // DRAFT: needs approval
+        "sol.label.supports": "يدعم:", // DRAFT: needs approval
+        "sol.proof.placeholder": "أدلة حالة الاستخدام هذه — تُقدَّم من WE WILL", // DRAFT: needs approval
+        "sol.method.kicker": "جودة رعاية الأعمال", // DRAFT: needs approval
+        "sol.method.vt": "يجري التحقق الآلي عبر Vibe Test، منصة ضمان الجودة القائمة على الوكلاء من WE WILL.", // DRAFT: needs approval
+        "sol.cta.guided": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
+        "sol.cta.bcq": "ناقش متطلبات الجودة لديك", // DRAFT: needs approval
+        "sol.release-verification.name": "التحقق من الإصدارات", // DRAFT: needs approval
+        "sol.release-verification.situation": "إصدارات متكررة، وقدرة ضمان الجودة يجب أن تتوسّع مع تزايد العمل المتكرر.", // DRAFT: needs approval
+        "sol.release-verification.help": "يتحقق <a href=\"/vibe-test/\">Vibe Test</a> من الرحلات الحرجة ويعيد التحقق منها في كل إصدار.", // DRAFT: needs approval
+        "sol.release-verification.outcome": "دورات أسرع قائمة على الأدلة.", // DRAFT: needs approval
+        "sol.ai-assisted-development.name": "التطوير بمساعدة الذكاء الاصطناعي", // DRAFT: needs approval
+        "sol.ai-assisted-development.situation": "إنتاج التطوير يتجاوز قدرة ضمان الجودة.", // DRAFT: needs approval
+        "sol.ai-assisted-development.help": "يتحقق <a href=\"/vibe-test/\">Vibe Test</a> من التغييرات في البرمجيات سريعة التغيّر، ليواكب التحقق سرعة البناء لديك.", // DRAFT: needs approval
+        "sol.ai-assisted-development.outcome": "التحقق يواكب السرعة.", // DRAFT: needs approval
+        "sol.ai-feature-evaluation.name": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
+        "sol.ai-feature-evaluation.situation": "تُطلق ميزة ذكاء اصطناعي وتحتاج إلى تقييم سلوكها غير المؤكد.", // DRAFT: needs approval
+        "sol.ai-feature-evaluation.help": "نهج طوّرته WE WILL يُنفَّذ عبر <a href=\"/vibe-test/\">Vibe Test</a>، مع تفسير الخبراء عند الحاجة.", // DRAFT: needs approval
+        "sol.ai-feature-evaluation.outcome": "أدلة مقابل معايير المخاطر.", // DRAFT: needs approval
+        "sol.release-decision.name": "قرار الإطلاق", // DRAFT: needs approval
+        "sol.release-decision.situation": "إطلاق عالي التأثير يجب أن يكون فيه قرار GO / NO-GO مسؤولًا.", // DRAFT: needs approval
+        "sol.release-decision.help": "خدمات خبراء BCQ مع أدلة الاختبار: مراجعة «قرار الإطلاق» للأدلة ومعايير GO / NO-GO.", // DRAFT: needs approval
+        "sol.release-decision.outcome": "مشورة مسؤولة بشأن GO / NO-GO.", // DRAFT: needs approval
+        "sol.lean-team-quality.name": "الجودة للفرق الصغيرة", // DRAFT: needs approval
+        "sol.lean-team-quality.situation": "قيادة أو قدرة محدودة لضمان الجودة.", // DRAFT: needs approval
+        "sol.lean-team-quality.help": "<a href=\"/vibe-test/\">Vibe Test</a> مع رعاية الجودة المُدارة: تحقق متكرر تحت إشراف الخبراء.", // DRAFT: needs approval
+        "sol.lean-team-quality.outcome": "قدرة جودة قابلة للتوسّع.", // DRAFT: needs approval
         "vibeTest.videoLabel": "شاهد Vibe Test عمليًا",
         "genai.kicker": "أنظمة GenAI",
         "genai.title": "منهجيتنا.",
@@ -316,11 +694,11 @@ const translations = {
         "sara.cta.kicker": "جاهز لجودة تقود القرار؟",
         "sara.cta.title": "دع سارة تختبر قرار منتجك القادم تحت الضغط.",
         "sara.cta.button": "تحدث مع WE WILL",
-        "hero.eyebrow": "جودة البرمجيات • رعاية الأعمال • وعي بالذكاء الاصطناعي",
-        "hero.title": "نحن لا نختبر البرمجيات فحسب.<br/>\n            نحن <span>نحمي قرارات المنتج</span>.",
-        "hero.subtitle": "الجودة لم تعد قائمة فحص، بل طبقة استراتيجية تحمي فكرتك، وتقلل مخاطر الإطلاق، وتمنحك وضوحًا في اتخاذ القرار يتجاوز مفهوم الـ QA التقليدي.",
-        "hero.ctaPrimary": "احجز جلسة وضوح",
-        "hero.ctaSecondary": "استكشف الخدمات",
+        "hero.eyebrow": "جودة البرمجيات القائمة على الوكلاء", // DRAFT: needs approval
+        "hero.audience": "مصمَّم لمديري التقنية وقادة الهندسة والمؤسسين في شركات SaaS والمنتجات الرقمية في مرحلة النمو.", // DRAFT: needs approval
+        "hero.title": "اعرف ما الآمن للإطلاق <br/><span>بالسرعة التي تبني بها</span>", // DRAFT: needs approval
+        "hero.subtitle": "يتحقق Vibe Test من الرحلات الحرجة باستخدام منهجية الجودة لدى WE WILL، وتضيف خدمات خبراء BCQ الحكم البشري حيث تتطلب المخاطر ذلك.", // DRAFT: needs approval
+        "hero.ctaPrimary": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
         "hero.chip1": "جودة ترعى العمل",
         "hero.chip2": "إستراتيجية جودة بوعي بالذكاء الاصطناعي",
         "hero.chip3": "تخطيط جودة قائم على المخاطر",
@@ -424,18 +802,28 @@ const translations = {
         "contact.company": "الشركة / المنتج",
         "contact.message": "أخبرنا بإيجاز عن منتجك والتحديات الحالية",
         "contact.submit": "إرسال الرسالة",
+        "contact.requestType": "نوع الطلب", // DRAFT: needs approval
+        "contact.requestGeneral": "رسالة عامة", // DRAFT: needs approval
+        "contact.requestGuided": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
+        "contact.requestBcq": "ناقش متطلبات جودة رعاية الأعمال لديك", // DRAFT: needs approval
+        "contact.offer.guided.title": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
+        "contact.offer.guided.scope": "إثبات قيمة موجَّه: بيئة واحدة، ومن رحلتين إلى ثلاث رحلات أو مسار إصدار واحد، ومعايير نجاح متفق عليها.", // DRAFT: needs approval
+        "contact.offer.guided.fit": "للفرق التي تملك منتجًا قائمًا أو MVP قابلًا للتشغيل، ومسؤولًا تقنيًا.", // DRAFT: needs approval
+        "contact.offer.bcq.title": "ناقش متطلبات جودة رعاية الأعمال لديك", // DRAFT: needs approval
+        "contact.offer.bcq.scope": "تضيف خدمات خبراء BCQ الحكم البشري حيث تتطلب المخاطر ذلك: تشخيص الجودة، أو قرار الإطلاق، أو رعاية الجودة المُدارة.", // DRAFT: needs approval
+        "contact.reassure": "سنعاود التواصل خلال يوم عمل واحد.",
         "chat.title": "تواصل مع WE WILL",
         "chat.subtitle": "أرسل لنا رسالة سريعة.",
         "chat.placeholder": "اكتب رسالتك هنا...",
         "chat.whatsapp": "💬 واتساب",
         "chat.email": "✉ بريد إلكتروني",
-        "success.case1.quote": "",
-        "success.case2.quote": "",
+        "success.case1.quote": "ساعدتنا الشراكة مع WE WILL في خدمات الجودة على حل تحديات رئيسية، وأضفت طاقة متجددة على فريقنا. كان تركيزهم على الحفاظ على تعريف واضح لنسخة MVP وتجهيز المنتج للحملات التسويقية مذهلًا. وقد نقل تمكين عملية التسليم ومعالجة المشكلات كلًّا من المنتج والشراكة إلى مستوى جديد من الاستقرار.", // DRAFT: needs approval
+        "success.case2.quote": "حسّنت WE WILL أداء فريقنا التقني، وقلّلت أخطاء النظام، وعزّزت تجربة المستخدم بشكل ملحوظ.\r\n\r\nخلال 8 أشهر فقط، غيّرت خبرة WE WILL عملية التطوير لدينا، ما أدى إلى إصدارات أكثر موثوقية ومشكلات أقل في بيئة الإنتاج.", // DRAFT: needs approval
         "success.case3.quote": "تعاونا مع فريق WE WILL في iStoria Coach، وكان دورهم يتجاوز الاختبار التقني التقليدي. ساعدونا في مراجعة وتنظيم خارطة طريق المنتج، وتدقيق تفاصيل النظام من منظور عملي، مما ساعدنا على ترتيب الأولويات، توضيح المتطلبات، وتقليل المخاطر قبل التنفيذ. فريق محترف، مرن، ويفهم احتياجات الشركات والمنتجات سريعة التطور.",
         "success.case4.quote": "لقد كانت تجربة العمل مع فريق ضمان الجودة لدى WE WILL رائعة. فاهتمامهم بالتفاصيل، ومنهجيتهم المنظمة في الاختبار، والتزامهم بتقديم برمجيات عالية الجودة، فاق توقعاتنا باستمرار. لقد حددوا المشكلات الحرجة مبكرًا، وتواصلوا معنا بوضوح طوال العملية، وساهموا في تحسين الموثوقية العامة لمنتجنا. نوصي بشدة بخدمات ضمان الجودة التي يقدمونها لأي شركة تبحث عن شريك اختبار موثوق ومحترف.",
-        "success.case5.quote": "",
+        "success.case5.quote": "تجربتنا مع WE WILL من التجارب الاستثنائية التي ساعدت على تحقيق الاستقرار في بيئة العمل لدينا في Rasel. فمن خلال الاستفادة من خدمات ضمان الجودة لديهم، حسّنّا أداء الفريق التقني، وقلّلنا الأخطاء في النظام، وعزّزنا تجربة المستخدم بشكل ملحوظ.", // DRAFT: needs approval
         "success.case6.quote": "كانت شركة WE WILL TECH جزءًا لا يتجزأ من فريق Darent منذ البداية. وقد ساهمت خبرتهم في ضمان الجودة، ومهارات التواصل الفعّالة، وسرعة استيعابهم لسياق منتجنا في الحفاظ على سير دورات التطوير بسلاسة. نحن لا نعتبرهم مجرد مورد، بل جزءًا من فريقنا.",
-        "success.case7.quote": ""
+        "success.case7.quote": "فاقت احترافية WE WILL ونهجها الموجّه نحو النتائج توقعاتنا. نوصي بخدماتهم بكل ثقة لأي شركة تسعى إلى التميّز في ضمان جودة البرمجيات." // DRAFT: needs approval
     }
 };
 const siteSettings = {
@@ -500,8 +888,8 @@ const siteSettings = {
         "ar": "قلل الوقت، قلل التكلفة، وكن واثقاً"
     },
     "footer_copyright": {
-        "en": "© 2023 WE WILL",
-        "ar": "© 2023 WE WILL"
+        "en": "© 2026 WE WILL Technology.",
+        "ar": "© 2026 WE WILL Technology."
     },
     "footer_rights": {
         "en": "All rights reserved.",
@@ -548,6 +936,22 @@ const siteSettings = {
     "header_nav_vibe_test": {
         "en": "Vibe Test",
         "ar": "Vibe Test"
+    },
+    "header_nav_solutions": {
+        "en": "Solutions",
+        "ar": "الحلول" // DRAFT: needs approval
+    },
+    "header_nav_resources": {
+        "en": "Resources",
+        "ar": "الموارد" // DRAFT: needs approval
+    },
+    "header_nav_about": {
+        "en": "About",
+        "ar": "من نحن" // DRAFT: needs approval
+    },
+    "header_nav_cta": {
+        "en": "Run a Guided Vibe Test",
+        "ar": "ابدأ تجربة Vibe Test موجَّهة" // DRAFT: needs approval
     }
 };
 const LANGUAGE_STORAGE_KEY = 'ww_language';
@@ -559,6 +963,11 @@ function getStoredLanguage() {
   } catch (error) {
     return null;
   }
+}
+
+// Latin brand names inside Arabic text otherwise wrap mid-name ("WE | WILL").
+function keepBrandsTogether(value, target) {
+  return target === 'ar' ? value.replace(/\bWE WILL\b/g, 'WE WILL').replace(/\bVibe Test\b/g, 'Vibe Test') : value;
 }
 
 function applyLanguage(lang) {
@@ -575,7 +984,7 @@ function applyLanguage(lang) {
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
-    const value = translations[target][key];
+    const value = keepBrandsTogether(translations[target][key] || '', target);
     if (value) {
       if (el.dataset.i18nHtml === 'true') {
         el.innerHTML = value;
@@ -599,7 +1008,7 @@ function applyLanguage(lang) {
 
   document.querySelectorAll('[data-site-setting]').forEach((el) => {
     const key = el.dataset.siteSetting;
-    const value = siteSettings[key]?.[target];
+    const value = keepBrandsTogether(siteSettings[key]?.[target] || '', target);
     if (value) {
       el.textContent = value;
     }
@@ -632,7 +1041,7 @@ function applyLanguage(lang) {
   });
 
   document.querySelectorAll('[data-blog-copy]').forEach((el) => {
-    const value = target === 'ar' ? el.dataset.blogAr : el.dataset.blogEn;
+    const value = keepBrandsTogether((target === 'ar' ? el.dataset.blogAr : el.dataset.blogEn) || '', target);
     if (value) {
       el.textContent = value;
     }
@@ -653,7 +1062,7 @@ function applyLanguage(lang) {
   });
 
   document.querySelectorAll('[data-blog-html]').forEach((el) => {
-    const value = target === 'ar' ? el.dataset.blogHtmlAr : el.dataset.blogHtmlEn;
+    const value = keepBrandsTogether((target === 'ar' ? el.dataset.blogHtmlAr : el.dataset.blogHtmlEn) || '', target);
     if (value) {
       el.innerHTML = value;
     }
@@ -667,7 +1076,7 @@ function applyLanguage(lang) {
   });
 
   document.querySelectorAll('[data-deep-dive-copy]').forEach((el) => {
-    const value = target === 'ar' ? el.dataset.deepDiveAr : el.dataset.deepDiveEn;
+    const value = keepBrandsTogether((target === 'ar' ? el.dataset.deepDiveAr : el.dataset.deepDiveEn) || '', target);
     if (value) {
       el.textContent = value;
     }

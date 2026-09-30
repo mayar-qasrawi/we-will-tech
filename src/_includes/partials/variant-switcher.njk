@@ -1,0 +1,19 @@
+{#- Review-only: shows several styles of one section in place, with a tab bar under it.
+    Usage: {% set vswId = "hero" %}{% set vswLabel = "Hero style" %}{% set vswItems = [ {name, file}, … ] %}{% include "partials/variant-switcher.njk" %} -#}
+<div class="vsw" id="{{ vswId }}" data-vsw="{{ vswId }}">
+{%- for item in vswItems %}
+  <div class="vsw-panel" id="vsw-{{ vswId }}-{{ loop.index }}" role="tabpanel" aria-labelledby="vsw-{{ vswId }}-{{ loop.index }}-tab" tabindex="-1"{% if not loop.first %} hidden{% endif %}>
+{% include item.file %}
+  </div>
+{%- endfor %}
+  <div class="vsw-bar">
+    <div class="vsw-bar-inner">
+      <span class="vsw-label" id="vsw-{{ vswId }}-label">{{ vswLabel }}</span>
+      <div class="vsw-tabs" role="tablist" aria-labelledby="vsw-{{ vswId }}-label">
+{%- for item in vswItems %}
+        <button type="button" class="vsw-tab" role="tab" id="vsw-{{ vswId }}-{{ loop.index }}-tab" aria-controls="vsw-{{ vswId }}-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}"><span class="vsw-num">{{ loop.index }}</span>{{ item.name }}</button>
+{%- endfor %}
+      </div>
+    </div>
+  </div>
+</div>

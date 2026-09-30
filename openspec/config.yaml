@@ -1,0 +1,33 @@
+schema: spec-driven
+
+# Project context (shown to AI when creating artifacts)
+context: |
+  Project: enhancement prototype of wewill.tech for WE WILL Technology, a B2B "Agentic Software Quality"
+  company. Vibe Test is its lead product; Business Care Quality (BCQ) is the methodology / expert-service layer.
+  Source of truth: docs/strategy/strategic-alignment-2.0.md and docs/strategy/website-brief.md. They override
+  any other preference. Do not invent copy, sections, features or brand claims that are not in them; record
+  anything ambiguous or contradictory as an open question instead of guessing.
+  Baseline: branch main holds an exact static rebuild of the live site as of 2026-09-28 (verified identical).
+  The pre-change live site is recorded in docs/current-site/ (text per section, EN + AR, screenshots).
+  Tech stack: Eleventy 3 with Nunjucks includes, generating plain static HTML into _site/. Styling is the live
+  site's own CSS (src/assets/site.css, src/assets/layout.css; design tokens are --ww-* custom properties on :root).
+  Behaviour is the live site's vanilla JS (src/assets/site.js). No front-end framework. Markup and class names
+  must stay portable to the client's PHP templates, section by section.
+  Structure: page shell src/_includes/layouts/base.njk; shared partials src/_includes/partials/; one partial per
+  page section src/_includes/sections/<page>/<section>.html; one route file per URL src/<path>/index.njk.
+  Bilingual: the site has an EN/AR switch (data-i18n keys with translations in site.js, and .i18n-en/.i18n-ar
+  pairs). Arabic sets dir="rtl"; changes must not break RTL layout.
+  Git: work on branch redesign/strategic-refinement; conventional commits; one commit per completed section.
+
+# Per-artifact rules
+rules:
+  proposal:
+    - Name every current-site section the change touches and its verdict (KEEP, MODIFY, REPLACE, NEW, REMOVE).
+    - Sections with verdict KEEP get no spec; list them under "Preserved" with a note only.
+  specs:
+    - Every requirement cites its source: the strategy file, the section name, and a short exact quote.
+    - Scenarios cover content, layout, desktop (1440px) and mobile (390px) behaviour, and accessibility (WCAG 2.2 AA).
+    - Copy in scenarios must be quoted from the strategy documents or from the current site; never invented.
+  tasks:
+    - Each task lists the files it owns. No two tasks that can run in parallel may own the same file.
+    - Shared files (layout, partials, design tokens, global CSS/JS, navigation) belong to shared tasks done first by the main agent.

@@ -6,3 +6,6 @@ Thumbs.db
 
 .vercel
 .env*
+
+# Local browser-automation screenshots
+.playwright-mcp/
