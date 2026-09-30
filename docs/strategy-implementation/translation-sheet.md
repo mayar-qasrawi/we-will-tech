@@ -149,19 +149,18 @@ All in `translations.ar` (value currently `""`). Reused with existing Arabic: `s
 | `sol.label.situation` | The situation |
 | `sol.label.help` | How WE WILL helps |
 | `sol.label.outcome` | Outcome |
-| `sol.label.supports` | Supports: |
 | `sol.proof.placeholder` | Evidence for this use case — to be supplied by WE WILL |
 | `sol.method.kicker` | Business Care Quality |
-| `sol.method.vt` | Automated verification runs through Vibe Test, WE WILL’s Agentic QA platform. |
+| `sol.aiQuality.body` | Vibe Test can evaluate your product’s own AI features against contracts you approve. |
 | `sol.cta.guided` | Run a Guided Vibe Test |
 | `sol.cta.bcq` | Discuss a Quality Requirement |
 | `sol.release-verification.name` | Release verification |
 | `sol.release-verification.situation` | Frequent releases, and QA capacity has to scale as repetitive work grows. |
-| `sol.release-verification.help` | Vibe Test verifies and re-verifies critical journeys on every release. |
+| `sol.release-verification.help` | Vibe Test verifies and re-verifies critical journeys. |
 | `sol.release-verification.outcome` | Faster evidence-based cycles. |
 | `sol.ai-assisted-development.name` | AI-assisted development |
 | `sol.ai-assisted-development.situation` | Development output exceeds QA capacity. |
-| `sol.ai-assisted-development.help` | Vibe Test verifies changes in rapidly changing software, so verification keeps pace with how fast you build. |
+| `sol.ai-assisted-development.help` | Vibe Test verifies rapidly changing software. |
 | `sol.ai-assisted-development.outcome` | Verification keeps pace. |
 | `sol.ai-feature-evaluation.name` | AI Feature Evaluation |
 | `sol.ai-feature-evaluation.situation` | You are launching an AI feature and need to assess uncertain AI behaviour. |

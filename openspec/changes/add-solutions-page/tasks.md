@@ -4,7 +4,7 @@ Depends on: `update-global-nav-footer-cta` (nav, CTA map, `.content-placeholder`
 
 ## 1. Route
 
-- [x] 1.1 **Files: `src/solutions/index.njk` (new).** Front matter (title, description, canonical, OG/Twitter, `activeNav: solutions`, the use-case data) and includes: intro, 5 × use-case, methodology, how-we-work. Verify: the build writes `_site/solutions/index.html` with the eight IDs in order and one H1.
+- [x] 1.1 **Files: `src/solutions/index.njk` (new).** Front matter (title, description, canonical, OG/Twitter, `activeNav: solutions`, the use-case data) and includes: intro, 5 × use-case, methodology. Verify: the build writes `_site/solutions/index.html` with the seven IDs in order and one H1.
 
 ## 2. Introduction (NEW)
 
@@ -16,7 +16,7 @@ Depends on: `update-global-nav-footer-cta` (nav, CTA map, `.content-placeholder`
 
 ## 4. Methodology (EDIT)
 
-- [x] 4.1 **Files: `src/_includes/sections/solutions/methodology.html` (new).** Reused heading and lead, the eight capabilities with verbatim copy and "Supports:" tags. Verify: a diff of each description against its source shows no change; no Quality Canvas card; the AI Quality card has no description.
+- [x] 4.1 **Files: `src/_includes/sections/solutions/methodology.html` (new).** Reused heading and lead, the eight capabilities with verbatim copy. Verify: a diff of each description against its source shows no change; no Quality Canvas card; the AI Quality card has no description.
 
 ## 5. Styles and strings
 

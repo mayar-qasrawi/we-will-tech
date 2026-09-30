@@ -171,23 +171,22 @@ const translations = {
         "sol.label.situation": "The situation",
         "sol.label.help": "How WE WILL helps",
         "sol.label.outcome": "Outcome",
-        "sol.label.supports": "Supports:",
         "sol.proof.placeholder": "Evidence for this use case — to be supplied by WE WILL",
         "sol.method.kicker": "Business Care Quality",
-        "sol.method.vt": "Automated verification runs through Vibe Test, WE WILL’s Agentic QA platform.",
+        "sol.aiQuality.body": "Vibe Test can evaluate your product’s own AI features against contracts you approve.",
         "sol.cta.guided": "Run a Guided Vibe Test",
         "sol.cta.bcq": "Discuss a Quality Requirement",
         "sol.release-verification.name": "Release verification",
         "sol.release-verification.situation": "Frequent releases, and QA capacity has to scale as repetitive work grows.",
-        "sol.release-verification.help": "<a href=\"/vibe-test/\">Vibe Test</a> verifies and re-verifies critical journeys on every release.",
+        "sol.release-verification.help": "Vibe Test verifies and re-verifies critical journeys.",
         "sol.release-verification.outcome": "Faster evidence-based cycles.",
         "sol.ai-assisted-development.name": "AI-assisted development",
         "sol.ai-assisted-development.situation": "Development output exceeds QA capacity.",
-        "sol.ai-assisted-development.help": "<a href=\"/vibe-test/\">Vibe Test</a> verifies changes in rapidly changing software, so verification keeps pace with how fast you build.",
+        "sol.ai-assisted-development.help": "Vibe Test verifies rapidly changing software.",
         "sol.ai-assisted-development.outcome": "Verification keeps pace.",
         "sol.ai-feature-evaluation.name": "AI Feature Evaluation",
         "sol.ai-feature-evaluation.situation": "You are launching an AI feature and need to assess uncertain AI behaviour.",
-        "sol.ai-feature-evaluation.help": "A WE WILL-developed approach executed through <a href=\"/vibe-test/\">Vibe Test</a>, with expert interpretation as needed.",
+        "sol.ai-feature-evaluation.help": "A WE WILL-developed approach executed through Vibe Test, with expert interpretation as needed.",
         "sol.ai-feature-evaluation.outcome": "Evidence against risk criteria.",
         "sol.release-decision.name": "Release decision",
         "sol.release-decision.situation": "A high-impact launch where the go / no-go decision must be accountable.",
@@ -195,7 +194,7 @@ const translations = {
         "sol.release-decision.outcome": "Accountable go / no-go advice.",
         "sol.lean-team-quality.name": "Lean-team quality",
         "sol.lean-team-quality.situation": "Limited QA leadership or capacity.",
-        "sol.lean-team-quality.help": "<a href=\"/vibe-test/\">Vibe Test</a> plus Managed Quality Care: recurring verification with expert oversight.",
+        "sol.lean-team-quality.help": "Vibe Test plus Managed Quality Care: recurring verification with expert oversight.",
         "sol.lean-team-quality.outcome": "Scalable quality capacity.",
         "vibeTest.videoLabel": "Watch Vibe Test in action",
         "genai.kicker": "GenAI-based Systems",
@@ -585,23 +584,22 @@ const translations = {
         "sol.label.situation": "الموقف", // DRAFT: needs approval
         "sol.label.help": "كيف تساعد WE WILL", // DRAFT: needs approval
         "sol.label.outcome": "النتيجة", // DRAFT: needs approval
-        "sol.label.supports": "يدعم:", // DRAFT: needs approval
         "sol.proof.placeholder": "أدلة حالة الاستخدام هذه — تُقدَّم من WE WILL", // DRAFT: needs approval
         "sol.method.kicker": "جودة رعاية الأعمال", // DRAFT: needs approval
-        "sol.method.vt": "يجري التحقق الآلي عبر Vibe Test، منصة ضمان الجودة القائمة على الوكلاء من WE WILL.", // DRAFT: needs approval
+        "sol.aiQuality.body": "يمكن لـ Vibe Test تقييم ميزات الذكاء الاصطناعي في منتجك وفق عقود توافق عليها.", // DRAFT: needs approval
         "sol.cta.guided": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
         "sol.cta.bcq": "ناقش متطلبات الجودة لديك", // DRAFT: needs approval
         "sol.release-verification.name": "التحقق من الإصدارات", // DRAFT: needs approval
         "sol.release-verification.situation": "إصدارات متكررة، وقدرة ضمان الجودة يجب أن تتوسّع مع تزايد العمل المتكرر.", // DRAFT: needs approval
-        "sol.release-verification.help": "يتحقق <a href=\"/vibe-test/\">Vibe Test</a> من الرحلات الحرجة ويعيد التحقق منها في كل إصدار.", // DRAFT: needs approval
+        "sol.release-verification.help": "يتحقق Vibe Test من الرحلات الحرجة ويعيد التحقق منها.", // DRAFT: needs approval
         "sol.release-verification.outcome": "دورات أسرع قائمة على الأدلة.", // DRAFT: needs approval
         "sol.ai-assisted-development.name": "التطوير بمساعدة الذكاء الاصطناعي", // DRAFT: needs approval
         "sol.ai-assisted-development.situation": "مخرجات التطوير تتجاوز قدرة ضمان الجودة.", // DRAFT: needs approval
-        "sol.ai-assisted-development.help": "يتحقق <a href=\"/vibe-test/\">Vibe Test</a> من التغييرات في البرمجيات سريعة التغيّر، ليواكب التحقق سرعة البناء لديك.", // DRAFT: needs approval
+        "sol.ai-assisted-development.help": "يتحقق Vibe Test من البرمجيات سريعة التغيّر.", // DRAFT: needs approval
         "sol.ai-assisted-development.outcome": "التحقق يواكب السرعة.", // DRAFT: needs approval
         "sol.ai-feature-evaluation.name": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
         "sol.ai-feature-evaluation.situation": "تُطلق ميزة ذكاء اصطناعي وتحتاج إلى تقييم سلوكها غير المؤكد.", // DRAFT: needs approval
-        "sol.ai-feature-evaluation.help": "نهج طوّرته WE WILL يُنفَّذ عبر <a href=\"/vibe-test/\">Vibe Test</a>، مع تفسير الخبراء عند الحاجة.", // DRAFT: needs approval
+        "sol.ai-feature-evaluation.help": "نهج طوّرته WE WILL يُنفَّذ عبر Vibe Test، مع تفسير الخبراء عند الحاجة.", // DRAFT: needs approval
         "sol.ai-feature-evaluation.outcome": "أدلة مقابل معايير المخاطر.", // DRAFT: needs approval
         "sol.release-decision.name": "قرار الإطلاق", // DRAFT: needs approval
         "sol.release-decision.situation": "إطلاق عالي التأثير يجب أن يكون فيه قرار GO / NO-GO مسؤولًا.", // DRAFT: needs approval
@@ -609,7 +607,7 @@ const translations = {
         "sol.release-decision.outcome": "مشورة مسؤولة بشأن GO / NO-GO.", // DRAFT: needs approval
         "sol.lean-team-quality.name": "الجودة للفرق الصغيرة", // DRAFT: needs approval
         "sol.lean-team-quality.situation": "قيادة أو قدرة محدودة لضمان الجودة.", // DRAFT: needs approval
-        "sol.lean-team-quality.help": "<a href=\"/vibe-test/\">Vibe Test</a> مع رعاية الجودة المُدارة: تحقق متكرر تحت إشراف الخبراء.", // DRAFT: needs approval
+        "sol.lean-team-quality.help": "Vibe Test مع رعاية الجودة المُدارة: تحقق متكرر تحت إشراف الخبراء.", // DRAFT: needs approval
         "sol.lean-team-quality.outcome": "قدرة جودة قابلة للتوسّع.", // DRAFT: needs approval
         "vibeTest.videoLabel": "شاهد Vibe Test عمليًا",
         "genai.kicker": "أنظمة GenAI",
