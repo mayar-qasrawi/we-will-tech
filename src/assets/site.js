@@ -453,24 +453,24 @@ const translations = {
         "res.method.title": "المنهجية الأساسية", // DRAFT: needs approval
         "res.method.lead": "تربط BCQ الأدلة التقنية بمخاطر العملاء والأعمال. وهي تُغذّي Vibe Test، وتُقدَّم أيضًا عبر خدمات خبراء محددة النطاق بشكل منفصل.", // DRAFT: needs approval
         "vibeTest.kicker": "Vibe Test من WE WILL Technology", // DRAFT: needs approval
-        "vibeTest.title": "تعرّف على Vibe Test — اختبار جودة ذاتيّ يمنحك الإيصالات.",
-        "vibeTest.subtitle": "Vibe Test منصة ضمان الجودة القائمة على الوكلاء من WE WILL: يمسح الوكلاء منتجك ويختبرونه ويصلحونه عبر الويب والموبايل والذكاء الاصطناعي التوليدي — ثم يثبتون كل حكم بإيصال مُتحقَّق آليًا. صُمّم للفرق التي تُطلق أسرع مما تستطيع اختباره.", // DRAFT: needs approval
+        "vibeTest.title": "تعرّف على Vibe Test — ضمان جودة ذاتيّ التشغيل يمنحك الإيصالات.", // DRAFT: needs approval
+        "vibeTest.subtitle": "Vibe Test منصة ضمان الجودة القائمة على الوكلاء من WE WILL: يمسح الوكلاء منتجك ويختبرونه ويصلحونه عبر الويب والجوّال والذكاء الاصطناعي التوليدي — ثم يثبتون كل حكم بإيصال مُتحقَّق آليًا. صُمّم للفرق التي تُطلق أسرع مما تستطيع اختباره.", // DRAFT: needs approval
         "vibeTest.card1.title": "المسح والإثبات",
-        "vibeTest.card1.body": "عمليات مسح استكشافية ذاتية ورحلات ذات قيمة تجارية عبر الويب والموبايل والذكاء الاصطناعي التوليدي.",
+        "vibeTest.card1.body": "عمليات مسح استكشافية ذاتية التشغيل ورحلات ذات قيمة تجارية عبر الويب والجوّال والذكاء الاصطناعي التوليدي.", // DRAFT: needs approval
         "vibeTest.card2.title": "اختبار وإصلاح وتحقّق",
-        "vibeTest.card2.body": "يكتشف Vibe Test الأخطاء ويصلحها ويعيد التحقق منها. لا يصل أي كود غير مُراجَع إلى الإنتاج.",
+        "vibeTest.card2.body": "يكتشف Vibe Test الأخطاء ويصلحها ويعيد التحقق منها. لا يصل أي كود غير مُراجَع إلى بيئة الإنتاج.", // DRAFT: needs approval
         "vibeTest.card3.title": "إيصالات جديرة بالثقة",
         "vibeTest.card3.body": "كل حكم يُتحدّى قبل أن يصلك. لا إيصال، لا نتيجة — وكودك وبياناتك تبقى ملكك.",
         "vibeTest.ctaPrimary": "اكتشف Vibe Test", // DRAFT: needs approval
         "vibeTest.sampleLabel": "نموذج", // DRAFT: needs approval
         "useCases.kicker": "حالات الاستخدام", // DRAFT: needs approval
         "useCases.title": "أيّ موقف إصدار تواجهه؟", // DRAFT: needs approval
-        "useCases.subtitle": "يتسارع إنتاج البرمجيات بينما يعجز التحقق اليدوي أو الهشّ عن مواكبته.", // DRAFT: needs approval
+        "useCases.subtitle": "تتسارع مخرجات البرمجيات بينما يعجز التحقق اليدوي أو الهشّ عن مواكبته.", // DRAFT: needs approval
         "useCases.uc1.title": "التحقق من الإصدارات", // DRAFT: needs approval
         "useCases.uc1.body": "إصدارات متكررة؛ Vibe Test على الرحلات الحرجة", // DRAFT: needs approval
         "useCases.uc1.outcome": "دورات أسرع قائمة على الأدلة", // DRAFT: needs approval
         "useCases.uc2.title": "التطوير بمساعدة الذكاء الاصطناعي", // DRAFT: needs approval
-        "useCases.uc2.body": "الإنتاج يتجاوز قدرة ضمان الجودة؛ Vibe Test على التغييرات", // DRAFT: needs approval
+        "useCases.uc2.body": "المخرجات تتجاوز قدرة ضمان الجودة؛ Vibe Test على التغييرات", // DRAFT: needs approval
         "useCases.uc2.outcome": "التحقق يواكب السرعة", // DRAFT: needs approval
         "useCases.uc3.title": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
         "useCases.uc3.body": "إطلاق ميزة ذكاء اصطناعي؛ نهج WE WILL يُنفَّذ عبر Vibe Test", // DRAFT: needs approval
@@ -494,7 +494,7 @@ const translations = {
         "expertLayer.expert.role": "حكم بشري على الجودة", // DRAFT: needs approval
         "expertLayer.expert.body": "تقييم المخاطر · المشورة بشأن الإطلاق", // DRAFT: needs approval
         "expertLayer.expert.s1.name": "تشخيص الجودة", // DRAFT: needs approval
-        "expertLayer.expert.s1.body": "مراجعة مخاطر المنتج والإصدار", // DRAFT: needs approval
+        "expertLayer.expert.s1.body": "مراجعة مخاطر المنتج والإطلاق", // DRAFT: needs approval
         "expertLayer.expert.s2.name": "قرار الإطلاق", // DRAFT: needs approval
         "expertLayer.expert.s2.body": "مراجعة الأدلة ومعايير GO / NO-GO", // DRAFT: needs approval
         "expertLayer.expert.s3.name": "رعاية الجودة المُدارة", // DRAFT: needs approval
@@ -514,9 +514,9 @@ const translations = {
         "vt.hero.how": "شاهد كيف يعمل",
         "vt.problem.title": "الإطلاق سهل. <span class=\"vt-outline\">أمّا إثبات أنه يعمل</span> فليس كذلك.",
         "vt.problem.p1.title": "الفرق تُطلق أسرع مما تستطيع اختباره",
-        "vt.problem.p1.body": "تصل العيوب وميزات الذكاء الاصطناعي غير المُتحقَّقة إلى المستخدمين قبل اكتشافها.",
-        "vt.problem.p2.title": "الجودة الحقيقية تحتاج خبراء اختبار",
-        "vt.problem.p2.body": "الوظائف والتجربة والأداء والأمان — يصعب على الفرق الصغيرة توفيرها.",
+        "vt.problem.p1.body": "تصل الأخطاء البرمجية وميزات الذكاء الاصطناعي غير المُتحقَّقة إلى المستخدمين قبل اكتشافها.", // DRAFT: needs approval
+        "vt.problem.p2.title": "ضمان الجودة الحقيقي يحتاج خبراء اختبار", // DRAFT: needs approval
+        "vt.problem.p2.body": "الوظائف وتجربة المستخدم والأداء والأمان — يصعب على الفرق الصغيرة توفيرها.", // DRAFT: needs approval
         "vt.problem.p3.title": "الأدوات تجد المشكلات فقط",
         "vt.problem.p3.body": "لا شيء يُغلق الحلقة من الاكتشاف إلى الإصلاح إلى التحقّق إلى الإطلاق.",
         "vt.what.title": "تحقّق من الرحلات الحرجة. اكتشف المشكلات. أعد التحقق من الإصلاحات.", // DRAFT: needs approval
@@ -530,11 +530,11 @@ const translations = {
         "vt.how.s3.body": "يُعاد الاختبار ويُتحقَّق آلياً في إيصال.",
         "vt.how.s4.title": "إطلاق",
         "vt.how.s4.body": "يُدمج ويُنشر وتعود الحلقة للتالية.",
-        "vt.cap.title": "خمسة وكلاء. <span class=\"vt-outline\">فريق جودة واحد.</span>",
+        "vt.cap.title": "خمسة وكلاء. <span class=\"vt-outline\">فريق ضمان جودة واحد.</span>", // DRAFT: needs approval
         "vt.cap.c1.body": "تدقيق ذكي لموقعك انطلاقاً من رابط واحد.",
         "vt.cap.c2.body": "القيمة · تجربة المستخدم · الأداء · الأمان في جولة واحدة.",
-        "vt.cap.c3.body": "إعادة اختبار مدعومة بالأدلة مع مقاييس ثقة.",
-        "vt.cap.c4.body": "إصلاح ذاتي: fix → PR → merge → deploy → تسليم.",
+        "vt.cap.c3.body": "إعادة اختبار مدعومة بالأدلة مع درجات ثقة.", // DRAFT: needs approval
+        "vt.cap.c4.body": "إصلاح ذاتيّ ← طلب دمج (PR) ← دمج ← نشر ← تسليم.", // DRAFT: needs approval
         "vt.cap.c5.title": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
         "vt.cap.c5.body": "نهج طوّرته WE WILL يُنفَّذ عبر Vibe Test.", // DRAFT: needs approval
         "vt.receipt.title": "الأدلة، <span class=\"vt-outline\">لا الادعاءات.</span>",
@@ -550,12 +550,12 @@ const translations = {
         "vt.who.c1.title": "فرق المنتج والهندسة في مرحلة النمو", // DRAFT: needs approval
         "vt.who.c1.body": "تراكم في اختبارات الانحدار، وعيوب، وتأخّر في الإصدارات. تغطية أوسع وإثبات موثوق عبر الرحلات الحرجة.", // DRAFT: needs approval
         "vt.who.c2.title": "الفرق الرقمية في المؤسسات", // DRAFT: needs approval
-        "vt.who.c2.body": "إطلاق كبير أو ميزة ذكاء اصطناعي تنطوي على مخاطر إصدار، حيث يجب أن يكون القرار مسؤولًا.", // DRAFT: needs approval
+        "vt.who.c2.body": "إطلاق كبير أو ميزة ذكاء اصطناعي تنطوي على مخاطر إطلاق، حيث يجب أن يكون القرار مسؤولًا.", // DRAFT: needs approval
         "vt.who.c3.title": "فرق MVP المموّلة وفرق ما قبل الإطلاق", // DRAFT: needs approval
         "vt.who.c3.body": "نسخة قابلة للتشغيل وتجربة أولية أو إطلاق قيد التحضير، مع قدرة محدودة لضمان الجودة.", // DRAFT: needs approval
         "vt.wewill.title": "منتجٌ وحكمٌ خبير.", // DRAFT: needs approval
         "vt.wewill.master": "جودة البرمجيات القائمة على الوكلاء", // DRAFT: needs approval
-        "vt.wewill.lead": "يتحقق Vibe Test، وتربط BCQ الأدلة بمخاطر العملاء والإصدار، وتدعم خدمات الخبراء القرارات المصيرية.", // DRAFT: needs approval
+        "vt.wewill.lead": "يتحقق Vibe Test، وتربط BCQ الأدلة بمخاطر العملاء والإطلاق، وتدعم خدمات الخبراء القرارات المصيرية.", // DRAFT: needs approval
         "vt.wewill.i1.label": "المنتج الرئيسي", // DRAFT: needs approval
         "vt.wewill.i1.title": "Vibe Test من WE\u00a0WILL Technology", // DRAFT: needs approval
         "vt.wewill.i1.body": "منصة ضمان جودة قائمة على الوكلاء.", // DRAFT: needs approval
@@ -582,7 +582,7 @@ const translations = {
         "vt.book.step3": "اشتراك الفريق", // DRAFT: needs approval
         "sol.intro.kicker": "الحلول", // DRAFT: needs approval
         "sol.intro.title": "حلول لمواقف الإصدار التي تواجهها فرق المنتجات.", // DRAFT: needs approval
-        "sol.intro.lead": "تساعد WE WILL Technology فرق المنتجات الرقمية على التحقق من رحلات البرمجيات الحرجة، وفهم مخاطر الإصدار، والإطلاق بثقة أكبر.", // DRAFT: needs approval
+        "sol.intro.lead": "تساعد WE WILL Technology فرق المنتجات الرقمية على التحقق من رحلات البرمجيات الحرجة، وفهم مخاطر الإطلاق، والإطلاق بثقة أكبر.", // DRAFT: needs approval
         "sol.label.useCase": "حالة استخدام", // DRAFT: needs approval
         "sol.label.situation": "الموقف", // DRAFT: needs approval
         "sol.label.help": "كيف تساعد WE WILL", // DRAFT: needs approval
@@ -598,7 +598,7 @@ const translations = {
         "sol.release-verification.help": "يتحقق <a href=\"/vibe-test/\">Vibe Test</a> من الرحلات الحرجة ويعيد التحقق منها في كل إصدار.", // DRAFT: needs approval
         "sol.release-verification.outcome": "دورات أسرع قائمة على الأدلة.", // DRAFT: needs approval
         "sol.ai-assisted-development.name": "التطوير بمساعدة الذكاء الاصطناعي", // DRAFT: needs approval
-        "sol.ai-assisted-development.situation": "إنتاج التطوير يتجاوز قدرة ضمان الجودة.", // DRAFT: needs approval
+        "sol.ai-assisted-development.situation": "مخرجات التطوير تتجاوز قدرة ضمان الجودة.", // DRAFT: needs approval
         "sol.ai-assisted-development.help": "يتحقق <a href=\"/vibe-test/\">Vibe Test</a> من التغييرات في البرمجيات سريعة التغيّر، ليواكب التحقق سرعة البناء لديك.", // DRAFT: needs approval
         "sol.ai-assisted-development.outcome": "التحقق يواكب السرعة.", // DRAFT: needs approval
         "sol.ai-feature-evaluation.name": "تقييم ميزات الذكاء الاصطناعي", // DRAFT: needs approval
@@ -618,7 +618,7 @@ const translations = {
         "genai.title": "منهجيتنا.",
         "genai.card.title": "جودة ميزات GenAI وحوكمة القرار",
         "genai.card.body": "منهجية مبنية على القرار لتقييم ميزات GenAI: العقود، مجموعات التغطية، والتقييم السلوكي.",
-        "genai.chip1": "وضوح قرار Go / No-Go",
+        "genai.chip1": "وضوح قرار GO / NO-GO", // DRAFT: needs approval
         "genai.chip2": "التركيز على السلوك لا المخرجات",
         "genai.cta": "استكشف (EN/AR)",
         "genai.summaryTitle": "ماذا ستحصل",
@@ -699,14 +699,14 @@ const translations = {
         "hero.title": "اعرف ما الآمن للإطلاق <br/><span>بالسرعة التي تبني بها</span>", // DRAFT: needs approval
         "hero.subtitle": "يتحقق Vibe Test من الرحلات الحرجة باستخدام منهجية الجودة لدى WE WILL، وتضيف خدمات خبراء BCQ الحكم البشري حيث تتطلب المخاطر ذلك.", // DRAFT: needs approval
         "hero.ctaPrimary": "ابدأ تجربة Vibe Test موجَّهة", // DRAFT: needs approval
-        "hero.chip1": "جودة ترعى العمل",
+        "hero.chip1": "جودة رعاية الأعمال", // DRAFT: needs approval
         "hero.chip2": "إستراتيجية جودة بوعي بالذكاء الاصطناعي",
         "hero.chip3": "تخطيط جودة قائم على المخاطر",
         "hero.chip4": "دعم قرارات الإطلاق",
         "why.kicker": "لماذا WE WILL",
         "why.title": "جودة تفكر معك، لا بعدك.",
         "why.subtitle": "نحن لا ننفذ حالات اختبار فحسب، بل نقود الجودة كطبقة استراتيجية تحمي خارطة الطريق والمستخدمين والإصدارات القادمة.",
-        "why.card1.title": "جودة تراعي العمل",
+        "why.card1.title": "جودة رعاية الأعمال", // DRAFT: needs approval
         "why.card1.body": "ننطلق من أهداف العمل لا من أدوات الاختبار. كل نشاط جودة مرتبط بقرار يجب أن تتخذه بثقة.",
         "why.card2.title": "تفكير قائم على المخاطر",
         "why.card2.body": "نكشف المخاطر مبكرًا، نقلل ديون الجودة من المصدر، ونمنع المفاجآت قرب الإطلاق.",
@@ -716,18 +716,18 @@ const translations = {
         "services.title": "نقدم الثقة، لا مجرد تقارير.",
         "services.subtitle": "أربعة أعمدة خدمية تربط الجودة بنتائج العمل عبر دورة حياة المنتج.",
         "services.card1.title": "الجودة كخدمة (QaaS)",
-        "services.card1.body": "قيادة جودة شاملة: جاهزية الإطلاق، دعم قرارات Go/No-Go، رسم المخاطر، وتصميم Definition of Done بما يناسب مرحلة منتجك.",
+        "services.card1.body": "قيادة جودة شاملة: جاهزية الإطلاق، دعم قرارات GO / NO-GO، رسم المخاطر، وتصميم تعريف الإنجاز (Definition of Done) بما يناسب مرحلة منتجك.", // DRAFT: needs approval
         "services.card2.title": "لوحة الجودة",
         "services.card2.body": "خريطة بصرية تجمع الميزات الرئيسية والمخاطر وسيناريوهات الجودة والتحسينات المستقبلية في لوحة استراتيجية واحدة.",
         "services.card3.title": "جودة الذكاء الاصطناعي وشفافية السلوك",
-        "services.card3.body": "قابلية التفسير، والملاءمة السياقية، والوعي بالتحيز، واختبارات السلوك للتجارب المعتمدة على الذكاء الاصطناعي والتوليد.",
+        "services.card3.body": "قابلية التفسير، والملاءمة السياقية، والوعي بالتحيز، واختبارات السلوك للتجارب المعتمدة على الذكاء الاصطناعي، بما فيه الذكاء الاصطناعي التوليدي.", // DRAFT: needs approval
         "services.card4.title": "منع مخاطر الإصدارات",
-        "services.card4.body": "مراجعات مخاطر ما قبل الإطلاق، إرشاد الرصد، وخطط الطوارئ لتجنب الأعطال عالية التأثير في اللحظات الحرجة.",
+        "services.card4.body": "مراجعات مخاطر ما قبل الإطلاق، إرشادات قابلية الرصد، وخطط الطوارئ لتجنب الأعطال عالية التأثير في اللحظات الحرجة.", // DRAFT: needs approval
         "canvas.kicker": "لوحة الجودة",
         "canvas.title": "جودة منتجك على لوحة واضحة واحدة.",
         "canvas.subtitle": "انقل النقاش من “جودة عالية” مبهمة إلى رؤية مشتركة وملموسة لما يهم الآن: الميزات الرئيسية، المخاطر الواقعية، سيناريوهات الجودة القابلة للقياس، وخطط التحسين.",
         "canvas.list1": "مواءمة أصحاب المصلحة حول معنى “كافٍ” لكل مرحلة.",
-        "canvas.list2": "رسم المخاطر الحقيقية قبل أن تتحول إلى حوادث في الإنتاج.",
+        "canvas.list2": "رسم المخاطر الحقيقية قبل أن تتحول إلى حوادث في بيئة الإنتاج.", // DRAFT: needs approval
         "canvas.list3": "تحويل المخاطر إلى سيناريوهات جودة واضحة وقابلة للاختبار.",
         "canvas.list4": "تخطيط ركائز الجودة المستقبلية دون إبطاء التسليم.",
         "canvas.ctaPrimary": "أنشئ لوحة الجودة الخاصة بك",
@@ -746,20 +746,20 @@ const translations = {
         "impact.title": "أثر يتحدث عن نفسه.",
         "impact.subtitle": "الجودة ليست بعدد الاختبارات بل بمدى تقليل المخاطر ووضوح القرارات.",
         "impact.card1.label": "مخاطر الإطلاق",
-        "impact.card1.note": "تقليل المشكلات الحرجة قبل الإصدار عبر مراجعات المخاطر ولوحة الجودة.",
+        "impact.card1.note": "تقليل المشكلات الحرجة قبل الإطلاق عبر مراجعات المخاطر ولوحة الجودة.", // DRAFT: needs approval
         "impact.card2.label": "وضوح القرار",
-        "impact.card2.note": "مواءمة أعلى بين المنتج والهندسة والقيادة حول معنى “جاهز للشحن”.",
+        "impact.card2.note": "مواءمة أعلى بين المنتج والهندسة والقيادة حول معنى “جاهز للإطلاق”.", // DRAFT: needs approval
         "impact.card3.label": "سرعة التحقق من الـ MVP",
         "impact.card3.note": "تجارب سوق أسرع مع جودة مضبوطة على مرحلة الـ MVP بدل السعي للكمال.",
         "process.kicker": "كيف نعمل",
         "process.title": "عملية جودة مبنية حول القرارات.",
         "process.subtitle": "نندمج مع فريقك، نرسم المخاطر، نصمم استراتيجية الجودة، ونرافقك من الفكرة إلى النمو المستقر.",
         "process.step1.title": "اكتشاف ومواءمة",
-        "process.step1.body": "نبدأ بأهداف المنتج والقيود والمخاطر الحالية لمواءمة التوقعات مع جميع الأطراف.",
+        "process.step1.body": "نبدأ بأهداف المنتج والقيود والمخاطر الحالية لمواءمة التوقعات مع جميع أصحاب المصلحة.", // DRAFT: needs approval
         "process.step2.title": "رسم الجودة",
         "process.step2.body": "باستخدام لوحة الجودة وإطار الجودة الثلاثي، نحدد الميزات والمخاطر الواقعية وسيناريوهات الجودة.",
         "process.step3.title": "تنفيذ ومتابعة",
-        "process.step3.body": "نقود تنفيذ الجودة ونراقب جاهزية الإصدار ونمنع المشكلات بدل التعامل معها بعد الإطلاق.",
+        "process.step3.body": "نقود تنفيذ الجودة ونراقب جاهزية الإطلاق ونمنع المشكلات بدل التعامل معها بعد الإطلاق.", // DRAFT: needs approval
         "process.step4.title": "تحسين مستمر",
         "process.step4.body": "نراجع الأثر، ونحسن استراتيجية الجودة، ونطور عملياتك بعقلية كايزن.",
         "team.kicker": "الفريق",
