@@ -1,0 +1,36 @@
+---
+layout: "layouts/base.njk"
+title: "About WE WILL Technology | Agentic Software Quality"
+description: "WE WILL Technology is an Agentic Software Quality company. Meet the team and see how we connect quality evidence to release decisions."
+canonical: "https://wewill.tech/about/"
+ogType: "website"
+ogTitle: "About WE WILL Technology | Agentic Software Quality"
+ogDescription: "WE WILL Technology is an Agentic Software Quality company. Meet the team and see how we connect quality evidence to release decisions."
+ogUrl: "https://wewill.tech/about/"
+ogImage: "https://wewill.tech/og-image.php?title=About+WE+WILL+Technology&amp;kicker=Agentic+Software+Quality&amp;description=WE+WILL+Technology+is+an+Agentic+Software+Quality+company.+Meet+the+team+and+see+how+we+connect+quality+evidence+to+release+decisions."
+twitterTitle: "About WE WILL Technology | Agentic Software Quality"
+twitterDescription: "WE WILL Technology is an Agentic Software Quality company. Meet the team and see how we connect quality evidence to release decisions."
+twitterImage: "https://wewill.tech/og-image.php?title=About+WE+WILL+Technology&amp;kicker=Agentic+Software+Quality&amp;description=WE+WILL+Technology+is+an+Agentic+Software+Quality+company.+Meet+the+team+and+see+how+we+connect+quality+evidence+to+release+decisions."
+navHomeHref: "/"
+navPrefix: "/"
+activeNav: "about"
+chatWidget: false
+jsonLd:
+  "@context": "https://schema.org"
+  "@type": "AboutPage"
+  name: "About WE WILL Technology"
+  url: "https://wewill.tech/about/"
+  isPartOf: { "@type": "WebSite", "@id": "https://wewill.tech/#website", url: "https://wewill.tech/" }
+  about: { "@type": "Organization", "@id": "https://wewill.tech/#organization", name: "WE WILL Technology", url: "https://wewill.tech/" }
+---
+{#
+  About: Website Brief §III "About" blocks, in order — Company story (EDIT), Team (REUSE, moved from Home),
+  Quality philosophy (EDIT, reuses the Home "Why WE WILL" copy), Credibility (REUSE, client logos + Talk to Us).
+  /team/ and /why-we-will/ are unchanged.
+#}
+<div class="about-page">
+{% include "sections/about/story.html" %}
+{% include "sections/home/team.html" %}
+{% include "sections/about/philosophy.html" %}
+{% include "sections/about/credibility.html" %}
+</div>

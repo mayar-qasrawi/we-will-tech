@@ -28,8 +28,11 @@ jsonLd:
 ---
 {#
   Resources: Website Brief §III "Resources" blocks, in order — Blog / insights (REUSE), Background methodology (EDIT),
-  followed by the existing Quality Canvas section (unchanged). /blog/ and the posts are unchanged.
+  followed by the existing Quality Canvas section (copy unchanged). /blog/ and the posts are unchanged.
+  Brief §IV: "Run a Guided Vibe Test" is the primary CTA, so the Canvas "Generate Your Quality Canvas" button is shown
+  as a secondary button on this page (other pages keep the original style).
 #}
+{% set canvasCtaClass = "btn-secondary" %}
 <div class="res-page">
 {% include "sections/resources/insights.html" %}
 {% include "sections/resources/methodology.html" %}
